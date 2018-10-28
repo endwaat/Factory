@@ -1,6 +1,7 @@
 package GUI.Menu;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class MenuBar extends JMenuBar {
 
@@ -15,28 +16,159 @@ public class MenuBar extends JMenuBar {
 
     public MenuBar() {
         super();
-        fileMenu = new JMenu("fileMenu");
+
+        fileMenu = new JMenu("File");
         this.add(fileMenu);
+        JMenuItem profile = new JMenuItem("Profil");
+        JMenuItem logout = new JMenuItem("Kijelentkezés");
+        JMenuItem exit = new JMenuItem("Kilépés");
+        fileMenu.add(profile);
+        fileMenu.add(logout);
+        fileMenu.add(exit);
 
-        storageMenu = new JMenu("storageMenu");
+        storageMenu = new JMenu("Raktár");
         this.add(storageMenu);
+        JMenu ingredients = new JMenu("Alapanyag");
+        JMenuItem newIngredient = new JMenuItem("Új alapanyag");
+        JMenuItem listIngredient = new JMenuItem("Alapanyagok listázása");
+        ingredients.add(newIngredient);
+        ingredients.add(listIngredient);
+        JMenu ingredientType = new JMenu("Alapanyag típus");
+        JMenuItem newIngredienType = new JMenuItem("Új alapanyag típus");
+        JMenuItem listIngredienType = new JMenuItem("Alapanyag típusok listázása");
+        ingredientType.add(newIngredienType);
+        ingredientType.add(listIngredienType);
+        JMenuItem madeProduct = new JMenuItem("Kész termékek raktáron");
+        storageMenu.add(ingredients);
+        storageMenu.add(ingredientType);
+        storageMenu.add(madeProduct);
 
-        productMenu = new JMenu("productMenu");
+        productMenu = new JMenu("Termék");
         this.add(productMenu);
+        JMenu productType = new JMenu("Termék típus");
+        JMenuItem newPoduct = new JMenuItem("Új terméktípus");
+        JMenuItem listPoducts = new JMenuItem("Terméktípusok listázása");
+        productType.add(newPoduct);
+        productType.add(listPoducts);
+        JMenuItem production = new JMenuItem("Gyártás");
+        JMenuItem completedProduction = new JMenuItem("Gyártott termékek");
+        productMenu.add(productType);
+        productMenu.add(production);
+        productMenu.add(completedProduction);
 
-        workerMenu = new JMenu("workerMenu");
+        workerMenu = new JMenu("Dolgozó");
         this.add(workerMenu);
+        JMenuItem newWorker = new JMenuItem("Új dolgozó");
+        JMenuItem listWorkers = new JMenuItem("Dolgozók listázása");
+        JMenuItem attendance = new JMenuItem("Jelenlét");
+        workerMenu.add(newWorker);
+        workerMenu.add(listWorkers);
+        workerMenu.add(attendance);
 
-        allergenMenu = new JMenu("allergenMenu");
+        allergenMenu = new JMenu("Allergének");
         this.add(allergenMenu);
+        JMenuItem newAllergent = new JMenuItem("Új allergén");
+        JMenuItem listAllergents = new JMenuItem("Allergének listázása");
+        allergenMenu.add(newAllergent);
+        allergenMenu.add(listAllergents);
 
-        machineMenu = new JMenu("machineMenu");
+        machineMenu = new JMenu("Gépek");
         this.add(machineMenu);
+        JMenuItem newMachine = new JMenuItem("Új gép");
+        JMenuItem listMachines = new JMenuItem("Gépek listázása");
+        machineMenu.add(newMachine);
+        machineMenu.add(listMachines);
 
-        orderMenu = new JMenu("orderMenu");
+        orderMenu = new JMenu("Rendelés");
         this.add(orderMenu);
+        JMenu order = new JMenu("Rendelés");
+        JMenuItem newOrder = new JMenuItem("Új rendelés");
+        JMenuItem listorders = new JMenuItem("Rendelések listázása");
+        order.add(newOrder);
+        order.add(listorders);
+        JMenu supplier = new JMenu("Szállítók");
+        JMenuItem newSupplier = new JMenuItem("Új szállító");
+        JMenuItem listSupplier = new JMenuItem("Szállítók listázása");
+        supplier.add(newSupplier);
+        supplier.add(listSupplier);
+        orderMenu.add(order);
+        orderMenu.add(supplier);
 
-        adminMenu = new JMenu("adminMenu");
+        adminMenu = new JMenu("Admin");
         this.add(adminMenu);
+        JMenuItem newUser = new JMenuItem("Új felhasználó");
+        JMenuItem listUser = new JMenuItem("Felhasználók listázása");
+        adminMenu.add(newUser);
+        adminMenu.add(listUser);
+    }
+
+    public JMenu getFileMenu() {
+        return fileMenu;
+    }
+
+    public void setFileMenu(JMenu fileMenu) {
+        this.fileMenu = fileMenu;
+    }
+
+    public JMenu getStorageMenu() {
+        return storageMenu;
+    }
+
+    public void setStorageMenu(JMenu storageMenu) {
+        this.storageMenu = storageMenu;
+    }
+
+    public JMenu getProductMenu() {
+        return productMenu;
+    }
+
+    public void setProductMenu(JMenu productMenu) {
+        this.productMenu = productMenu;
+    }
+
+    public JMenu getWorkerMenu() {
+        return workerMenu;
+    }
+
+    public void setWorkerMenu(JMenu workerMenu) {
+        this.workerMenu = workerMenu;
+    }
+
+    public JMenu getAllergenMenu() {
+        return allergenMenu;
+    }
+
+    public void setAllergenMenu(JMenu allergenMenu) {
+        this.allergenMenu = allergenMenu;
+    }
+
+    public JMenu getMachineMenu() {
+        return machineMenu;
+    }
+
+    public void setMachineMenu(JMenu machineMenu) {
+        this.machineMenu = machineMenu;
+    }
+
+    public JMenu getOrderMenu() {
+        return orderMenu;
+    }
+
+    public void setOrderMenu(JMenu orderMenu) {
+        this.orderMenu = orderMenu;
+    }
+
+    public JMenu getAdminMenu() {
+        return adminMenu;
+    }
+
+    public void setAdminMenu(JMenu adminMenu) {
+        this.adminMenu = adminMenu;
+    }
+
+    public void addListener(String menu, ActionListener actionListener){
+        if("profile".equals(menu)){
+            ((JMenuItem)fileMenu.getMenuComponent(0)).addActionListener(actionListener);
+        }
     }
 }

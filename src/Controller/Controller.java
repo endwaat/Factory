@@ -3,6 +3,7 @@ package Controller;
 import Database.DAO;
 import GUI.Menu.MenuBar;
 import GUI.Windows.LoginFrame;
+import GUI.Windows.ProfileFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 
 public class Controller {
     static JFrame frame;
+    static JDesktopPane desktopPane;
 
     public Controller() {
 
@@ -19,7 +21,7 @@ public class Controller {
         frame = new JFrame("Factory");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
-        JDesktopPane desktopPane = new JDesktopPane();
+        desktopPane = new JDesktopPane();
 
         LoginFrame loginInternalFrame = new LoginFrame("Bejelentkezés", true, true, true, true);
         loginInternalFrame.addLoginButtonActionListener(e -> {
@@ -29,6 +31,7 @@ public class Controller {
                 MenuBar menuBar = new MenuBar();
                 frame.setJMenuBar(menuBar);
                 loginInternalFrame.dispose();
+                addMenuListeners(menuBar);
             }else{
                 //TODO popup invalid data
             }
@@ -39,5 +42,16 @@ public class Controller {
         frame.setSize(1500, 1000);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+    }
+
+    public void addMenuListeners(MenuBar menuBar){
+        menuBar.addListener("profile", new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ProfileFrame profileFrame = new ProfileFrame("Profil", true, true, true, true);
+                desktopPane.add(profileFrame);
+                frame.add(desktopPane);
+            }
+        });
     }
 }
