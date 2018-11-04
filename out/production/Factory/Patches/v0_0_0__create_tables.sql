@@ -4,7 +4,11 @@ CREATE TABLE users (
     id              integer PRIMARY KEY DEFAULT nextval('users_sequence'),
     username        varchar(40) NOT NULL,
     password        varchar(20) NOT NULL,
-    email           varchar(40) NOT NULL
+    email           varchar(40) NOT NULL,
+    zip             integer,
+    town            varchar(40),
+    address         varchar(40),
+    phone           integer
 );
 
 CREATE SEQUENCE workers_sequence START 1;
@@ -65,7 +69,7 @@ CREATE TABLE product_type (
     weight          integer,
     time            integer,
     value           integer,
-    vost            integer
+    cost            integer
 );
 
 CREATE SEQUENCE machine_product_sequence START 1;
@@ -85,7 +89,7 @@ CREATE TABLE ingredient (
     ingredient_type_id   integer references ingredient_type (id),
     arrived   DATE DEFAULT now(),
     expire            DATE DEFAULT now() ,
-    wieght            integer,
+    weight            integer,
     source            varchar(40),
     value            integer
 );
@@ -104,7 +108,7 @@ CREATE SEQUENCE product_sequence START 1;
 CREATE TABLE product (
     id              integer PRIMARY KEY DEFAULT nextval('product_sequence'),
     product_type_id   integer references product_type (id),
-    arrived   DATE DEFAULT now(),
+    production_date   DATE DEFAULT now(),
     wieght        integer,
     instorage     boolean default false
 );

@@ -9,7 +9,7 @@ public class LoginFrame extends JInternalFrame {
     private JLabel usernameText;
     private JTextField usernameInput;
     private JLabel passwordText;
-    private JTextField passwordInput;
+    private JPasswordField passwordInput;
 
     public LoginFrame(String title, boolean resizable, boolean closable,
                       boolean maximizable, boolean iconifiable) {
@@ -20,7 +20,7 @@ public class LoginFrame extends JInternalFrame {
         usernameText = new JLabel("Felhasználónév");
         usernameInput = new JTextField();
         passwordText = new JLabel("Jelszó");
-        passwordInput = new JTextField();
+        passwordInput = new JPasswordField();
         JPanel loginPanel = new JPanel();
         loginPanel.setLayout(new GridLayout(5,2));
         loginPanel.add(usernameText);
@@ -68,11 +68,11 @@ public class LoginFrame extends JInternalFrame {
         this.passwordText = passwordText;
     }
 
-    public JTextField getPasswordInput() {
+    public JPasswordField getPasswordInput() {
         return passwordInput;
     }
 
-    public void setPasswordInput(JTextField passwordInput) {
+    public void setPasswordInput(JPasswordField passwordInput) {
         this.passwordInput = passwordInput;
     }
 }

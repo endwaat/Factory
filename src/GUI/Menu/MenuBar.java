@@ -166,9 +166,18 @@ public class MenuBar extends JMenuBar {
         this.adminMenu = adminMenu;
     }
 
-    public void addListener(String menu, ActionListener actionListener){
-        if("profile".equals(menu)){
-            ((JMenuItem)fileMenu.getMenuComponent(0)).addActionListener(actionListener);
+    public void addListener(String menu, ActionListener actionListener) {
+
+        switch (menu) {
+            case "profile":
+                ((JMenuItem) fileMenu.getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "logout":
+                ((JMenuItem) fileMenu.getMenuComponent(1)).addActionListener(actionListener);
+                break;
+            case "close":
+                ((JMenuItem) fileMenu.getMenuComponent(2)).addActionListener(actionListener);
+                break;
         }
     }
 }

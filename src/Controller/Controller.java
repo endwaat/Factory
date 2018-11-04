@@ -7,17 +7,15 @@ import GUI.Windows.ProfileFrame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class Controller {
     static JFrame frame;
     static JDesktopPane desktopPane;
+    static DAO dao;
 
     public Controller() {
 
-        DAO dao = new DAO();
+        dao = new DAO();
         frame = new JFrame("Factory");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
@@ -25,8 +23,7 @@ public class Controller {
 
         LoginFrame loginInternalFrame = new LoginFrame("Bejelentkezés", true, true, true, true);
         loginInternalFrame.addLoginButtonActionListener(e -> {
-            if(dao.login(loginInternalFrame.getUsernameInput().getText(),loginInternalFrame.getPasswordInput().getText())){
-                System.out.println("FUCK IT MAN");
+            if(dao.login(loginInternalFrame.getUsernameInput().getText(), String.valueOf(( loginInternalFrame.getPasswordInput()).getPassword()))){
                 //TODO show menu
                 MenuBar menuBar = new MenuBar();
                 frame.setJMenuBar(menuBar);
@@ -45,13 +42,30 @@ public class Controller {
     }
 
     public void addMenuListeners(MenuBar menuBar){
-        menuBar.addListener("profile", new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ProfileFrame profileFrame = new ProfileFrame("Profil", true, true, true, true);
-                desktopPane.add(profileFrame);
-                frame.add(desktopPane);
-            }
+        menuBar.addListener("profile", e -> {
+            ProfileFrame profileFrame = new ProfileFrame("Profil", true, true, true, true);
+            profileFrame.setValues(dao.getProfile());
+            profileFrame.setSave(e1 -> {
+                dao.saveProfile(profileFrame.getValues());
+                profileFrame.dispose();
+            });
+            desktopPane.add(profileFrame);
+            frame.add(desktopPane);
         });
+        menuBar.addListener("logout", event -> {
+            frame.setJMenuBar(null);
+            dao.setUserId(0);
+            LoginFrame loginInternalFrame = new LoginFrame("Bejelentkezés", true, true, true, true);
+            loginInternalFrame.addLoginButtonActionListener(e -> {
+                if(dao.login(loginInternalFrame.getUsernameInput().getText(), String.valueOf(( loginInternalFrame.getPasswordInput()).getPassword()))){
+                    MenuBar menuBar1 = new MenuBar();
+                    frame.setJMenuBar(menuBar1);
+                    loginInternalFrame.dispose();
+                    addMenuListeners(menuBar1);
+                }
+            });
+            desktopPane.add(loginInternalFrame);
+        });
+        menuBar.addListener("close", event -> frame.dispose());
     }
 }
