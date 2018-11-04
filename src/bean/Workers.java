@@ -1,6 +1,6 @@
 package bean;
 
-public class workers {
+public class Workers {
 
     int id;
     String name;
@@ -11,7 +11,7 @@ public class workers {
     String address;
     int phone;
 
-    public workers(int id, String name, String email, int salary, int zip, String town, String address, int phone) {
+    public Workers(int id, String name, String email, int salary, int zip, String town, String address, int phone) {
         this.id = id;
         this.name = name;
         this.email = email;
