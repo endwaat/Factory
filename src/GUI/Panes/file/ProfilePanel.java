@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Sun Nov 04 17:26:38 CET 2018
  */
 
-package GUI.Panes;
+package GUI.Panes.file;
 
 import javax.swing.*;
 
@@ -17,7 +17,7 @@ import java.util.HashMap;
 /**
  * @author Dominik
  */
-public class ProfilePane {
+public class ProfilePanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -127,7 +127,7 @@ public class ProfilePane {
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
 
-    public ProfilePane() {
+    public ProfilePanel() {
         initComponents();
     }
 

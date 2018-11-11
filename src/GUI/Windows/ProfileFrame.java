@@ -1,14 +1,13 @@
 package GUI.Windows;
 
-import GUI.Panes.ProfilePane;
+import GUI.Panes.file.ProfilePanel;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class ProfileFrame extends JInternalFrame {
-    private ProfilePane profilePane;
+    private ProfilePanel profilePanel;
     private JPanel mainPanel;
 
     public ProfileFrame(String title, boolean resizable, boolean closable,
@@ -16,22 +15,22 @@ public class ProfileFrame extends JInternalFrame {
         super(title, resizable, closable, maximizable, iconifiable);
         this.setBounds(10, 10, 300, 275);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
-        profilePane = new ProfilePane();
-        mainPanel = profilePane.getPanel1();
+        profilePanel = new ProfilePanel();
+        mainPanel = profilePanel.getPanel1();
         this.setVisible(true);
         this.add(mainPanel);
     }
 
     public void setSave(ActionListener actionListener){
-        profilePane.setSave(actionListener);
+        profilePanel.setSave(actionListener);
     }
 
     public HashMap getValues(){
-        return profilePane.getValues();
+        return profilePanel.getValues();
     }
 
     public void setValues(HashMap values){
-        profilePane.setTexts(values);
+        profilePanel.setTexts(values);
     }
 
 }

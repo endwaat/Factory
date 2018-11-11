@@ -178,6 +178,12 @@ public class MenuBar extends JMenuBar {
             case "close":
                 ((JMenuItem) fileMenu.getMenuComponent(2)).addActionListener(actionListener);
                 break;
+            case "newAllergens":
+                ((JMenuItem) allergenMenu.getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listAllergens":
+                ((JMenuItem) allergenMenu.getMenuComponent(1)).addActionListener(actionListener);
+                break;
         }
     }
 }

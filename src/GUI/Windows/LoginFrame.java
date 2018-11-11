@@ -30,6 +30,7 @@ public class LoginFrame extends JInternalFrame {
         loginPanel.add(loginButton);
         this.setVisible(true);
         this.add(loginPanel);
+        this.getRootPane().setDefaultButton(loginButton);
     }
 
     public JButton getLoginButton() {

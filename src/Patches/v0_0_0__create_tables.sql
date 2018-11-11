@@ -38,10 +38,10 @@ CREATE TABLE authentication (
     admin           boolean
 );
 
-CREATE SEQUENCE allergetic_sequence START 1;
+CREATE SEQUENCE allergens_sequence START 1;
 
-CREATE TABLE allergetic (
-    id              integer PRIMARY KEY DEFAULT nextval('allergetic_sequence'),
+CREATE TABLE allergens (
+    id              integer PRIMARY KEY DEFAULT nextval('allergens_sequence'),
     name            varchar(40) NOT NULL
 );
 
@@ -50,7 +50,7 @@ CREATE SEQUENCE ingredient_type_sequence START 1;
 CREATE TABLE ingredient_type (
     id              integer PRIMARY KEY DEFAULT nextval('ingredient_type_sequence'),
     name            varchar(40) NOT NULL,
-    allergetic_id   integer references allergetic (id)
+    allergens_id   integer references allergens (id)
 );
 
 CREATE SEQUENCE machine_sequence START 1;
@@ -65,7 +65,7 @@ CREATE SEQUENCE product_type_sequence START 1;
 CREATE TABLE product_type (
     id              integer PRIMARY KEY DEFAULT nextval('product_type_sequence'),
     name            varchar(40) NOT NULL,
-    allergetic_id   integer references allergetic (id),
+    allergens_id   integer references allergens (id),
     weight          integer,
     time            integer,
     value           integer,
@@ -175,3 +175,5 @@ CREATE TABLE worklog (
     date            Date default now(),
     hour           integer
 );
+
+INSERT INTO users(username, password, email, zip, town, address, phone) VALUES ('Admin', 'Admin', 'e.dominik1995@gmail.com', 6000, 'Kecskemét', 'Kullai köz 12', 305640832)
