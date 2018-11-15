@@ -23,6 +23,13 @@ public class DAO {
             "LEFT JOIN authentication ON users.id = authentication.user_id " +
             "WHERE users.id = ? AND users.deleted = 'f'";
     private static String SQL_LOGICAL_DELETE_USER = "UPDATE users SET deleted = 't' WHERE id = ?";
+    private static String SQL_INSERT_MACHINE = "INSERT INTO machine (name) VALUES (?)";
+    private static String SQL_UPDATE_MACHINE = "UPDATE machine SET name = ? WHERE id = ?";
+    private static String SQL_SELECT_MACHINE_LIST = "SELECT id,name FROM machine WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_MACHINE = "SELECT id,name FROM machine WHERE id = ? AND deleted = 'f'";
+    private static String SQL_DELETE_MACHINE = "DELETE FROM machine WHERE id = ?";
+
+
     private int userId;
 
     public DAO() {
@@ -64,6 +71,10 @@ public class DAO {
         return false;
     }
 
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     public boolean saveProfile(HashMap values) {
         Connection connection = getConnection();
         PreparedStatement preparedStatement = null;
@@ -84,7 +95,6 @@ public class DAO {
             return false;
         }
     }
-
 
     public boolean saveAllergens(HashMap values) {
         Connection connection = getConnection();
@@ -303,7 +313,75 @@ public class DAO {
         }
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public boolean saveMachine(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_INSERT_MACHINE);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.execute();
+                return true;
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_MACHINE);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("id"));
+                preparedStatement.execute();
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
+
+    public List<Map> getMachineList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_MACHINE_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getMachine(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_MACHINE);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public void deleteMachine(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_MACHINE);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

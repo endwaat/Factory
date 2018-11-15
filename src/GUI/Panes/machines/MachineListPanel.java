@@ -1,22 +1,24 @@
 /*
- * Created by JFormDesigner on Sun Nov 04 22:16:38 CET 2018
+ * Created by JFormDesigner on Thu Nov 15 21:13:54 CET 2018
  */
 
-package GUI.Panes.allergens;
+package GUI.Panes.machines;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import net.miginfocom.swing.*;
 
+import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @author Dominik
  */
-public class AllergensListPanel extends JPanel {
-    public AllergensListPanel() {
+public class MachineListPanel extends JPanel {
+    public MachineListPanel() {
         initComponents();
     }
 
@@ -24,7 +26,7 @@ public class AllergensListPanel extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Dominik
         scrollPane1 = new JScrollPane();
-        allergensTable = new JTable();
+        machineTable = new JTable();
         deleteButton = new JButton();
         editButton = new JButton();
 
@@ -40,18 +42,18 @@ public class AllergensListPanel extends JPanel {
         setLayout(new MigLayout(
             "hidemode 3",
             // columns
-            "[grow,fill]" +
-            "[grow,fill]",
+            "[150,grow,fill]" +
+            "[150,grow,fill]",
             // rows
-            "[81,grow]" +
+            "[]" +
             "[]"));
 
         //======== scrollPane1 ========
         {
 
-            //---- allergensTable ----
-            allergensTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-            scrollPane1.setViewportView(allergensTable);
+            //---- machineTable ----
+            machineTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            scrollPane1.setViewportView(machineTable);
         }
         add(scrollPane1, "cell 0 0 2 1");
 
@@ -60,7 +62,7 @@ public class AllergensListPanel extends JPanel {
         add(deleteButton, "cell 0 1");
 
         //---- editButton ----
-        editButton.setText("Sterkeszt\u00e9s");
+        editButton.setText("Szerkeszt\u00e9s");
         add(editButton, "cell 1 1");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
@@ -68,22 +70,17 @@ public class AllergensListPanel extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Dominik
     private JScrollPane scrollPane1;
-    private JTable allergensTable;
+    private JTable machineTable;
     private JButton deleteButton;
     private JButton editButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
-
     public void setTableValues(List<Map> list){
-        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Allergén"}, 0);
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Gép név"}, 0);
         for(int i = 0; i < list.size(); i++){
             model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name")});
         }
-        allergensTable.setModel(model);
-        allergensTable.removeColumn(allergensTable.getColumnModel().getColumn(0));
-    }
-
-    public JTable getAllergensTable() {
-        return allergensTable;
+        machineTable.setModel(model);
+        machineTable.removeColumn(machineTable.getColumnModel().getColumn(0));
     }
 
     public JScrollPane getScrollPane1() {
@@ -94,8 +91,12 @@ public class AllergensListPanel extends JPanel {
         this.scrollPane1 = scrollPane1;
     }
 
-    public void setAllergensTable(JTable allergensTable) {
-        this.allergensTable = allergensTable;
+    public JTable getMachineTable() {
+        return machineTable;
+    }
+
+    public void setMachineTable(JTable machineTable) {
+        this.machineTable = machineTable;
     }
 
     public JButton getDeleteButton() {

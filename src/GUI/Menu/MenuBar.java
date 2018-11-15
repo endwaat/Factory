@@ -190,6 +190,12 @@ public class MenuBar extends JMenuBar {
             case "listUsers":
                 ((JMenuItem) adminMenu.getMenuComponent(1)).addActionListener(actionListener);
                 break;
+            case "newMachine":
+                ((JMenuItem) machineMenu.getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listMachine":
+                ((JMenuItem) machineMenu.getMenuComponent(1)).addActionListener(actionListener);
+                break;
         }
     }
 }

@@ -3,6 +3,7 @@ package Controller;
 import Database.DAO;
 import GUI.Menu.MenuBar;
 import GUI.Panes.admin.UserPanel;
+import GUI.Panes.machines.MachineListPanel;
 import GUI.Windows.*;
 
 import javax.swing.*;
@@ -162,5 +163,46 @@ public class Controller {
 
         //kilépés
         menuBar.addListener("close", event -> frame.dispose());
+
+        //új allergén
+        menuBar.addListener("newMachine", event -> {
+            MachineFrame machineFrame = new MachineFrame("Gép", true, true, true, true);
+            machineFrame.setSave(e1 -> {
+                if (dao.saveMachine(machineFrame.getValues())) {
+                    machineFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(machineFrame);
+            machineFrame.toFront();
+        });
+
+        //allergén lista
+        menuBar.addListener("listMachine", event -> {
+            MachineListFrame machineListFrame = new MachineListFrame("Gép lista", true, true, true, true);
+            machineListFrame.setEdit(e1 -> {
+                MachineFrame machineFrame = new MachineFrame("Gép", true, true, true, true);
+                machineFrame.setId(machineListFrame.getId());
+                machineFrame.setSave(e2 -> {
+                    if (dao.saveMachine(machineFrame.getValues())) {
+                        machineFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                    machineListFrame.setValues(dao.getMachineList()); //reload
+                });
+                machineFrame.setValues(dao.getMachine(machineListFrame.getId()));
+                desktopPane.add(machineFrame);
+                machineFrame.toFront();
+            });
+            machineListFrame.setDelete(el -> {
+                dao.deleteMachine(machineListFrame.getId());
+                machineListFrame.setValues(dao.getMachineList());
+            });
+            machineListFrame.setValues(dao.getMachineList());
+            desktopPane.add(machineListFrame);
+            machineListFrame.toFront();
+        });
     }
 }
