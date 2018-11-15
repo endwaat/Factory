@@ -88,7 +88,7 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "saveButton"
-				"text": "Save"
+				"text": "Mentés"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 0 7 2 1"
 			} )

@@ -2,10 +2,8 @@ package Controller;
 
 import Database.DAO;
 import GUI.Menu.MenuBar;
-import GUI.Windows.AllergensFrame;
-import GUI.Windows.AllergensListFrame;
-import GUI.Windows.LoginFrame;
-import GUI.Windows.ProfileFrame;
+import GUI.Panes.admin.UserPanel;
+import GUI.Windows.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -97,7 +95,6 @@ public class Controller {
         //allergén lista
         menuBar.addListener("listAllergens", event -> {
             AllergensListFrame allergensListFrame = new AllergensListFrame("Allergén lista", true, true, true, true);
-//            allergensFrame.setValues(dao.getAllergens());
             allergensListFrame.setEdit(e1 -> {
                 AllergensFrame allergensFrame = new AllergensFrame("Allergén", true, true, true, true);
                 allergensFrame.setId(allergensListFrame.getId());
@@ -107,7 +104,7 @@ public class Controller {
                     } else {
                         //TODO ERROR
                     }
-                    allergensListFrame.setValues(dao.getAllergensList());
+                    allergensListFrame.setValues(dao.getAllergensList()); //reload
                 });
                 allergensFrame.setValues(dao.getAllergen(allergensListFrame.getId()));
                 desktopPane.add(allergensFrame);
@@ -120,6 +117,47 @@ public class Controller {
             allergensListFrame.setValues(dao.getAllergensList());
             desktopPane.add(allergensListFrame);
             allergensListFrame.toFront();
+        });
+
+        //Új felhasználó
+        menuBar.addListener("newUser", event -> {
+            UserFrame userFrame = new UserFrame("Felhasználó", true, true, true, true);
+            userFrame.setSave(e1 -> {
+                if (dao.saveUser(userFrame.getValues())) {
+                    userFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(userFrame);
+            userFrame.toFront();
+        });
+
+        //Felhasználó lista
+        menuBar.addListener("listUsers", event -> {
+            UserListFrame userListFrame = new UserListFrame("Felhasználó lista", true, true, true, true);
+            userListFrame.setEdit(e1 -> {
+                UserFrame userFrame = new UserFrame("Felhasználó", true, true, true, true);
+                userFrame.setId(userListFrame.getId());
+                userFrame.setSave(e2 -> {
+                    if (dao.saveUser(userFrame.getValues())) {
+                        userFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                    userListFrame.setValues(dao.getUsersList()); //reload
+                });
+                userFrame.setValues(dao.getUser(userListFrame.getId()));
+                desktopPane.add(userFrame);
+                userFrame.toFront();
+            });
+            userListFrame.setDelete(el -> {
+                dao.deleteUser(userListFrame.getId());
+                userListFrame.setValues(dao.getUsersList());
+            });
+            userListFrame.setValues(dao.getUsersList());
+            desktopPane.add(userListFrame);
+            userListFrame.toFront();
         });
 
         //kilépés

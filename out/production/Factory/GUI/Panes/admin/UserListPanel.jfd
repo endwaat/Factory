@@ -5,30 +5,33 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "hidemode 3"
-			"$columnConstraints": "[89,grow,fill][83,grow,fill]"
-			"$rowConstraints": "[][]"
+			"$columnConstraints": "[grow,fill][grow,fill]"
+			"$rowConstraints": "[grow][]"
 		} ) {
 			name: "this"
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
-				"text": "Allergén"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "userTable"
+				} )
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 0,alignx right,growx 0"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "allergenField"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 0"
+				"value": "cell 0 0 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "saveButton"
-				"text": "Save"
+				name: "deleteButton"
+				"text": "Törlés"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 1 2 1"
+				"value": "cell 0 1"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "editButton"
+				"text": "Szerkesztés"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 1"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 20, 20 )
-			"size": new java.awt.Dimension( 195, 90 )
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
 		} )
 	}
 }

@@ -5,96 +5,138 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "fillx,hidemode 3,align center center"
-			"$columnConstraints": "[fill][fill]"
-			"$rowConstraints": "[][][][][][][][]"
+			"$columnConstraints": "[grow,fill][grow,fill][grow,fill][grow,fill]"
+			"$rowConstraints": "[][][][][][][][][][]"
 		} ) {
-			name: "panel1"
+			name: "this"
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label3"
 				"text": "Név"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 0,alignx right,growx 0"
+				"value": "cell 0 0 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "nameField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 0"
+				"value": "cell 2 0 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label4"
 				"text": "Jelszó"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 1,alignx right,growx 0"
+				"value": "cell 0 1 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "passwordField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 1"
+				"value": "cell 2 1 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label5"
 				"text": "Email"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 2,alignx right,growx 0"
+				"value": "cell 0 2 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "emailField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 2"
+				"value": "cell 2 2 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": "Irányítószám"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 3,alignx right,growx 0"
+				"value": "cell 0 3 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "zipField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 3"
+				"value": "cell 2 3 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label2"
 				"text": "Város"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 4,alignx right,growx 0"
+				"value": "cell 0 4 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "townField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 4"
+				"value": "cell 2 4 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label6"
 				"text": "Lakcím"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 5,alignx right,growx 0"
+				"value": "cell 0 5 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "addressField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 5"
+				"value": "cell 2 5 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label7"
 				"text": "Telefonszám"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 6,alignx right,growx 0"
+				"value": "cell 0 6 2 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "phoneField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 6"
+				"value": "cell 2 6 2 1"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "storageCheckBox"
+				"text": "Raktár"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 7"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "productCheckBox"
+				"text": "Termék"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 7"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "workerCheckBox"
+				"text": "Dolgozó"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 7"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "allergensCheckBox"
+				"text": "Allergén"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 3 7"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "machinesCheckBox"
+				"text": "Gépek"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 8"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "orderCheckBox"
+				"text": "Rendelés"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 1 8"
+			} )
+			add( new FormComponent( "javax.swing.JCheckBox" ) {
+				name: "adminCheckBox"
+				"text": "Admin"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 2 8"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "saveButton"
 				"text": "Mentés"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 7 2 1"
+				"value": "cell 0 9 4 1"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 30, 100 )
-			"size": new java.awt.Dimension( 475, 335 )
+			"location": new java.awt.Point( 15, 115 )
+			"size": new java.awt.Dimension( 475, 370 )
 		} )
 	}
 }

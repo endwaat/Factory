@@ -16,7 +16,7 @@ new FormModel {
 				"value": "cell 0 0,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "nameField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 0"
 			} )
@@ -27,7 +27,7 @@ new FormModel {
 				"value": "cell 0 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
+				name: "costumerField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 1"
 			} )
@@ -38,7 +38,7 @@ new FormModel {
 				"value": "cell 0 2,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
+				name: "priceField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 2"
 			} )
@@ -65,7 +65,7 @@ new FormModel {
 				"value": "cell 1 4"
 			} )
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
-				name: "checkBox1"
+				name: "doneCheckBox"
 				"text": "Teljesítve"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 5"
@@ -83,9 +83,8 @@ new FormModel {
 				"value": "cell 1 6"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 190, 65 )
 			"size": new java.awt.Dimension( 320, 260 )
 		} )
 	}
 }
-

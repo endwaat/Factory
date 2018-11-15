@@ -184,6 +184,12 @@ public class MenuBar extends JMenuBar {
             case "listAllergens":
                 ((JMenuItem) allergenMenu.getMenuComponent(1)).addActionListener(actionListener);
                 break;
+            case "newUser":
+                ((JMenuItem) adminMenu.getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listUsers":
+                ((JMenuItem) adminMenu.getMenuComponent(1)).addActionListener(actionListener);
+                break;
         }
     }
 }

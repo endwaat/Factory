@@ -19,16 +19,16 @@ public class OrderPanel extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Dominik
         label1 = new JLabel();
-        textField1 = new JTextField();
+        nameField = new JTextField();
         label2 = new JLabel();
-        textField2 = new JTextField();
+        costumerField = new JTextField();
         label3 = new JLabel();
-        textField3 = new JTextField();
+        priceField = new JTextField();
         label4 = new JLabel();
         orderDate = new JFormattedTextField();
         label5 = new JLabel();
         endDate = new JFormattedTextField();
-        checkBox1 = new JCheckBox();
+        doneCheckBox = new JCheckBox();
         button2 = new JButton();
         button1 = new JButton();
 
@@ -58,17 +58,17 @@ public class OrderPanel extends JPanel {
         //---- label1 ----
         label1.setText("Rendel\u00e9s neve");
         add(label1, "cell 0 0,alignx right,growx 0");
-        add(textField1, "cell 1 0");
+        add(nameField, "cell 1 0");
 
         //---- label2 ----
         label2.setText("Megrendel\u0151");
         add(label2, "cell 0 1,alignx right,growx 0");
-        add(textField2, "cell 1 1");
+        add(costumerField, "cell 1 1");
 
         //---- label3 ----
         label3.setText("\u00c1r");
         add(label3, "cell 0 2,alignx right,growx 0");
-        add(textField3, "cell 1 2");
+        add(priceField, "cell 1 2");
 
         //---- label4 ----
         label4.setText("Rendel\u00e9s d\u00e1tuma");
@@ -80,9 +80,9 @@ public class OrderPanel extends JPanel {
         add(label5, "cell 0 4,alignx right,growx 0");
         add(endDate, "cell 1 4");
 
-        //---- checkBox1 ----
-        checkBox1.setText("Teljes\u00edtve");
-        add(checkBox1, "cell 1 5");
+        //---- doneCheckBox ----
+        doneCheckBox.setText("Teljes\u00edtve");
+        add(doneCheckBox, "cell 1 5");
 
         //---- button2 ----
         button2.setText("Lez\u00e1r\u00e1s");
@@ -97,16 +97,16 @@ public class OrderPanel extends JPanel {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Dominik
     private JLabel label1;
-    private JTextField textField1;
+    private JTextField nameField;
     private JLabel label2;
-    private JTextField textField2;
+    private JTextField costumerField;
     private JLabel label3;
-    private JTextField textField3;
+    private JTextField priceField;
     private JLabel label4;
     private JFormattedTextField orderDate;
     private JLabel label5;
     private JFormattedTextField endDate;
-    private JCheckBox checkBox1;
+    private JCheckBox doneCheckBox;
     private JButton button2;
     private JButton button1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
