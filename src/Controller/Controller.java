@@ -164,7 +164,7 @@ public class Controller {
         //kilépés
         menuBar.addListener("close", event -> frame.dispose());
 
-        //új allergén
+        //új gép
         menuBar.addListener("newMachine", event -> {
             MachineFrame machineFrame = new MachineFrame("Gép", true, true, true, true);
             machineFrame.setSave(e1 -> {
@@ -178,7 +178,7 @@ public class Controller {
             machineFrame.toFront();
         });
 
-        //allergén lista
+        //gép lista
         menuBar.addListener("listMachine", event -> {
             MachineListFrame machineListFrame = new MachineListFrame("Gép lista", true, true, true, true);
             machineListFrame.setEdit(e1 -> {
@@ -203,6 +203,47 @@ public class Controller {
             machineListFrame.setValues(dao.getMachineList());
             desktopPane.add(machineListFrame);
             machineListFrame.toFront();
+        });
+
+        //új alapanyagtípus
+        menuBar.addListener("newIngredientType", event -> {
+            IngredientTypeFrame ingredientTypeFrame = new IngredientTypeFrame("Alapanyag típus", true, true, true, true);
+            ingredientTypeFrame.setSave(e1 -> {
+                if (dao.saveIngredientType(ingredientTypeFrame.getValues())) {
+                    ingredientTypeFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(ingredientTypeFrame);
+            ingredientTypeFrame.toFront();
+        });
+
+        //alapanyagtípus lista
+        menuBar.addListener("listIngredientType", event -> {
+            IngredientTypeListFrame ingredientTypeListFrame = new IngredientTypeListFrame("Alapanyag típus lista", true, true, true, true);
+            ingredientTypeListFrame.setEdit(e1 -> {
+                IngredientTypeFrame ingredientTypeFrame = new IngredientTypeFrame("Alapanyag típus", true, true, true, true);
+                ingredientTypeFrame.setId(ingredientTypeListFrame.getId());
+                ingredientTypeFrame.setSave(e2 -> {
+                    if (dao.saveIngredientType(ingredientTypeFrame.getValues())) {
+                        ingredientTypeFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                    ingredientTypeListFrame.setValues(dao.getIngredientTypeList()); //reload
+                });
+                ingredientTypeFrame.setValues(dao.getIngredientType(ingredientTypeListFrame.getId()));
+                desktopPane.add(ingredientTypeFrame);
+                ingredientTypeFrame.toFront();
+            });
+            ingredientTypeListFrame.setDelete(el -> {
+                dao.deteleIngredientType(ingredientTypeListFrame.getId());
+                ingredientTypeListFrame.setValues(dao.getIngredientTypeList());
+            });
+            ingredientTypeListFrame.setValues(dao.getIngredientTypeList());
+            desktopPane.add(ingredientTypeListFrame);
+            ingredientTypeListFrame.toFront();
         });
     }
 }

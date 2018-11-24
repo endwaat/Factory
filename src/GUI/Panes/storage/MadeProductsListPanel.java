@@ -1,5 +1,5 @@
 /*
- * Created by JFormDesigner on Mon Nov 05 22:00:18 CET 2018
+ * Created by JFormDesigner on Sun Nov 18 22:49:00 CET 2018
  */
 
 package GUI.Panes.storage;
@@ -10,19 +10,18 @@ import net.miginfocom.swing.*;
 /**
  * @author Dominik
  */
-public class IngredienTypePanel extends JPanel {
-    public IngredienTypePanel() {
+public class MadeProductsListPanel extends JPanel {
+    public MadeProductsListPanel() {
         initComponents();
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Dominik
-        label1 = new JLabel();
-        textField1 = new JTextField();
-        label3 = new JLabel();
-        comboBox1 = new JComboBox();
+        scrollPane1 = new JScrollPane();
+        madeProductTable = new JTable();
         button1 = new JButton();
+        button2 = new JButton();
 
         //======== this ========
 
@@ -36,35 +35,33 @@ public class IngredienTypePanel extends JPanel {
         setLayout(new MigLayout(
             "hidemode 3",
             // columns
-            "[66,fill]" +
-            "[fill]",
+            "[grow,fill]" +
+            "[grow,fill]",
             // rows
-            "[]" +
-            "[]" +
+            "[330]" +
             "[]"));
 
-        //---- label1 ----
-        label1.setText("N\u00e9v");
-        add(label1, "cell 0 0,alignx right,growx 0");
-        add(textField1, "cell 1 0");
-
-        //---- label3 ----
-        label3.setText("Allerg\u00e9n");
-        add(label3, "cell 0 1,alignx right,growx 0");
-        add(comboBox1, "cell 1 1");
+        //======== scrollPane1 ========
+        {
+            scrollPane1.setViewportView(madeProductTable);
+        }
+        add(scrollPane1, "cell 0 0 2 1");
 
         //---- button1 ----
-        button1.setText("Ment\u00e9s");
-        add(button1, "cell 0 2 2 1");
+        button1.setText("T\u00f6rl\u00e9s");
+        add(button1, "cell 0 1");
+
+        //---- button2 ----
+        button2.setText("Szerkeszt\u00e9s");
+        add(button2, "cell 1 1");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Dominik
-    private JLabel label1;
-    private JTextField textField1;
-    private JLabel label3;
-    private JComboBox comboBox1;
+    private JScrollPane scrollPane1;
+    private JTable madeProductTable;
     private JButton button1;
+    private JButton button2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

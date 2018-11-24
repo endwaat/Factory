@@ -28,6 +28,11 @@ public class DAO {
     private static String SQL_SELECT_MACHINE_LIST = "SELECT id,name FROM machine WHERE deleted = 'f' ORDER BY name";
     private static String SQL_SELECT_MACHINE = "SELECT id,name FROM machine WHERE id = ? AND deleted = 'f'";
     private static String SQL_DELETE_MACHINE = "DELETE FROM machine WHERE id = ?";
+    private static String SQL_INSERT_INGREDIENT_TYPE = "INSERT INTO ingredient_type (name,allergens_id) VALUES (?,?)";
+    private static String SQL_UPDATE_INGREDIENT_TYPE = "UPDATE ingredient_type SET name = ?, allergens_id = ? WHERE id = ?";
+    private static String SQL_SELECT_INGREDIENT_TYPE_LIST = "SELECT id,name FROM ingredient_type WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_INGREDIENT_TYPE = "SELECT id,name,allergens_id FROM ingredient_type WHERE id = ? AND deleted = 'f'";
+    private static String SQL_DELETE_INGREDIENT_TYPE = "DELETE FROM ingredient_type WHERE id = ?";
 
 
     private int userId;
@@ -377,6 +382,80 @@ public class DAO {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_DELETE_MACHINE);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean saveIngredientType(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_INSERT_INGREDIENT_TYPE);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("allergensType"));
+                preparedStatement.execute();
+                return true;
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_INGREDIENT_TYPE);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("allergensType"));
+                preparedStatement.setInt(3, (Integer) values.get("id"));
+                preparedStatement.execute();
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<Map> getIngredientTypeList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT_TYPE_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getIngredientType(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT_TYPE);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("allergensType", resultSet.getInt(3));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public void deteleIngredientType(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_INGREDIENT_TYPE);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {
