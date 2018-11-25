@@ -7,8 +7,11 @@ package GUI.Panes.storage;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
+import Database.DAO;
+import bean.Item;
 import net.miginfocom.swing.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

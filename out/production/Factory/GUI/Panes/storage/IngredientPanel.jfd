@@ -55,8 +55,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JSpinner" ) {
 				name: "expireSpinner"
 				"model": new javax.swing.SpinnerDateModel {
-					start: new java.util.Date( -9223372036854775808l )
-					value: new java.util.Date( 1542578820000l )
+					value: new java.util.Date( -9223372036854775808l )
 				}
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 3"
@@ -103,7 +102,7 @@ new FormModel {
 				"value": "cell 1 6"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
+				name: "saveButton"
 				"text": "Mentés"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 0 7 2 1"

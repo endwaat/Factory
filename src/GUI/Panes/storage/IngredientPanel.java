@@ -5,7 +5,15 @@
 package GUI.Panes.storage;
 
 import javax.swing.*;
+
+import Database.DAO;
+import bean.Item;
 import net.miginfocom.swing.*;
+
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Dominik
@@ -13,6 +21,7 @@ import net.miginfocom.swing.*;
 public class IngredientPanel extends JPanel {
     public IngredientPanel() {
         initComponents();
+        fillCombobox();
     }
 
     private void initComponents() {
@@ -32,7 +41,7 @@ public class IngredientPanel extends JPanel {
         sourceField = new JTextField();
         label1 = new JLabel();
         valueSpinner = new JSpinner();
-        button2 = new JButton();
+        saveButton = new JButton();
 
         //======== this ========
 
@@ -84,7 +93,7 @@ public class IngredientPanel extends JPanel {
         add(label4, "cell 0 3,alignx right,growx 0");
 
         //---- expireSpinner ----
-        expireSpinner.setModel(new SpinnerDateModel(new java.util.Date(1542578820000L), new java.util.Date((System.currentTimeMillis()/60000)*60000), null, java.util.Calendar.DAY_OF_MONTH));
+        expireSpinner.setModel(new SpinnerDateModel());
         add(expireSpinner, "cell 1 3");
 
         //---- label3 ----
@@ -108,9 +117,9 @@ public class IngredientPanel extends JPanel {
         valueSpinner.setModel(new SpinnerNumberModel(1, 1, null, 1));
         add(valueSpinner, "cell 1 6");
 
-        //---- button2 ----
-        button2.setText("Ment\u00e9s");
-        add(button2, "cell 0 7 2 1");
+        //---- saveButton ----
+        saveButton.setText("Ment\u00e9s");
+        add(saveButton, "cell 0 7 2 1");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
@@ -130,6 +139,54 @@ public class IngredientPanel extends JPanel {
     private JTextField sourceField;
     private JLabel label1;
     private JSpinner valueSpinner;
-    private JButton button2;
+    private JButton saveButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+    private int id = 0;
+
+    public void fillCombobox(){
+        DAO dao = new DAO();
+        List<Map> values = dao.getIngredientTypeList();
+        for(int i = 0; i < values.size(); i++){
+            typeCombo.addItem(new Item((Integer) (values.get(i)).get("id"),(String) (values.get(i)).get("name")));
+        }
+    }
+
+    public void setSave(ActionListener actionListener) {
+        saveButton.addActionListener(actionListener);
+    }
+
+    public Map getValues() {
+        Map values = new HashMap();
+        try {
+            values.put("id", id);
+            values.put("name", nameField.getText());
+            values.put("type", ((Item)typeCombo.getSelectedItem()).getId());
+            values.put("arrived", arrivedSpinner.getValue());
+            values.put("expire", expireSpinner.getValue());
+            values.put("weight", weightSpinner.getValue());
+            values.put("source", sourceField.getText());
+            values.put("value", valueSpinner.getValue());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return values;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setTexts(Map values) {
+        nameField.setText((String) values.get("name"));
+        for(int i = 0; i < typeCombo.getItemCount(); i++){
+            if(((Item)typeCombo.getItemAt(i)).getId() == (Integer) (values.get("ingredient_type_id"))){
+                typeCombo.setSelectedIndex(i);
+            }
+        }
+        arrivedSpinner.setValue(values.get("arrived"));
+        expireSpinner.setValue(values.get("expire"));
+        weightSpinner.setValue(values.get("weight"));
+        sourceField.setText((String) values.get("source"));
+        valueSpinner.setValue(values.get("value"));
+    }
 }

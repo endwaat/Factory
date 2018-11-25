@@ -245,5 +245,46 @@ public class Controller {
             desktopPane.add(ingredientTypeListFrame);
             ingredientTypeListFrame.toFront();
         });
+
+        //új alapanyag
+        menuBar.addListener("newIngredient", event -> {
+            IngredientFrame ingredientFrame = new IngredientFrame("Alapanyag", true, true, true, true);
+            ingredientFrame.setSave(e1 -> {
+                if (dao.saveIngredient(ingredientFrame.getValues())) {
+                    ingredientFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(ingredientFrame);
+            ingredientFrame.toFront();
+        });
+
+        //alapanyag lista
+        menuBar.addListener("listIngredient", event -> {
+            IngredientListFrame ingredientListFrame = new IngredientListFrame("Alapanyag lista", true, true, true, true);
+            ingredientListFrame.setEdit(e1 -> {
+                IngredientFrame ingredientFrame = new IngredientFrame("Alapanyag", true, true, true, true);
+                ingredientFrame.setId(ingredientListFrame.getId());
+                ingredientFrame.setSave(e2 -> {
+                    if (dao.saveIngredient(ingredientFrame.getValues())) {
+                        ingredientFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                    ingredientListFrame.setValues(dao.getIngredientList()); //reload
+                });
+                ingredientFrame.setValues(dao.getIngredient(ingredientListFrame.getId()));
+                desktopPane.add(ingredientFrame);
+                ingredientFrame.toFront();
+            });
+            ingredientListFrame.setDelete(el -> {
+                dao.deteleIngredient(ingredientListFrame.getId());
+                ingredientListFrame.setValues(dao.getIngredientList());
+            });
+            ingredientListFrame.setValues(dao.getIngredientList());
+            desktopPane.add(ingredientListFrame);
+            ingredientListFrame.toFront();
+        });
     }
 }

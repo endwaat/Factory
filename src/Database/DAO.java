@@ -33,6 +33,11 @@ public class DAO {
     private static String SQL_SELECT_INGREDIENT_TYPE_LIST = "SELECT id,name FROM ingredient_type WHERE deleted = 'f' ORDER BY name";
     private static String SQL_SELECT_INGREDIENT_TYPE = "SELECT id,name,allergens_id FROM ingredient_type WHERE id = ? AND deleted = 'f'";
     private static String SQL_DELETE_INGREDIENT_TYPE = "DELETE FROM ingredient_type WHERE id = ?";
+    private static String SQL_INSERT_INGREDIENT = "INSERT INTO ingredient (name,ingredient_type_id,arrived,expire,weight,source,value) VALUES (?,?,?,?,?,?,?)";
+    private static String SQL_UPDATE_INGREDIENT = "UPDATE ingredient SET name = ?, ingredient_type_id = ?, arrived = ?, expire = ?, weight = ?, source = ?, value = ?  WHERE id = ?";
+    private static String SQL_SELECT_INGREDIENT_LIST = "SELECT id,name,ingredient_type_id,arrived,expire,weight FROM ingredient WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_INGREDIENT = "SELECT id,name,ingredient_type_id,arrived,expire,weight,source,value FROM ingredient WHERE id = ? AND deleted = 'f'";
+    private static String SQL_DELETE_INGREDIENT = "UPDATE ingredient SET deleted = 't'";
 
 
     private int userId;
@@ -463,4 +468,95 @@ public class DAO {
         }
     }
 
+    public boolean saveIngredient(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_INSERT_INGREDIENT);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("type"));
+                preparedStatement.setDate(3, new java.sql.Date(((java.util.Date) values.get("arrived")).getTime()));
+                preparedStatement.setDate(4, new java.sql.Date(((java.util.Date) values.get("expire")).getTime()));
+                preparedStatement.setInt(5, (Integer) values.get("weight"));
+                preparedStatement.setString(6, (String) values.get("source"));
+                preparedStatement.setInt(7, (Integer) values.get("value"));
+                preparedStatement.execute();
+                return true;
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_INGREDIENT);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("type"));
+                preparedStatement.setDate(3, new java.sql.Date(((java.util.Date) values.get("arrived")).getTime()));
+                preparedStatement.setDate(4, new java.sql.Date(((java.util.Date) values.get("expire")).getTime()));
+                preparedStatement.setInt(5, (Integer) values.get("weight"));
+                preparedStatement.setString(6, (String) values.get("source"));
+                preparedStatement.setInt(7, (Integer) values.get("value"));
+                preparedStatement.setInt(8, (Integer) values.get("id"));
+                preparedStatement.execute();
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    public List<Map> getIngredientList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("type", resultSet.getInt(3));
+                values.put("arrived", resultSet.getDate(4));
+                values.put("expire", resultSet.getDate(5));
+                values.put("weight", resultSet.getString(6));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getIngredient(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("ingredient_type_id", resultSet.getInt(3));
+                values.put("arrived", resultSet.getDate(4));
+                values.put("expire", resultSet.getDate(5));
+                values.put("weight", resultSet.getInt(6));
+                values.put("source", resultSet.getString(7));
+                values.put("value", resultSet.getInt(8));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public void deteleIngredient(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_INGREDIENT);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

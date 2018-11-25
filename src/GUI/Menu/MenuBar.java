@@ -197,10 +197,16 @@ public class MenuBar extends JMenuBar {
                 ((JMenuItem) machineMenu.getMenuComponent(1)).addActionListener(actionListener);
                 break;
             case "newIngredientType":
-                ((JMenuItem)((JMenu) storageMenu.getMenuComponent(0)).getMenuComponent(0)).addActionListener(actionListener);
+                ((JMenuItem) ((JMenu) storageMenu.getMenuComponent(1)).getMenuComponent(0)).addActionListener(actionListener);
                 break;
             case "listIngredientType":
-                ((JMenuItem)((JMenu) storageMenu.getMenuComponent(0)).getMenuComponent(1)).addActionListener(actionListener);
+                ((JMenuItem) ((JMenu) storageMenu.getMenuComponent(1)).getMenuComponent(1)).addActionListener(actionListener);
+                break;
+            case "newIngredient":
+                ((JMenuItem) ((JMenu) storageMenu.getMenuComponent(0)).getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listIngredient":
+                ((JMenuItem) ((JMenu) storageMenu.getMenuComponent(0)).getMenuComponent(1)).addActionListener(actionListener);
                 break;
         }
     }
