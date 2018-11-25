@@ -18,6 +18,7 @@ public class OrderPanel extends JPanel {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Dominik
+        tabbedPane1 = new JTabbedPane();
         label1 = new JLabel();
         nameField = new JTextField();
         label2 = new JLabel();
@@ -29,73 +30,89 @@ public class OrderPanel extends JPanel {
         label5 = new JLabel();
         endDate = new JFormattedTextField();
         doneCheckBox = new JCheckBox();
-        button2 = new JButton();
-        button1 = new JButton();
+        exchangeButton = new JButton();
+        saveButton = new JButton();
+        scrollPane1 = new JScrollPane();
+        table1 = new JTable();
 
-        //======== this ========
+        //======== tabbedPane1 ========
+        {
 
-        // JFormDesigner evaluation mark
-        setBorder(new javax.swing.border.CompoundBorder(
-            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+            //======== this ========
+            {
 
-        setLayout(new MigLayout(
-            "hidemode 3",
-            // columns
-            "[130,fill]" +
-            "[170,fill]",
-            // rows
-            "[]" +
-            "[]" +
-            "[]" +
-            "[]" +
-            "[]" +
-            "[]" +
-            "[]"));
+                // JFormDesigner evaluation mark
+                this.setBorder(new javax.swing.border.CompoundBorder(
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                        "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                        javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                        java.awt.Color.red), this.getBorder())); this.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
-        //---- label1 ----
-        label1.setText("Rendel\u00e9s neve");
-        add(label1, "cell 0 0,alignx right,growx 0");
-        add(nameField, "cell 1 0");
+                this.setLayout(new MigLayout(
+                    "hidemode 3",
+                    // columns
+                    "[150,grow,fill]" +
+                    "[150,grow,fill]",
+                    // rows
+                    "[]" +
+                    "[]" +
+                    "[]" +
+                    "[]" +
+                    "[]" +
+                    "[]" +
+                    "[]"));
 
-        //---- label2 ----
-        label2.setText("Megrendel\u0151");
-        add(label2, "cell 0 1,alignx right,growx 0");
-        add(costumerField, "cell 1 1");
+                //---- label1 ----
+                label1.setText("Rendel\u00e9s neve");
+                this.add(label1, "cell 0 0,alignx right,growx 0");
+                this.add(nameField, "cell 1 0");
 
-        //---- label3 ----
-        label3.setText("\u00c1r");
-        add(label3, "cell 0 2,alignx right,growx 0");
-        add(priceField, "cell 1 2");
+                //---- label2 ----
+                label2.setText("Megrendel\u0151");
+                this.add(label2, "cell 0 1,alignx right,growx 0");
+                this.add(costumerField, "cell 1 1");
 
-        //---- label4 ----
-        label4.setText("Rendel\u00e9s d\u00e1tuma");
-        add(label4, "cell 0 3,alignx right,growx 0");
-        add(orderDate, "cell 1 3");
+                //---- label3 ----
+                label3.setText("\u00c1r");
+                this.add(label3, "cell 0 2,alignx right,growx 0");
+                this.add(priceField, "cell 1 2");
 
-        //---- label5 ----
-        label5.setText("Hat\u00e1rid\u0151");
-        add(label5, "cell 0 4,alignx right,growx 0");
-        add(endDate, "cell 1 4");
+                //---- label4 ----
+                label4.setText("Rendel\u00e9s d\u00e1tuma");
+                this.add(label4, "cell 0 3,alignx right,growx 0");
+                this.add(orderDate, "cell 1 3");
 
-        //---- doneCheckBox ----
-        doneCheckBox.setText("Teljes\u00edtve");
-        add(doneCheckBox, "cell 1 5");
+                //---- label5 ----
+                label5.setText("Hat\u00e1rid\u0151");
+                this.add(label5, "cell 0 4,alignx right,growx 0");
+                this.add(endDate, "cell 1 4");
 
-        //---- button2 ----
-        button2.setText("Lez\u00e1r\u00e1s");
-        add(button2, "cell 0 6");
+                //---- doneCheckBox ----
+                doneCheckBox.setText("Teljes\u00edtve");
+                this.add(doneCheckBox, "cell 1 5");
 
-        //---- button1 ----
-        button1.setText("Ment\u00e9s");
-        add(button1, "cell 1 6");
+                //---- exchangeButton ----
+                exchangeButton.setText("Lez\u00e1r\u00e1s");
+                this.add(exchangeButton, "cell 0 6");
+
+                //---- saveButton ----
+                saveButton.setText("Ment\u00e9s");
+                this.add(saveButton, "cell 1 6");
+            }
+            tabbedPane1.addTab("Rendel\u00e9s", this);
+
+            //======== scrollPane1 ========
+            {
+                scrollPane1.setViewportView(table1);
+            }
+            tabbedPane1.addTab("Rendel\u00e9si t\u00e9telek", scrollPane1);
+        }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Dominik
+    private JTabbedPane tabbedPane1;
     private JLabel label1;
     private JTextField nameField;
     private JLabel label2;
@@ -107,7 +124,9 @@ public class OrderPanel extends JPanel {
     private JLabel label5;
     private JFormattedTextField endDate;
     private JCheckBox doneCheckBox;
-    private JButton button2;
-    private JButton button1;
+    private JButton exchangeButton;
+    private JButton saveButton;
+    private JScrollPane scrollPane1;
+    private JTable table1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

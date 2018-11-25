@@ -3,88 +3,101 @@ JFDML JFormDesigner: "6.0.4.1.172" Java: "1.8.0_152-release" encoding: "UTF-8"
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
-		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
-			"$layoutConstraints": "hidemode 3"
-			"$columnConstraints": "[130,fill][170,fill]"
-			"$rowConstraints": "[][][][][][][]"
-		} ) {
-			name: "this"
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
-				"text": "Rendelés neve"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 0,alignx right,growx 0"
+		add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+			name: "tabbedPane1"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+				"$layoutConstraints": "hidemode 3"
+				"$columnConstraints": "[150,grow,fill][150,grow,fill]"
+				"$rowConstraints": "[][][][][][][]"
+			} ) {
+				name: "this"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Rendelés neve"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 0,alignx right,growx 0"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "nameField"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 0"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Megrendelő"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 1,alignx right,growx 0"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "costumerField"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Ár"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 2,alignx right,growx 0"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "priceField"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Rendelés dátuma"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 3,alignx right,growx 0"
+				} )
+				add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+					name: "orderDate"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Határidő"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 4,alignx right,growx 0"
+				} )
+				add( new FormComponent( "javax.swing.JFormattedTextField" ) {
+					name: "endDate"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 4"
+				} )
+				add( new FormComponent( "javax.swing.JCheckBox" ) {
+					name: "doneCheckBox"
+					"text": "Teljesítve"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 5"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "exchangeButton"
+					"text": "Lezárás"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 0 6"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "saveButton"
+					"text": "Mentés"
+				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+					"value": "cell 1 6"
+				} )
+			}, new FormLayoutConstraints( null ) {
+				"title": "Rendelés"
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "nameField"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 0"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
-				"text": "Megrendelő"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 1,alignx right,growx 0"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "costumerField"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 1"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
-				"text": "Ár"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 2,alignx right,growx 0"
-			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "priceField"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 2"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label4"
-				"text": "Rendelés dátuma"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 3,alignx right,growx 0"
-			} )
-			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-				name: "orderDate"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 3"
-			} )
-			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label5"
-				"text": "Határidő"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 4,alignx right,growx 0"
-			} )
-			add( new FormComponent( "javax.swing.JFormattedTextField" ) {
-				name: "endDate"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 4"
-			} )
-			add( new FormComponent( "javax.swing.JCheckBox" ) {
-				name: "doneCheckBox"
-				"text": "Teljesítve"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 5"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button2"
-				"text": "Lezárás"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 6"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
-				"text": "Mentés"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 6"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+				} )
+			}, new FormLayoutConstraints( null ) {
+				"title": "Rendelési tételek"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 190, 65 )
-			"size": new java.awt.Dimension( 320, 260 )
+			"location": new java.awt.Point( 100, 65 )
+			"size": new java.awt.Dimension( 340, 290 )
 		} )
 	}
 }

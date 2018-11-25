@@ -286,5 +286,46 @@ public class Controller {
             desktopPane.add(ingredientListFrame);
             ingredientListFrame.toFront();
         });
+
+        //új szállító
+        menuBar.addListener("newSupplier", event -> {
+            SupplierFrame supplierFrame = new SupplierFrame("Szállító", true, true, true, true);
+            supplierFrame.setSave(e1 -> {
+                if (dao.saveSupplier(supplierFrame.getValues())) {
+                    supplierFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(supplierFrame);
+            supplierFrame.toFront();
+        });
+
+        //szállító lista
+        menuBar.addListener("listSupplier", event -> {
+            SupplierListFrame supplierListFrame = new SupplierListFrame("Szállító lista", true, true, true, true);
+            supplierListFrame.setEdit(e1 -> {
+                SupplierFrame supplierFrame = new SupplierFrame("Szállító", true, true, true, true);
+                supplierFrame.setId(supplierListFrame.getId());
+                supplierFrame.setSave(e2 -> {
+                    if (dao.saveSupplier(supplierFrame.getValues())) {
+                        supplierFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                    supplierListFrame.setValues(dao.getSupplierList()); //reload
+                });
+                supplierFrame.setValues(dao.getSupplier(supplierListFrame.getId()));
+                desktopPane.add(supplierFrame);
+                supplierFrame.toFront();
+            });
+            supplierListFrame.setDelete(el -> {
+                dao.deteleSupplier(supplierListFrame.getId());
+                supplierListFrame.setValues(dao.getSupplierList());
+            });
+            supplierListFrame.setValues(dao.getSupplierList());
+            desktopPane.add(supplierListFrame);
+            supplierListFrame.toFront();
+        });
     }
 }

@@ -37,7 +37,13 @@ public class DAO {
     private static String SQL_UPDATE_INGREDIENT = "UPDATE ingredient SET name = ?, ingredient_type_id = ?, arrived = ?, expire = ?, weight = ?, source = ?, value = ?  WHERE id = ?";
     private static String SQL_SELECT_INGREDIENT_LIST = "SELECT id,name,ingredient_type_id,arrived,expire,weight FROM ingredient WHERE deleted = 'f' ORDER BY name";
     private static String SQL_SELECT_INGREDIENT = "SELECT id,name,ingredient_type_id,arrived,expire,weight,source,value FROM ingredient WHERE id = ? AND deleted = 'f'";
-    private static String SQL_DELETE_INGREDIENT = "UPDATE ingredient SET deleted = 't'";
+    private static String SQL_DELETE_INGREDIENT = "UPDATE ingredient SET deleted = 't' WHERE id = ?";
+    private static String SQL_INSERT_SUPPLIER = "INSERT INTO supplier (name,phone,zip,town,address) VALUES (?,?,?,?,?)";
+    private static String SQL_UPDATE_SUPPLIER = "UPDATE supplier SET name = ?, phone = ?, zip = ?, town = ?, address = ? WHERE id = ?";
+    private static String SQL_SELECT_SUPPLIER_LIST = "SELECT id,name,phone FROM supplier WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_SUPPLIER = "SELECT id,name,phone,zip,town,address FROM supplier WHERE id = ? AND deleted = 'f'";
+    private static String SQL_DELETE_SUPPLIER = "UPDATE supplier SET deleted = 't' WHERE id = ?";
+
 
 
     private int userId;
@@ -501,6 +507,7 @@ public class DAO {
             return false;
         }
     }
+
     public List<Map> getIngredientList() {
         Connection connection = getConnection();
         PreparedStatement preparedStatement = null;
@@ -553,6 +560,89 @@ public class DAO {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_DELETE_INGREDIENT);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean saveSupplier(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_INSERT_SUPPLIER);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, Integer.valueOf((String)values.get("phone")));
+                preparedStatement.setInt(3, Integer.valueOf((String)values.get("zip")));
+                preparedStatement.setString(4, (String) values.get("town"));
+                preparedStatement.setString(5, (String) values.get("address"));
+                preparedStatement.execute();
+                return true;
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_SUPPLIER);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, Integer.valueOf((String)values.get("phone")));
+                preparedStatement.setInt(3, Integer.valueOf((String)values.get("zip")));
+                preparedStatement.setString(4, (String) values.get("town"));
+                preparedStatement.setString(5, (String) values.get("address"));
+                preparedStatement.setInt(6, (Integer) values.get("id"));
+                preparedStatement.execute();
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<Map> getSupplierList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_SUPPLIER_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("phone", resultSet.getInt(3));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getSupplier(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_SUPPLIER);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("phone", resultSet.getInt(3));
+                values.put("zip", resultSet.getInt(4));
+                values.put("town", resultSet.getString(5));
+                values.put("address", resultSet.getString(6));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+    public void deteleSupplier(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_SUPPLIER);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {

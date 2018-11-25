@@ -5,7 +5,7 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
 			"$layoutConstraints": "hidemode 3"
-			"$columnConstraints": "[136,fill][136,fill]"
+			"$columnConstraints": "[150,grow,fill][150,grow,fill]"
 			"$rowConstraints": "[][][][][][]"
 		} ) {
 			name: "this"
@@ -16,7 +16,7 @@ new FormModel {
 				"value": "cell 0 0,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "nameField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 0"
 			} )
@@ -27,7 +27,7 @@ new FormModel {
 				"value": "cell 0 1,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
+				name: "phoneField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 1"
 			} )
@@ -38,7 +38,7 @@ new FormModel {
 				"value": "cell 0 2,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
+				name: "zipField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 2"
 			} )
@@ -49,7 +49,7 @@ new FormModel {
 				"value": "cell 0 3,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField4"
+				name: "townField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 3"
 			} )
@@ -60,12 +60,12 @@ new FormModel {
 				"value": "cell 0 4,alignx right,growx 0"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField5"
+				name: "addressField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 4"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "saveButton"
 				"text": "Mentés"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 0 5 2 1"

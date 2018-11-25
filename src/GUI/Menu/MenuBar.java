@@ -208,6 +208,12 @@ public class MenuBar extends JMenuBar {
             case "listIngredient":
                 ((JMenuItem) ((JMenu) storageMenu.getMenuComponent(0)).getMenuComponent(1)).addActionListener(actionListener);
                 break;
+            case "newSupplier":
+                ((JMenuItem) ((JMenu) orderMenu.getMenuComponent(1)).getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listSupplier":
+                ((JMenuItem) ((JMenu) orderMenu.getMenuComponent(1)).getMenuComponent(1)).addActionListener(actionListener);
+                break;
         }
     }
 }
