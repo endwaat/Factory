@@ -2,53 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb92c49-6b24-475b-b880-f4a69cfadf39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.jfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Windows/PresenceListFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Windows/WorkerFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/Windows/WorkerListFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/Controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/Database/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/Database/DAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Menu/MenuBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Menu/MenuBar.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderListPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderListPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderListPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderListPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderListPanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/orders/OrderPanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/storage/IngredientListPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/storage/IngredientListPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/storage/IngredientListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/storage/IngredientListPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/PresencePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/PresencePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/PresencePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/PresencePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/PresencePanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/PresencePanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerListPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerListPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerListPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Factory/GUI/Panes/workers/WorkerPanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Menu/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Menu/MenuBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/DAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Menu/MenuBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/file/ProfilePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/file/ProfilePanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachineListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachineListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachinePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachinePanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypePanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/MadeProductsListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/MadeProductsListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.jfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/AllergensFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/AllergensListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientTypeFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientTypeListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/LoginFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/MachineFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/MachineListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/PresenceListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/ProfileFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/SupplierFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/SupplierListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/UserFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/UserListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/WorkerFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/WorkerListFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Patches/v0_0_0__create_tables.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Allergetic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Authentication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Ingredient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/IngredientType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Machine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Orders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/ProductType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Supplier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Workers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,7 +122,7 @@
     <session id="-733942014">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="3" />
@@ -91,36 +130,40 @@
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.open.time.8" value="9" />
+          <entry key="project.open.time.8" value="10" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
           <entry key="gitignore" value="4" />
-          <entry key="java" value="15127" />
+          <entry key="java" value="15132" />
           <entry key="sql" value="1631" />
           <entry key="txt" value="7" />
+          <entry key="xml" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15127" />
+          <entry key="JAVA" value="15132" />
           <entry key="PLAIN_TEXT" value="22" />
           <entry key="SQL" value="1631" />
+          <entry key="XML" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
+          <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="315" />
           <entry key="JFormDesigner_form" value="111" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SQL" value="11" />
+          <entry key="SQL" value="12" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="3" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -130,9 +173,11 @@
           <entry key="ProfileFrame" value="1" />
           <entry key="class" value="3" />
           <entry key="gitignore" value="1" />
+          <entry key="iml" value="1" />
           <entry key="java" value="315" />
           <entry key="jfd" value="111" />
-          <entry key="sql" value="12" />
+          <entry key="sql" value="13" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -142,18 +187,37 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Database/DAO.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Database/DAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
-              <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+              <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Patches/V20181203191320__v0_0_0__modify_patch.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Factory.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceFrame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
@@ -162,9 +226,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="1904">
               <caret line="396" column="71" selection-start-line="396" selection-start-column="71" selection-end-line="396" selection-end-column="71" />
               <folding>
                 <element signature="method#Controller#0;class#Controller#0" />
@@ -217,25 +281,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Windows/PresenceListFrame.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceListFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="306">
               <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1092#1093#0" expanded="true" />
-                <element signature="e#1202#1203#0" expanded="true" />
-                <element signature="e#1256#1257#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+            <state relative-caret-position="1615">
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <marker date="1543859759141" expanded="true" signature="452:2749" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
                 <marker date="1543859759141" expanded="true" signature="2761:3223" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
@@ -245,7 +303,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.jfd">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.jfd">
           <provider selected="true" editor-type-id="JFormDesigner" />
         </entry>
       </file>
@@ -304,7 +362,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensPanel.jfd" />
         <option value="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.jfd" />
         <option value="$PROJECT_DIR$/src/GUI/Windows/MachineFrame.java" />
         <option value="$PROJECT_DIR$/src/GUI/Windows/MachineListFrame.java" />
@@ -355,6 +412,7 @@
         <option value="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java" />
         <option value="$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java" />
         <option value="$PROJECT_DIR$/src/Database/DAO.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -371,8 +429,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="461" />
-    <option name="y" value="-8" />
+    <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -401,130 +458,7 @@
               <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
               <item name="Factory" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bean" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="allergens" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="file" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="machines" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="orders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Panes" type="462c0819:PsiDirectoryNode" />
-              <item name="workers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Windows" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Factory" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Patches" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -537,9 +471,9 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543860242670" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543861507599" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="G:/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -644,7 +578,8 @@
       <workItem from="1543266013604" duration="109000" />
       <workItem from="1543266393853" duration="1658000" />
       <workItem from="1543352801421" duration="4082000" />
-      <workItem from="1543843952581" duration="12716000" />
+      <workItem from="1543843952581" duration="13420000" />
+      <workItem from="1543860763909" duration="713000" />
     </task>
     <servers />
   </component>
@@ -657,13 +592,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136486000" />
+    <option name="totallyTimeSpent" value="137903000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915966" visible="true" weight="0.1684435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49915966" visible="true" weight="0.34901533" />
       <window_info id="Structure" order="1" sideWeight="0.50084037" side_tool="true" weight="0.12100213" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -674,7 +609,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.2483731" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" visible="true" weight="0.4197397" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.4197397" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -712,35 +647,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/IngredientTypeFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/time/LocalDate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="136" column="19" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/IngredientTypeListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypeListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
         <state paletteWidth="236" propertiesWidth="466" />
       </provider>
@@ -752,38 +666,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/IngredientListFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="58">
           <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/AllergensListFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/AllergensListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/UserListFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/UserListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/admin/UserListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="72" selection-start-line="72" selection-end-line="79" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="76" selection-start-line="76" selection-end-line="81" selection-end-column="82" />
@@ -794,10 +708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
@@ -805,7 +719,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductType.java" />
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -814,7 +728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
@@ -825,7 +739,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -834,10 +748,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
@@ -847,35 +761,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
         <state paletteWidth="210" propertiesWidth="393" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
         <state paletteWidth="168" propertiesWidth="423" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
         <state paletteWidth="224" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/event/ActionListener.java">
@@ -885,7 +799,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="138" column="5" lean-forward="true" selection-start-line="107" selection-start-column="3" selection-end-line="138" selection-end-column="5" />
@@ -896,7 +810,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/SupplierFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/SupplierFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
@@ -907,14 +821,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/SupplierListFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/SupplierListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="73" selection-start-line="73" selection-end-line="112" selection-end-column="5" />
@@ -932,7 +846,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
         <state propertiesWidth="222" />
       </provider>
@@ -944,10 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/IngredientFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
@@ -958,7 +872,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="185" column="18" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
@@ -969,14 +883,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Menu/MenuBar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
           <caret line="231" column="32" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="101" column="28" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="28" />
@@ -989,7 +903,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="186" column="21" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="21" />
@@ -1000,7 +914,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/WorkerFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="33" column="29" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="29" />
@@ -1014,17 +928,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.jfd">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/WorkerListFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
           <caret line="71" selection-start-line="71" selection-end-line="110" selection-end-column="5" />
@@ -1037,23 +951,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <marker date="1543859759141" expanded="true" signature="452:2749" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543859759141" expanded="true" signature="2761:3223" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="1904">
           <caret line="396" column="71" selection-start-line="396" selection-start-column="71" selection-end-line="396" selection-end-column="71" />
           <folding>
             <element signature="method#Controller#0;class#Controller#0" />
@@ -1104,30 +1011,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/PresenceListFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="306">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
           <folding>
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-            <element signature="e#1256#1257#0" expanded="true" />
+            <marker date="1543859759141" expanded="true" signature="452:2749" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543859759141" expanded="true" signature="2761:3223" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Factory.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Database/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+        <state relative-caret-position="203">
+          <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Database/DAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Patches/V20181203191320__v0_0_0__modify_patch.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="58" column="26" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
