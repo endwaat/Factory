@@ -327,5 +327,76 @@ public class Controller {
             desktopPane.add(supplierListFrame);
             supplierListFrame.toFront();
         });
+
+        //új dolgozó
+        menuBar.addListener("newWorker", event -> {
+            WorkerFrame workerFrame = new WorkerFrame("Dolgozó", true, true, true, true);
+            workerFrame.setSave(e1 -> {
+                if (dao.saveWorker(workerFrame.getValues())) {
+                    workerFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(workerFrame);
+            workerFrame.toFront();
+        });
+
+        //dolgozó lista
+        menuBar.addListener("listWorker", event -> {
+            WorkerListFrame workerListFrame = new WorkerListFrame("Dolgozó lista", true, true, true, true);
+            workerListFrame.setEdit(e1 -> {
+                WorkerFrame workerFrame = new WorkerFrame("Dolgozó", true, true, true, true);
+                workerFrame.setId(workerListFrame.getId());
+                workerFrame.setSave(e2 -> {
+                    if (dao.saveWorker(workerFrame.getValues())) {
+                        workerFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                    workerListFrame.setValues(dao.getWorkerList()); //reload
+                });
+                workerFrame.setValues(dao.getWorker(workerListFrame.getId()));
+//                workerFrame.setAttendance(dao.getWorkersLog(workerListFrame.getId()));
+                desktopPane.add(workerFrame);
+                workerFrame.toFront();
+            });
+            workerListFrame.setDelete(el -> {
+                dao.deleteWorker(workerListFrame.getId());
+                workerListFrame.setValues(dao.getWorkerList());
+            });
+            workerListFrame.setValues(dao.getWorkerList());
+            desktopPane.add(workerListFrame);
+            workerListFrame.toFront();
+        });
+
+        //új jelenlét
+        menuBar.addListener("newAttendance", event -> {
+            PresenceFrame presenceFrame = new PresenceFrame("Jelenlét", true, true, true, true);
+            presenceFrame.setSave(e1 -> {
+                if ("SUCCES".equals(dao.savePresence(presenceFrame.getValues()).toString())) {
+                    presenceFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            desktopPane.add(presenceFrame);
+            presenceFrame.toFront();
+        });
+
+        //jelenlétilista
+        menuBar.addListener("listAttendance", event -> {
+            PresenceListFrame presenceListFrame = new PresenceListFrame("Jelenléti lista", true, true, true, true);
+            presenceListFrame.setDelete(el -> {
+                dao.deletePresence(presenceListFrame.getId());
+                presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
+            });
+            presenceListFrame.setShow(el -> {
+                presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
+            });
+            presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
+            desktopPane.add(presenceListFrame);
+            presenceListFrame.toFront();
+        });
     }
 }

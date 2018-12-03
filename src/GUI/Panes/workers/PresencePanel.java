@@ -5,7 +5,14 @@
 package GUI.Panes.workers;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import net.miginfocom.swing.*;
+
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Dominik
@@ -19,12 +26,12 @@ public class PresencePanel extends JPanel {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Dominik
         label1 = new JLabel();
-        comboBox1 = new JComboBox();
+        barcodeField = new JTextField();
         label2 = new JLabel();
         dateSpinner = new JSpinner();
         label3 = new JLabel();
         hourSpinner = new JSpinner();
-        saveButtoin = new JButton();
+        saveButton = new JButton();
 
         //======== this ========
 
@@ -47,9 +54,9 @@ public class PresencePanel extends JPanel {
             "[]"));
 
         //---- label1 ----
-        label1.setText("Dolgoz\u00f3 neve");
+        label1.setText("Dolgoz\u00f3 azonos\u00edt\u00f3ja");
         add(label1, "cell 0 0,alignx right,growx 0");
-        add(comboBox1, "cell 1 0");
+        add(barcodeField, "cell 1 0");
 
         //---- label2 ----
         label2.setText("Munkanap");
@@ -67,20 +74,39 @@ public class PresencePanel extends JPanel {
         hourSpinner.setModel(new SpinnerNumberModel(8, 0, 12, 0));
         add(hourSpinner, "cell 1 2");
 
-        //---- saveButtoin ----
-        saveButtoin.setText("Ment\u00e9s");
-        add(saveButtoin, "cell 0 3 2 1");
+        //---- saveButton ----
+        saveButton.setText("Ment\u00e9s");
+        add(saveButton, "cell 0 3 2 1");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Dominik
     private JLabel label1;
-    private JComboBox comboBox1;
+    private JTextField barcodeField;
     private JLabel label2;
     private JSpinner dateSpinner;
     private JLabel label3;
     private JSpinner hourSpinner;
-    private JButton saveButtoin;
+    private JButton saveButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+    public void setSave(ActionListener actionListener) {
+        saveButton.addActionListener(actionListener);
+    }
+
+    public Map getValues() {
+        Map values = new HashMap();
+        try {
+            values.put("barcode", barcodeField.getText());
+            values.put("date", dateSpinner.getValue());
+            values.put("hour", hourSpinner.getValue());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return values;
+    }
+
+    public void setTexts(Map values) {
+        barcodeField.setText((String) values.get("barcode"));
+    }
 }

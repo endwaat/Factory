@@ -1,10 +1,11 @@
 package Database;
 
+import com.sun.java.accessibility.util.GUIInitializedListener;
+
+import java.io.Serializable;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.sql.Date;
+import java.util.*;
 
 public class DAO {
     private static String SQL_SELECT_PASSWORD = "SELECT password, id FROM users WHERE username = ? AND deleted = 'f'";
@@ -43,8 +44,19 @@ public class DAO {
     private static String SQL_SELECT_SUPPLIER_LIST = "SELECT id,name,phone FROM supplier WHERE deleted = 'f' ORDER BY name";
     private static String SQL_SELECT_SUPPLIER = "SELECT id,name,phone,zip,town,address FROM supplier WHERE id = ? AND deleted = 'f'";
     private static String SQL_DELETE_SUPPLIER = "UPDATE supplier SET deleted = 't' WHERE id = ?";
-
-
+    private static String SQL_INSERT_WORKER = "INSERT INTO workers (name,barcode,email,salary,zip,town,address,phone) VALUES (?,?,?,?,?,?,?,?)";
+    private static String SQL_UPDATE_WORKER = "UPDATE workers SET name = ?, barcode = ?, email = ?, salary = ?, zip = ?, town = ?, address = ?, phone = ? WHERE id = ?";
+    private static String SQL_SELECT_WORKER_LIST = "SELECT id,name,barcode,email,salary,zip,town,address,phone FROM workers WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_WORKER = "SELECT id,name,barcode,email,salary,zip,town,address,phone FROM workers WHERE id = ? AND deleted = 'f'";
+    private static String SQL_DELETE_WORKER = "UPDATE workers SET name = ?, email = ?, address = ?, phone = null, deleted = 't' WHERE id = ?";
+    private static String SQL_SELECT_WORKER_BY_BARCODE = "SELECT id FROM workers WHERE barcode = ?";
+    private static String SQL_INSERT_WORKLOG = "INSERT INTO worklog (worker_id,date,hour) VALUES (?,?,?)";
+    private static String SQL_SELECT_WORKLIG_LIST = "SELECT worklog.id,workers.barcode,workers.name,date,hour " +
+            "FROM worklog " +
+            "LEFT JOIN workers ON worklog.worker_id = workers.id " +
+            "WHERE date BETWEEN ? AND ? " +
+            "ORDER BY worklog.id";
+    private static String SQL_DELETE_WORKLOG = "DELETE FROM worklog WHERE id = ?";
 
     private int userId;
 
@@ -574,8 +586,8 @@ public class DAO {
             if (0 == (Integer) values.get("id")) {
                 preparedStatement = connection.prepareStatement(SQL_INSERT_SUPPLIER);
                 preparedStatement.setString(1, (String) values.get("name"));
-                preparedStatement.setInt(2, Integer.valueOf((String)values.get("phone")));
-                preparedStatement.setInt(3, Integer.valueOf((String)values.get("zip")));
+                preparedStatement.setInt(2, Integer.valueOf((String) values.get("phone")));
+                preparedStatement.setInt(3, Integer.valueOf((String) values.get("zip")));
                 preparedStatement.setString(4, (String) values.get("town"));
                 preparedStatement.setString(5, (String) values.get("address"));
                 preparedStatement.execute();
@@ -583,8 +595,8 @@ public class DAO {
             } else {
                 preparedStatement = connection.prepareStatement(SQL_UPDATE_SUPPLIER);
                 preparedStatement.setString(1, (String) values.get("name"));
-                preparedStatement.setInt(2, Integer.valueOf((String)values.get("phone")));
-                preparedStatement.setInt(3, Integer.valueOf((String)values.get("zip")));
+                preparedStatement.setInt(2, Integer.valueOf((String) values.get("phone")));
+                preparedStatement.setInt(3, Integer.valueOf((String) values.get("zip")));
                 preparedStatement.setString(4, (String) values.get("town"));
                 preparedStatement.setString(5, (String) values.get("address"));
                 preparedStatement.setInt(6, (Integer) values.get("id"));
@@ -638,11 +650,175 @@ public class DAO {
         }
         return values;
     }
+
     public void deteleSupplier(int id) {
         Connection connection = getConnection();
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(SQL_DELETE_SUPPLIER);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean saveWorker(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_INSERT_WORKER);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setString(2, (String) values.get("barcode"));
+                preparedStatement.setString(3, (String) values.get("email"));
+                preparedStatement.setInt(4, Integer.parseInt((String) values.get("salary")));
+                preparedStatement.setInt(5, Integer.valueOf((String) values.get("zip")));
+                preparedStatement.setString(6, (String) values.get("town"));
+                preparedStatement.setString(7, (String) values.get("address"));
+                preparedStatement.setInt(8, Integer.valueOf((String) values.get("phone")));
+                preparedStatement.execute();
+                return true;
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_WORKER);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setString(2, (String) values.get("barcode"));
+                preparedStatement.setString(3, (String) values.get("email"));
+                preparedStatement.setInt(4, Integer.valueOf((String) values.get("salary")));
+                preparedStatement.setInt(5, Integer.valueOf((String) values.get("zip")));
+                preparedStatement.setString(6, (String) values.get("town"));
+                preparedStatement.setString(7, (String) values.get("address"));
+                preparedStatement.setInt(8, Integer.valueOf((String) values.get("phone")));
+                preparedStatement.setInt(9, (Integer) values.get("id"));
+                preparedStatement.execute();
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public List<Map> getWorkerList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_WORKER_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("barcode", resultSet.getString(3));
+                values.put("email", resultSet.getString(3));
+                values.put("salary", resultSet.getInt(3));
+                values.put("zip", resultSet.getInt(3));
+                values.put("town", resultSet.getString(3));
+                values.put("address", resultSet.getString(3));
+                values.put("phone", resultSet.getInt(3));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getWorker(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_WORKER);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("barcode", resultSet.getString(3));
+                values.put("email", resultSet.getString(4));
+                values.put("salary", resultSet.getInt(5));
+                values.put("zip", resultSet.getInt(6));
+                values.put("town", resultSet.getString(7));
+                values.put("address", resultSet.getString(8));
+                values.put("phone", resultSet.getInt(9));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public void deleteWorker(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_WORKER);
+            String uuid = UUID.randomUUID().toString();
+            preparedStatement.setString(1, uuid);
+            preparedStatement.setString(2, uuid);
+            preparedStatement.setString(3, uuid);
+            preparedStatement.setInt(4, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Serializable savePresence(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_WORKER_BY_BARCODE);
+            preparedStatement.setString(1, (String) values.get("barcode"));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                preparedStatement = connection.prepareStatement(SQL_INSERT_WORKLOG);
+                preparedStatement.setInt(1, id);
+                preparedStatement.setDate(2, new java.sql.Date(((java.util.Date) values.get("date")).getTime()));
+                preparedStatement.setInt(3, (Integer) values.get("hour"));
+                preparedStatement.execute();
+                return "SUCCES";
+            } else {
+                return "UNKNOWN_BARCODE";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "SAVE_ERROR";
+        }
+    }
+
+    public List<Map> getPresenceList(Map mapDates) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_WORKLIG_LIST);
+            preparedStatement.setDate(1, new java.sql.Date(((java.util.Date) mapDates.get("from")).getTime()));
+            preparedStatement.setDate(2, new java.sql.Date(((java.util.Date) mapDates.get("to")).getTime()));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("barcode", resultSet.getString(2));
+                values.put("name", resultSet.getString(3));
+                values.put("date", resultSet.getDate(4));
+                values.put("hour", resultSet.getInt(5));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public void deletePresence(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_WORKLOG);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {

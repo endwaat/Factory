@@ -58,11 +58,17 @@ public class MenuBar extends JMenuBar {
 
         workerMenu = new JMenu("Dolgozó");
         this.add(workerMenu);
+        JMenu worker = new JMenu("Dolgozó");
         JMenuItem newWorker = new JMenuItem("Új dolgozó");
         JMenuItem listWorkers = new JMenuItem("Dolgozók listázása");
-        JMenuItem attendance = new JMenuItem("Jelenlét");
-        workerMenu.add(newWorker);
-        workerMenu.add(listWorkers);
+        worker.add(newWorker);
+        worker.add(listWorkers);
+        JMenu attendance = new JMenu("Jelenlét");
+        JMenuItem newAttendance = new JMenuItem("Új jelenlét");
+        JMenuItem listAttendance = new JMenuItem("Jelenléti lista");
+        attendance.add(newAttendance);
+        attendance.add(listAttendance);
+        workerMenu.add(worker);
         workerMenu.add(attendance);
 
         allergenMenu = new JMenu("Allergének");
@@ -213,6 +219,18 @@ public class MenuBar extends JMenuBar {
                 break;
             case "listSupplier":
                 ((JMenuItem) ((JMenu) orderMenu.getMenuComponent(1)).getMenuComponent(1)).addActionListener(actionListener);
+                break;
+            case "newWorker":
+                ((JMenuItem) ((JMenu) workerMenu.getMenuComponent(0)).getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listWorker":
+                ((JMenuItem) ((JMenu) workerMenu.getMenuComponent(0)).getMenuComponent(1)).addActionListener(actionListener);
+                break;
+            case "newAttendance":
+                ((JMenuItem) ((JMenu) workerMenu.getMenuComponent(1)).getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listAttendance":
+                ((JMenuItem) ((JMenu) workerMenu.getMenuComponent(1)).getMenuComponent(1)).addActionListener(actionListener);
                 break;
         }
     }

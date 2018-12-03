@@ -34,24 +34,19 @@ public class IngredientListPanel extends JPanel {
 
         // JFormDesigner evaluation mark
         setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                        "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                        javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                        java.awt.Color.red), getBorder()));
-        addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent e) {
-                if ("border".equals(e.getPropertyName())) throw new RuntimeException();
-            }
-        });
+            new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                java.awt.Color.red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
         setLayout(new MigLayout(
-                "hidemode 3",
-                // columns
-                "[grow,fill]" +
-                        "[grow,fill]",
-                // rows
-                "[]" +
-                        "[]"));
+            "hidemode 3",
+            // columns
+            "[grow,fill]" +
+            "[grow,fill]",
+            // rows
+            "[]" +
+            "[]"));
 
         //======== scrollPane1 ========
         {
@@ -75,7 +70,6 @@ public class IngredientListPanel extends JPanel {
     private JTable ingredientTable;
     private JButton deleteButton;
     private JButton editButton;
-
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     public void setTableValues(List<Map> list) {
         DAO dao = new DAO();

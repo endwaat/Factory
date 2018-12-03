@@ -20,6 +20,7 @@ public class OrderListPanel extends JPanel {
         // Generated using JFormDesigner Evaluation license - Dominik
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
+        deleteButton = new JButton();
         button1 = new JButton();
 
         //======== this ========
@@ -34,7 +35,8 @@ public class OrderListPanel extends JPanel {
         setLayout(new MigLayout(
             "hidemode 3",
             // columns
-            "[281,fill]",
+            "[150,grow,fill]" +
+            "[150,grow,fill]",
             // rows
             "[301,grow]" +
             "[]"));
@@ -43,11 +45,15 @@ public class OrderListPanel extends JPanel {
         {
             scrollPane1.setViewportView(table1);
         }
-        add(scrollPane1, "cell 0 0");
+        add(scrollPane1, "cell 0 0 2 1");
+
+        //---- deleteButton ----
+        deleteButton.setText("T\u00f6rl\u00e9s");
+        add(deleteButton, "cell 0 1");
 
         //---- button1 ----
         button1.setText("Szerkeszt");
-        add(button1, "cell 0 1");
+        add(button1, "cell 1 1");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
@@ -55,6 +61,7 @@ public class OrderListPanel extends JPanel {
     // Generated using JFormDesigner Evaluation license - Dominik
     private JScrollPane scrollPane1;
     private JTable table1;
+    private JButton deleteButton;
     private JButton button1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
