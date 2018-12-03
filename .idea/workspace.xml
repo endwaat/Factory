@@ -2,94 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fb92c49-6b24-475b-b880-f4a69cfadf39" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Controller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/DAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Menu/MenuBar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/admin/UserPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/file/ProfilePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/file/ProfilePanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachineListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachineListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachinePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/machines/MachinePanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/OrderPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypeListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/product/ProductTypePanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypePanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/MadeProductsListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/storage/MadeProductsListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/PresencePanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerListPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.jfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/AllergensFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/AllergensListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientTypeFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/IngredientTypeListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/LoginFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/MachineFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/MachineListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/PresenceListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/ProfileFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/SupplierFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/SupplierListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/UserFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/UserListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/WorkerFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/Windows/WorkerListFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Patches/v0_0_0__create_tables.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Allergetic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Authentication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Ingredient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/IngredientType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Machine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Orders.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Supplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Workers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,16 +58,16 @@
           <entry key="gitignore" value="4" />
           <entry key="java" value="15132" />
           <entry key="sql" value="1631" />
-          <entry key="txt" value="7" />
-          <entry key="xml" value="23" />
+          <entry key="txt" value="20" />
+          <entry key="xml" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="15132" />
-          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="PLAIN_TEXT" value="35" />
           <entry key="SQL" value="1631" />
-          <entry key="XML" value="23" />
+          <entry key="XML" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -163,7 +80,7 @@
           <entry key="SQL" value="12" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="3" />
-          <entry key="XML" value="2" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -177,7 +94,7 @@
           <entry key="java" value="315" />
           <entry key="jfd" value="111" />
           <entry key="sql" value="13" />
-          <entry key="xml" value="2" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -205,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+            <state relative-caret-position="204">
+              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -424,7 +341,12 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Factory" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -471,7 +393,7 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543861507599" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543861979003" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -579,7 +501,7 @@
       <workItem from="1543266393853" duration="1658000" />
       <workItem from="1543352801421" duration="4082000" />
       <workItem from="1543843952581" duration="13420000" />
-      <workItem from="1543860763909" duration="713000" />
+      <workItem from="1543860763909" duration="1019000" />
     </task>
     <servers />
   </component>
@@ -592,13 +514,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137903000" />
+    <option name="totallyTimeSpent" value="138209000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49915966" visible="true" weight="0.34901533" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915966" visible="true" weight="0.17004265" />
       <window_info id="Structure" order="1" sideWeight="0.50084037" side_tool="true" weight="0.12100213" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -608,7 +529,7 @@
       <window_info anchor="bottom" id="JFormDesigner Error Log" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.2483731" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.47830802" />
       <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.4197397" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -627,7 +548,7 @@
       <window_info anchor="right" id="Database" order="5" weight="0.0042643924" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.12579957" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="8" visible="true" weight="0.12526652" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" />
     </layout>
   </component>
@@ -1047,8 +968,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+        <state relative-caret-position="204">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1127,5 +1048,9 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="$PROJECT_DIR$" />
+    <option value="clean install" />
   </component>
 </project>
