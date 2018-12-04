@@ -61,7 +61,7 @@ public class ProductPanel extends JTabbedPane {
                 "[]" +
                 "[]" +
                 "[]" +
-                "[]"));
+                "[161]"));
 
             //---- label1 ----
             label1.setText("Term\u00e9k t\u00edpus");
@@ -86,7 +86,7 @@ public class ProductPanel extends JTabbedPane {
 
             //---- button1 ----
             button1.setText("Gy\u00e1rt\u00e1s");
-            dataPanel.add(button1, "cell 0 3 2 1");
+            dataPanel.add(button1, "cell 0 3 2 1,aligny bottom,growy 0");
         }
         addTab("Term\u00e9k", dataPanel);
 

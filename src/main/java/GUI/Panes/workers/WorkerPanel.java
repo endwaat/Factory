@@ -54,7 +54,7 @@ public class WorkerPanel extends JTabbedPane {
             // JFormDesigner evaluation mark
             dataPanel.setBorder(new javax.swing.border.CompoundBorder(
                     new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                            "", javax.swing.border.TitledBorder.CENTER,
                             javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
                             java.awt.Color.red), dataPanel.getBorder()));
             dataPanel.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
@@ -196,12 +196,11 @@ public class WorkerPanel extends JTabbedPane {
     }
 
     public void setAttendance(List<Map> list) {
-        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Felhasználó", "Telefon"}, 0);
+        DefaultTableModel model = new DefaultTableModel(new String[]{"Dátum", "Óra"}, 0);
         for (int i = 0; i < list.size(); i++) {
-            model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name"), list.get(i).get("phone")});
+            model.addRow(new Object[]{list.get(i).get("date"), list.get(i).get("hour")});
         }
         presenceTable.setModel(model);
-        presenceTable.removeColumn(presenceTable.getColumnModel().getColumn(0));
     }
 
     public JTable getPresenceTable() {

@@ -36,7 +36,7 @@ public class IngredientPanel extends JPanel {
         label4 = new JLabel();
         expireSpinner = new JSpinner();
         label3 = new JLabel();
-        weightSpinner = new JSpinner();
+        weightField = new JTextField();
         label2 = new JLabel();
         sourceField = new JTextField();
         label1 = new JLabel();
@@ -99,10 +99,7 @@ public class IngredientPanel extends JPanel {
         //---- label3 ----
         label3.setText("Mennyis\u00e9g (kg)");
         add(label3, "cell 0 4,alignx right,growx 0");
-
-        //---- weightSpinner ----
-        weightSpinner.setModel(new SpinnerNumberModel(1, 1, null, 1));
-        add(weightSpinner, "cell 1 4");
+        add(weightField, "cell 1 4");
 
         //---- label2 ----
         label2.setText("Beszerz\u0151");
@@ -134,7 +131,7 @@ public class IngredientPanel extends JPanel {
     private JLabel label4;
     private JSpinner expireSpinner;
     private JLabel label3;
-    private JSpinner weightSpinner;
+    private JTextField weightField;
     private JLabel label2;
     private JTextField sourceField;
     private JLabel label1;
@@ -163,7 +160,7 @@ public class IngredientPanel extends JPanel {
             values.put("type", ((Item)typeCombo.getSelectedItem()).getId());
             values.put("arrived", arrivedSpinner.getValue());
             values.put("expire", expireSpinner.getValue());
-            values.put("weight", weightSpinner.getValue());
+            values.put("weight", weightField.getText().replace(",","."));
             values.put("source", sourceField.getText());
             values.put("value", valueSpinner.getValue());
         } catch (Exception e) {
@@ -185,7 +182,7 @@ public class IngredientPanel extends JPanel {
         }
         arrivedSpinner.setValue(values.get("arrived"));
         expireSpinner.setValue(values.get("expire"));
-        weightSpinner.setValue(values.get("weight"));
+        weightField.setText(String.valueOf(values.get("weight")));
         sourceField.setText((String) values.get("source"));
         valueSpinner.setValue(values.get("value"));
     }

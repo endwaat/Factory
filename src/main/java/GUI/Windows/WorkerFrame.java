@@ -31,6 +31,7 @@ public class WorkerFrame extends JInternalFrame {
     public void setValues(Map values){
         workerPanel.setTexts(values);
     }
+
     public void setAttendance(List<Map> values){
         workerPanel.setAttendance(values);
     }

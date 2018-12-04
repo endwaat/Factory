@@ -38,10 +38,8 @@ public class MenuBar extends JMenuBar {
         JMenuItem listIngredienType = new JMenuItem("Alapanyag típusok listázása");
         ingredientType.add(newIngredienType);
         ingredientType.add(listIngredienType);
-        JMenuItem madeProduct = new JMenuItem("Kész termékek raktáron");
         storageMenu.add(ingredients);
         storageMenu.add(ingredientType);
-        storageMenu.add(madeProduct);
 
         productMenu = new JMenu("Termék");
         this.add(productMenu);
@@ -231,6 +229,12 @@ public class MenuBar extends JMenuBar {
                 break;
             case "listAttendance":
                 ((JMenuItem) ((JMenu) workerMenu.getMenuComponent(1)).getMenuComponent(1)).addActionListener(actionListener);
+                break;
+            case "newProductType":
+                ((JMenuItem) ((JMenu) productMenu.getMenuComponent(0)).getMenuComponent(0)).addActionListener(actionListener);
+                break;
+            case "listProductType":
+                ((JMenuItem) ((JMenu) productMenu.getMenuComponent(0)).getMenuComponent(1)).addActionListener(actionListener);
                 break;
         }
     }

@@ -5,7 +5,18 @@
 package GUI.Panes.product;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+import Database.DAO;
+import bean.Item;
 import net.miginfocom.swing.*;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Dominik
@@ -13,6 +24,12 @@ import net.miginfocom.swing.*;
 public class ProductTypePanel extends JTabbedPane {
     public ProductTypePanel() {
         initComponents();
+        fillCombobox();
+        setAddIngredientButton();
+        setDeleteIngredientButton();
+        setAddMachineButton();
+        setDeleteMachineButton();
+
     }
 
     private void initComponents() {
@@ -20,17 +37,17 @@ public class ProductTypePanel extends JTabbedPane {
         // Generated using JFormDesigner Evaluation license - Dominik
         asd = new JPanel();
         label1 = new JLabel();
-        textField1 = new JTextField();
+        nameField = new JTextField();
         label2 = new JLabel();
-        comboBox1 = new JComboBox();
+        allergenCombo = new JComboBox();
         label3 = new JLabel();
-        textField6 = new JTextField();
+        weightField = new JTextField();
         label4 = new JLabel();
-        textField5 = new JTextField();
+        productionTimeField = new JTextField();
         label5 = new JLabel();
-        textField4 = new JTextField();
+        valueField = new JTextField();
         label6 = new JLabel();
-        textField3 = new JTextField();
+        costField = new JTextField();
         saveButton = new JButton();
         panel1 = new JPanel();
         label7 = new JLabel();
@@ -39,7 +56,7 @@ public class ProductTypePanel extends JTabbedPane {
         label8 = new JLabel();
         ingredientweightField = new JTextField();
         addIngredientButton = new JButton();
-        deleteINgredientButton = new JButton();
+        deleteIngredientButton = new JButton();
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
         panel2 = new JPanel();
@@ -80,32 +97,32 @@ public class ProductTypePanel extends JTabbedPane {
             //---- label1 ----
             label1.setText("Term\u00e9kt\u00edpus neve");
             asd.add(label1, "cell 0 0");
-            asd.add(textField1, "cell 1 0");
+            asd.add(nameField, "cell 1 0");
 
             //---- label2 ----
             label2.setText("Allerg\u00e9n");
             asd.add(label2, "cell 0 1");
-            asd.add(comboBox1, "cell 1 1");
+            asd.add(allergenCombo, "cell 1 1");
 
             //---- label3 ----
             label3.setText("Mennyis\u00e9g (kg)");
             asd.add(label3, "cell 0 2");
-            asd.add(textField6, "cell 1 2");
+            asd.add(weightField, "cell 1 2");
 
             //---- label4 ----
             label4.setText("Elk\u00e9sz\u00edt\u00e9si Id\u0151 (perc)");
             asd.add(label4, "cell 0 3");
-            asd.add(textField5, "cell 1 3");
+            asd.add(productionTimeField, "cell 1 3");
 
             //---- label5 ----
             label5.setText("\u00c1r (elad\u00e1si)");
             asd.add(label5, "cell 0 4");
-            asd.add(textField4, "cell 1 4");
+            asd.add(valueField, "cell 1 4");
 
             //---- label6 ----
             label6.setText("Gy\u00e1rt\u00e1si \u00e1r");
             asd.add(label6, "cell 0 5");
-            asd.add(textField3, "cell 1 5");
+            asd.add(costField, "cell 1 5");
 
             //---- saveButton ----
             saveButton.setText("Ment\u00e9s");
@@ -137,7 +154,7 @@ public class ProductTypePanel extends JTabbedPane {
             panel1.add(browseIngredientButton, "cell 2 0");
 
             //---- label8 ----
-            label8.setText("Mennyis\u00e9g (kg)");
+            label8.setText("Mennyis\u00e9g (%)");
             panel1.add(label8, "cell 0 1");
             panel1.add(ingredientweightField, "cell 1 1 2 1");
 
@@ -145,9 +162,9 @@ public class ProductTypePanel extends JTabbedPane {
             addIngredientButton.setText("+");
             panel1.add(addIngredientButton, "cell 1 2");
 
-            //---- deleteINgredientButton ----
-            deleteINgredientButton.setText("-");
-            panel1.add(deleteINgredientButton, "cell 2 2");
+            //---- deleteIngredientButton ----
+            deleteIngredientButton.setText("-");
+            panel1.add(deleteIngredientButton, "cell 2 2");
 
             //======== scrollPane1 ========
             {
@@ -201,17 +218,17 @@ public class ProductTypePanel extends JTabbedPane {
     // Generated using JFormDesigner Evaluation license - Dominik
     private JPanel asd;
     private JLabel label1;
-    private JTextField textField1;
+    private JTextField nameField;
     private JLabel label2;
-    private JComboBox comboBox1;
+    private JComboBox allergenCombo;
     private JLabel label3;
-    private JTextField textField6;
+    private JTextField weightField;
     private JLabel label4;
-    private JTextField textField5;
+    private JTextField productionTimeField;
     private JLabel label5;
-    private JTextField textField4;
+    private JTextField valueField;
     private JLabel label6;
-    private JTextField textField3;
+    private JTextField costField;
     private JButton saveButton;
     private JPanel panel1;
     private JLabel label7;
@@ -220,7 +237,7 @@ public class ProductTypePanel extends JTabbedPane {
     private JLabel label8;
     private JTextField ingredientweightField;
     private JButton addIngredientButton;
-    private JButton deleteINgredientButton;
+    private JButton deleteIngredientButton;
     private JScrollPane scrollPane1;
     private JTable table1;
     private JPanel panel2;
@@ -232,4 +249,159 @@ public class ProductTypePanel extends JTabbedPane {
     private JScrollPane scrollPane2;
     private JTable table2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+    private int id = 0;
+    private int tempIngredientTypeId = 0;
+    private int tempMachineId = 0;
+    DAO dao = new DAO();
+    List<Map> ingredientTypeList = new ArrayList<>();
+    List<Map> machineList = new ArrayList<>();
+
+    public void setAddIngredientButton() {
+        addIngredientButton.addActionListener(e -> {
+            if(tempIngredientTypeId != 0) {
+                double maxingred = 0;
+                for(int i = 0; i < ingredientTypeList.size(); i++){
+                    maxingred += (double) ingredientTypeList.get(i).get("value");
+                }
+                maxingred += Double.valueOf(ingredientweightField.getText().replace(",","."));
+                if(maxingred <= 100) {
+                    Map tempMap = new HashMap();
+                    tempMap.put("id", tempIngredientTypeId);
+                    tempMap.put("name", ingredientTypeField.getText());
+                    tempMap.put("value", Double.valueOf(ingredientweightField.getText().replace(",",".")));
+                    ingredientTypeList.add(tempMap);
+                    setIngredients(ingredientTypeList);
+                    tempIngredientTypeId = 0;
+                    ingredientTypeField.setText("");
+                    ingredientweightField.setText("");
+                }else{
+                    JOptionPane.showMessageDialog(this,
+                            dao.translate("OVER_100") ,
+                            "ERROR",
+                            JOptionPane.PLAIN_MESSAGE);
+                }
+            }
+        });
+    }
+
+    public void setDeleteIngredientButton() {
+        deleteIngredientButton.addActionListener(e -> {
+            for(int i = 0; i < ingredientTypeList.size(); i++){
+                if(ingredientTypeList.get(i).get("id") == table1.getModel().getValueAt(table1.getSelectedRow(),0)){
+                    ingredientTypeList.remove(i);
+                }
+            }
+            setIngredients(ingredientTypeList);
+        });
+    }
+
+    public void setAddMachineButton() {
+        addMachineButton.addActionListener(e -> {
+            if(tempMachineId != 0) {
+                Map tempMap = new HashMap();
+                tempMap.put("id", tempMachineId);
+                tempMap.put("name", machineField.getText());
+                machineList.add(tempMap);
+                setMachines(machineList);
+                tempMachineId = 0;
+                machineField.setText("");
+            }
+        });
+    }
+
+    public void setDeleteMachineButton() {
+        deleteMachineButton.addActionListener(e -> {
+            for(int i = 0; i < machineList.size(); i++){
+                if(machineList.get(i).get("id") == table2.getModel().getValueAt(table2.getSelectedRow(),0)){
+                    machineList.remove(i);
+                }
+            }
+            setMachines(machineList);
+        });
+    }
+
+    public void fillCombobox(){
+        DAO dao = new DAO();
+        List<Map> values = dao.getAllergensList();
+        for(int i = 0; i < values.size(); i++){
+            allergenCombo.addItem(new Item((Integer) (values.get(i)).get("id"),(String) (values.get(i)).get("name")));
+        }
+    }
+
+    public void setSave(ActionListener actionListener) {
+        saveButton.addActionListener(actionListener);
+    }
+    public void setBrowseIngredientButton(ActionListener actionListener) {
+        browseIngredientButton.addActionListener(actionListener);
+    }
+    public void setBrowseMachineButton(ActionListener actionListener) {
+        browseMachineButton.addActionListener(actionListener);
+    }
+
+    public Map getValues() {
+        Map values = new HashMap();
+        try {
+            values.put("id", id);
+            values.put("name", nameField.getText());
+            values.put("allergensType", ((Item)allergenCombo.getSelectedItem()).getId());
+            values.put("weight", weightField.getText());
+            values.put("productionTime", productionTimeField.getText());
+            values.put("value", valueField.getText());
+            values.put("cost", costField.getText());
+            values.put("ingredients", ingredientTypeList);
+            values.put("machines", machineList);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return values;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+        setIngredients(dao.getIngredientlistByproductId(id));
+        ingredientTypeList = dao.getIngredientlistByproductId(id);
+        setMachines(dao.getMachinesByproductId(id));
+        machineList = dao.getMachinesByproductId(id);
+    }
+
+    public void setTexts(Map values) {
+        nameField.setText((String) values.get("name"));
+        for(int i = 0; i < allergenCombo.getItemCount(); i++){
+            if(((Item)allergenCombo.getItemAt(i)).getId() == (Integer) (values.get("allergensType"))){
+                allergenCombo.setSelectedIndex(i);
+            }
+        }
+        weightField.setText(String.valueOf(values.get("weight")));
+        productionTimeField.setText(String.valueOf(values.get("productionTime")));
+        valueField.setText(String.valueOf(values.get("value")));
+        costField.setText(String.valueOf(values.get("cost")));
+    }
+
+    public void setIngredients(List<Map> list) {
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Alapanyagtípus","Mennyiség (%)"}, 0);
+        for (int i = 0; i < list.size(); i++) {
+            model.addRow(new Object[]{list.get(i).get("id"),list.get(i).get("name"), list.get(i).get("value")});
+        }
+        table1.setModel(model);
+        table1.removeColumn(table1.getColumnModel().getColumn(0));
+    }
+
+    public void setMachines(List<Map> list) {
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Gép"}, 0);
+        for (int i = 0; i < list.size(); i++) {
+            model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name")});
+        }
+        table2.setModel(model);
+        table2.removeColumn(table2.getColumnModel().getColumn(0));
+    }
+
+    public void setSelectedIngredientTypeItem(Map values){
+        ingredientTypeField.setText((String) values.get("name"));
+        tempIngredientTypeId = (int) values.get("id");
+    }
+
+    public void setSelectedMachineItem(Map values){
+        machineField.setText((String) values.get("name"));
+        tempMachineId = (int) values.get("id");
+    }
 }

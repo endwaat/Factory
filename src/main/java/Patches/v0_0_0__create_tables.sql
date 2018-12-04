@@ -193,4 +193,12 @@ CREATE TABLE worklog (
     deleted boolean NOT NULL DEFAULT false
 );
 
+CREATE SEQUENCE dict_sequence START 1;
+
+CREATE TABLE dict (
+    id              integer PRIMARY KEY DEFAULT nextval('dict_sequence'),
+    name            varchar(255) NOT NULL,
+    value           varchar(255)
+);
+
 INSERT INTO users(username, password, email, zip, town, address, phone) VALUES ('Admin', 'Admin', 'e.dominik1995@gmail.com', 6000, 'Kecskemét', 'Kullai köz 12', 305640832)

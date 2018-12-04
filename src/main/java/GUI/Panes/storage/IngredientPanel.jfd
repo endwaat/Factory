@@ -66,12 +66,8 @@ new FormModel {
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 0 4,alignx right,growx 0"
 			} )
-			add( new FormComponent( "javax.swing.JSpinner" ) {
-				name: "weightSpinner"
-				"model": new javax.swing.SpinnerNumberModel {
-					minimum: 1
-					value: 1
-				}
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "weightField"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 1 4"
 			} )

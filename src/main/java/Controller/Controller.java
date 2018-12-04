@@ -8,8 +8,11 @@ import GUI.Windows.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Map;
 
 public class Controller {
     static JFrame frame;
@@ -39,7 +42,7 @@ public class Controller {
         desktopPane.add(loginInternalFrame);
         loginInternalFrame.toFront();
         Dimension dim = frame.getToolkit().getDefaultToolkit().getScreenSize();
-        loginInternalFrame.setLocation(dim.width/2-loginInternalFrame.getSize().width/2, dim.height/2-loginInternalFrame.getSize().height/2);
+        loginInternalFrame.setLocation(dim.width / 2 - loginInternalFrame.getSize().width / 2, dim.height / 2 - loginInternalFrame.getSize().height / 2);
         frame.add(desktopPane);
         frame.setSize(dim.width, dim.height);
         frame.setLocationRelativeTo(null);
@@ -357,7 +360,7 @@ public class Controller {
                     workerListFrame.setValues(dao.getWorkerList()); //reload
                 });
                 workerFrame.setValues(dao.getWorker(workerListFrame.getId()));
-//                workerFrame.setAttendance(dao.getWorkersLog(workerListFrame.getId()));
+                workerFrame.setAttendance(dao.getWorkersLog(workerListFrame.getId()));
                 desktopPane.add(workerFrame);
                 workerFrame.toFront();
             });
@@ -397,6 +400,90 @@ public class Controller {
             presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
             desktopPane.add(presenceListFrame);
             presenceListFrame.toFront();
+        });
+
+        //új terméktípus
+        menuBar.addListener("newProductType", event -> {
+            ProductTypeFrame productTypeFrame = new ProductTypeFrame("Terméktípus", true, true, true, true);
+            productTypeFrame.setSave(e1 -> {
+                if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
+                    productTypeFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            productTypeFrame.setBrowseIngredientButton(e1 -> {
+                BrowseIngredientTypeFrame browseIngredientTypeFrame = new BrowseIngredientTypeFrame("Alapanyag típus böngészés", true, true, true, true);
+                browseIngredientTypeFrame.setTableValues(dao.getIngredientTypeList());
+                browseIngredientTypeFrame.setSelect(e -> {
+                    Map selectedItem = browseIngredientTypeFrame.getSelectedItem();
+                    productTypeFrame.setSelectedIngredientTypeItem(selectedItem);
+                    browseIngredientTypeFrame.dispose();
+                });
+                desktopPane.add(browseIngredientTypeFrame);
+                browseIngredientTypeFrame.toFront();
+            });
+            productTypeFrame.setBrowseMachineButton(e1 -> {
+                BrowseMachineFrame browseMachineFrame = new BrowseMachineFrame("Gép böngészés", true, true, true, true);
+                browseMachineFrame.setTableValues(dao.getMachineList());
+                browseMachineFrame.setSelect(e -> {
+                    Map selectedItem = browseMachineFrame.getSelectedItem();
+                    productTypeFrame.setSelectedMachineItem(selectedItem);
+                    browseMachineFrame.dispose();
+                });
+                desktopPane.add(browseMachineFrame);
+                browseMachineFrame.toFront();
+            });
+            desktopPane.add(productTypeFrame);
+            productTypeFrame.toFront();
+        });
+
+        //terméktípus lista
+        menuBar.addListener("listProductType", event -> {
+            ProductTypeListFrame productTypeListFrame = new ProductTypeListFrame("Terméktípus lista", true, true, true, true);
+            productTypeListFrame.setEdit(e1 -> {
+                ProductTypeFrame productTypeFrame = new ProductTypeFrame("Terméktípus", true, true, true, true);
+                productTypeFrame.setId(productTypeListFrame.getId());
+                productTypeFrame.setValues(dao.getProductType(productTypeListFrame.getId()));
+                productTypeFrame.setSave(e2 -> {
+                    if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
+                        productTypeFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                });
+                productTypeFrame.setBrowseIngredientButton(e2 -> {
+                    BrowseIngredientTypeFrame browseIngredientTypeFrame = new BrowseIngredientTypeFrame("Alapanyag típus böngészés", true, true, true, true);
+                    browseIngredientTypeFrame.setTableValues(dao.getIngredientTypeList());
+                    browseIngredientTypeFrame.setSelect(e -> {
+                        Map selectedItem = browseIngredientTypeFrame.getSelectedItem();
+                        productTypeFrame.setSelectedIngredientTypeItem(selectedItem);
+                        browseIngredientTypeFrame.dispose();
+                    });
+                    desktopPane.add(browseIngredientTypeFrame);
+                    browseIngredientTypeFrame.toFront();
+                });
+                productTypeFrame.setBrowseMachineButton(e2 -> {
+                    BrowseMachineFrame browseMachineFrame = new BrowseMachineFrame("Gép böngészés", true, true, true, true);
+                    browseMachineFrame.setTableValues(dao.getMachineList());
+                    browseMachineFrame.setSelect(e -> {
+                        Map selectedItem = browseMachineFrame.getSelectedItem();
+                        productTypeFrame.setSelectedMachineItem(selectedItem);
+                        browseMachineFrame.dispose();
+                    });
+                    desktopPane.add(browseMachineFrame);
+                    browseMachineFrame.toFront();
+                });
+                desktopPane.add(productTypeFrame);
+                productTypeFrame.toFront();
+            });
+            productTypeListFrame.setDelete(el -> {
+                dao.deleteProductType(productTypeListFrame.getId());
+                productTypeListFrame.setValues(dao.getProductTypeList());
+            });
+            productTypeListFrame.setValues(dao.getProductTypeList());
+            desktopPane.add(productTypeListFrame);
+            productTypeListFrame.toFront();
         });
     }
 }

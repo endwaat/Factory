@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/Database/DAO.java" line="67" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3fb92c49-6b24-475b-b880-f4a69cfadf39" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowsePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowsePanel.jfd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Windows/BrowseIngredientTypeFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Windows/BrowseMachineFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeListFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/Factory-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/browse/BrowsePanel$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/browse/BrowsePanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Windows/BrowseIngredientTypeFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Windows/BrowseMachineFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/GUI/Windows/ProductTypeFrame.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Database/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Database/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/file/ProfilePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/file/ProfilePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/machines/MachineListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/machines/MachineListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/machines/MachinePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/machines/MachinePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypeListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypeListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/MadeProductsListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/MadeProductsListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Windows/UserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Windows/UserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patches/V20181203191320__v0_0_0__modify_patch.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patches/v0_0_0__create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patches/v0_0_0__create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Database/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Database/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Menu/MenuBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Menu/MenuBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/admin/UserListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/admin/UserListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/admin/UserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/admin/UserPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/allergens/AllergensListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/allergens/AllergensListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/allergens/AllergensPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/allergens/AllergensPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/file/ProfilePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/file/ProfilePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/machines/MachineListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/machines/MachineListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/machines/MachinePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/machines/MachinePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/OrderListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/OrderListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/OrderPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/OrderPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/SupplierListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/SupplierListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/SupplierPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/orders/SupplierPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductTypeListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductTypeListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductTypePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductTypePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductTypePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/product/ProductTypePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientTypeListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientTypeListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientTypePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/IngredientTypePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/MadeProductsListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/storage/MadeProductsListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/PresenceListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/PresenceListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/PresencePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/PresencePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/WorkerListPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/WorkerListPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/WorkerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Panes/workers/WorkerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Windows/UserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Windows/UserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/Windows/WorkerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GUI/Windows/WorkerFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,8 +121,9 @@
     <session id="-733942014">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="29" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.3" value="1" />
@@ -48,39 +131,39 @@
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="10" />
-          <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="30" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="11" />
+          <entry key="dummy" value="38" />
           <entry key="gitignore" value="4" />
-          <entry key="java" value="15132" />
-          <entry key="sql" value="1631" />
+          <entry key="java" value="18632" />
+          <entry key="sql" value="1655" />
           <entry key="txt" value="20" />
-          <entry key="xml" value="32" />
+          <entry key="xml" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15132" />
-          <entry key="PLAIN_TEXT" value="35" />
-          <entry key="SQL" value="1631" />
-          <entry key="XML" value="32" />
+          <entry key="JAVA" value="18632" />
+          <entry key="PLAIN_TEXT" value="62" />
+          <entry key="SQL" value="1655" />
+          <entry key="XML" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="315" />
-          <entry key="JFormDesigner_form" value="111" />
+          <entry key="JAVA" value="368" />
+          <entry key="JFormDesigner_form" value="126" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SQL" value="12" />
+          <entry key="SQL" value="13" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="3" />
-          <entry key="XML" value="3" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -91,10 +174,10 @@
           <entry key="class" value="3" />
           <entry key="gitignore" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="315" />
-          <entry key="jfd" value="111" />
-          <entry key="sql" value="13" />
-          <entry key="xml" value="3" />
+          <entry key="java" value="368" />
+          <entry key="jfd" value="126" />
+          <entry key="sql" value="14" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -108,120 +191,115 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Database/DAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
+            <state relative-caret-position="170">
+              <caret line="911" selection-start-line="911" selection-end-line="911" />
+              <folding>
+                <element signature="e#41786#42345#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Patches/V20181203191320__v0_0_0__modify_patch.sql">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="234" column="22" lean-forward="true" selection-start-line="234" selection-start-column="22" selection-end-line="234" selection-end-column="22" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Factory.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/MadeProductsListPanel.jfd">
+          <provider selected="true" editor-type-id="JFormDesigner" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="396" column="71" selection-start-line="396" selection-start-column="71" selection-end-line="396" selection-end-column="71" />
-              <folding>
-                <element signature="method#Controller#0;class#Controller#0" />
-                <element signature="e#789#1246#0" />
-                <element signature="e#1806#2289#0" />
-                <element signature="e#1992#2198#0" />
-                <element signature="e#2355#3089#0" />
-                <element signature="e#2594#2986#0" />
-                <element signature="e#3159#3612#0" />
-                <element signature="e#3305#3517#0" />
-                <element signature="e#3686#4952#0" />
-                <element signature="e#3854#4584#0" />
-                <element signature="e#4071#4390#0" />
-                <element signature="e#4628#4783#0" />
-                <element signature="e#5020#5431#0" />
-                <element signature="e#5149#5346#0" />
-                <element signature="e#5504#6636#0" />
-                <element signature="e#5655#6310#0" />
-                <element signature="e#5845#6140#0" />
-                <element signature="e#6349#6486#0" />
-                <element signature="e#6782#7212#0" />
-                <element signature="e#6915#7121#0" />
-                <element signature="e#7279#8479#0" />
-                <element signature="e#7434#8128#0" />
-                <element signature="e#7634#7943#0" />
-                <element signature="e#8170#8318#0" />
-                <element signature="e#8560#9065#0" />
-                <element signature="e#8733#8960#0" />
-                <element signature="e#9150#10577#0" />
-                <element signature="e#9345#10163#0" />
-                <element signature="e#9599#9943#0" />
-                <element signature="e#10212#10388#0" />
-                <element signature="e#10649#11112#0" />
-                <element signature="e#10800#11015#0" />
-                <element signature="e#11188#12487#0" />
-                <element signature="e#11361#12109#0" />
-                <element signature="e#11585#11909#0" />
-                <element signature="e#12154#12314#0" />
-                <element signature="e#12556#13000#0" />
-                <element signature="e#12698#12907#0" />
-                <element signature="e#13073#14312#0" />
-                <element signature="e#13237#13952#0" />
-                <element signature="e#13448#13762#0" />
-                <element signature="e#13995#14147#0" />
-                <element signature="e#14378#14803#0" />
-                <element signature="e#14511#14714#0" />
-              </folding>
+            <state relative-caret-position="226">
+              <caret line="480" column="28" lean-forward="true" selection-start-line="480" selection-start-column="20" selection-end-line="480" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceListFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="106" selection-start-line="106" selection-end-line="106" />
-              <folding>
-                <marker date="1543859759141" expanded="true" signature="452:2749" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-                <marker date="1543859759141" expanded="true" signature="2761:3223" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.jfd">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd">
           <provider selected="true" editor-type-id="JFormDesigner" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="380" column="99" selection-start-line="380" selection-start-column="99" selection-end-line="380" selection-end-column="99" />
+              <folding>
+                <marker date="1543954040021" expanded="false" signature="756:7185" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1543954040021" expanded="true" signature="7197:8492" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1285#1286#0" expanded="true" />
+                <element signature="e#1334#1335#0" expanded="true" />
+                <element signature="e#1366#1367#0" expanded="true" />
+                <element signature="e#1408#1409#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeListFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <folding>
+                <element signature="e#1211#1212#0" expanded="true" />
+                <element signature="e#1265#1266#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+              <folding>
+                <element signature="e#3041#3042#0" expanded="true" />
+                <element signature="e#3070#3071#0" expanded="true" />
+                <element signature="e#3114#3115#0" expanded="true" />
+                <element signature="e#3150#3151#0" expanded="true" />
+                <element signature="e#3224#3225#0" expanded="true" />
+                <element signature="e#3259#3260#0" expanded="true" />
+                <marker date="1543954005017" expanded="true" signature="432:2096" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1543954005017" expanded="true" signature="2108:2456" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="71" selection-start-line="71" selection-end-line="110" selection-end-column="5" />
+              <folding>
+                <marker date="1543933428388" expanded="false" signature="422:2068" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+                <marker date="1543933428388" expanded="false" signature="2080:2433" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -235,41 +313,44 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>login</find>
-      <find>deleted  = FALSE</find>
-      <find>SELECT</find>
-      <find>userListFrame.getId</find>
-      <find>storage</find>
-      <find>storeage</find>
-      <find>userListFrame</find>
-      <find>userd_</find>
-      <find>user_id</find>
-      <find>userFrame</find>
-      <find>saveAllergen</find>
-      <find>getMachineList</find>
-      <find>spinner2</find>
-      <find>Map</find>
-      <find>saveMachi</find>
-      <find>menu</find>
-      <find>saveingredienttype</find>
-      <find>getIngredientTypeList</find>
-      <find>getingredienttpy</find>
-      <find>ingredienttypelist</find>
-      <find>getIngredientType(</find>
-      <find>deteleIngredient</find>
-      <find>spinner</find>
-      <find>getIngredientList</find>
-      <find>getTable1</find>
-      <find>valueOf</find>
       <find>workers</find>
       <find>spinner.get</find>
-      <find>getWorkerList</find>
       <find>date</find>
+      <find>1.5</find>
+      <find>getpresence</find>
+      <find>workerFrame.setAttendance</find>
+      <find>&quot;JFormDesigner Evaluation&quot;</find>
+      <find>getValues</find>
+      <find>allergensComboBox</find>
+      <find>getselected</find>
+      <find>edit</find>
+      <find>get</find>
+      <find>PreparedStatement</find>
+      <find>productMenu</find>
+      <find>SQL_UPDATE_PRODUCTTYPE</find>
+      <find>\n</find>
+      <find>ingredientweightField</find>
+      <find>ta</find>
+      <find>workerTable</find>
+      <find>workerlist</find>
+      <find>deleteWorker</find>
+      <find>getWorker</find>
+      <find>setId</find>
+      <find>getProductTypeList</find>
+      <find>getWorkerList</find>
+      <find>SQL_DELETE_PRODUCTTYPE</find>
+      <find>deleteProductType</find>
+      <find>de</find>
+      <find>setDelete</find>
+      <find>kész tem</find>
     </findStrings>
     <replaceStrings>
       <replace>allergens</replace>
       <replace>deleted = 'f'</replace>
       <replace>storage</replace>
+      <replace />
+      <replace>&quot;&quot;</replace>
+      <replace>table1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -279,31 +360,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GUI/Panes/allergens/AllergensListPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/MachineFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/MachineListFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/machines/MachineListPanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/machines/MachineListPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientListPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/PresencePanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/PresencePanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/MadeProductsListPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/machines/MachinePanel.java" />
-        <option value="$PROJECT_DIR$/src/bean/Item.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypePanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/IngredientTypeFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/IngredientTypeListFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypePanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/IngredientFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientTypeListPanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/storage/IngredientPanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/IngredientListFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/SupplierListFrame.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/Windows/SupplierFrame.java" />
         <option value="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierListPanel.jfd" />
         <option value="$PROJECT_DIR$/src/GUI/Panes/orders/SupplierPanel.java" />
         <option value="$PROJECT_DIR$/src/GUI/Panes/workers/WorkerPanel.jfd" />
@@ -329,7 +385,32 @@
         <option value="$PROJECT_DIR$/src/GUI/Panes/workers/PresenceListPanel.java" />
         <option value="$PROJECT_DIR$/src/GUI/Windows/PresenceFrame.java" />
         <option value="$PROJECT_DIR$/src/Database/DAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerFrame.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Windows/UserFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.jfd" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.jfd" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.jfd" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowseIngredientType.jfd" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowseIngredientType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowsePanel.jfd" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowsePanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Windows/BrowseIngredientTypeFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Windows/BrowseMachineFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypeListPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Patches/v0_0_0__create_tables.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeListFrame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Database/DAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java" />
       </list>
     </option>
   </component>
@@ -346,12 +427,28 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Factory" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Factory" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Factory" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Factory" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
       </expand>
       <select />
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="227" />
+    <option name="y" value="-28" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -363,7 +460,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -382,18 +478,111 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Panes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Panes" type="462c0819:PsiDirectoryNode" />
+              <item name="browse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="Windows" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Factory" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Patches" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543861979003" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543954910273" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -501,7 +690,10 @@
       <workItem from="1543266393853" duration="1658000" />
       <workItem from="1543352801421" duration="4082000" />
       <workItem from="1543843952581" duration="13420000" />
-      <workItem from="1543860763909" duration="1019000" />
+      <workItem from="1543860763909" duration="2064000" />
+      <workItem from="1543866379582" duration="1988000" />
+      <workItem from="1543868616188" duration="923000" />
+      <workItem from="1543931966505" duration="20436000" />
     </task>
     <servers />
   </component>
@@ -514,12 +706,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138209000" />
+    <option name="totallyTimeSpent" value="162601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49915966" visible="true" weight="0.17004265" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49915966" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="1" sideWeight="0.50084037" side_tool="true" weight="0.12100213" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -529,15 +721,15 @@
       <window_info anchor="bottom" id="JFormDesigner Error Log" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.47830802" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" weight="0.4197397" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4989339" weight="0.47830802" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.4989339" visible="true" weight="0.39262474" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.12906724" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5010661" side_tool="true" weight="0.47830802" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3286334" />
       <window_info anchor="bottom" id="JFormDesigner Bindings" order="13" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -548,7 +740,7 @@
       <window_info anchor="right" id="Database" order="5" weight="0.0042643924" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="8" visible="true" weight="0.12526652" />
+      <window_info anchor="right" id="Maven Projects" order="8" weight="0.23560767" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" />
     </layout>
   </component>
@@ -563,210 +755,35 @@
       <path value="$PROJECT_DIR$/Factory" />
     </ignored-roots>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.java</url>
+          <line>88</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Database/DAO.java</url>
+          <line>990</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Database/DAO.java</url>
+          <line>987</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypeListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="236" propertiesWidth="466" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/javax/swing/SpinnerDateModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="200" column="11" selection-start-line="200" selection-start-column="11" selection-end-line="200" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/AllergensListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/UserListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="72" selection-start-line="72" selection-end-line="79" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="76" selection-start-line="76" selection-end-line="81" selection-end-column="82" />
-          <folding>
-            <marker date="1542313320076" expanded="false" signature="430:2227" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1542313320076" expanded="false" signature="2239:2595" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierListPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Panes/product/ProductType.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1543357243321" expanded="false" signature="341:1968" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="71" column="31" lean-forward="true" selection-start-line="71" selection-start-column="31" selection-end-line="71" selection-end-column="31" />
-          <folding>
-            <marker date="1543356447915" expanded="true" signature="477:2147" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543356447915" expanded="true" signature="2159:2516" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1543357243301" expanded="false" signature="333:1643" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <marker date="1543357243311" expanded="false" signature="330:5205" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="210" propertiesWidth="393" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/OrderListPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="168" propertiesWidth="423" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state paletteWidth="224" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductListPanel.jfd">
-      <provider selected="true" editor-type-id="JFormDesigner" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/event/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="138" column="5" lean-forward="true" selection-start-line="107" selection-start-column="3" selection-end-line="138" selection-end-column="5" />
-          <folding>
-            <marker date="1543182215663" expanded="true" signature="476:3001" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543182215663" expanded="true" signature="3013:3571" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/SupplierFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/SupplierListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="73" selection-start-line="73" selection-end-line="112" selection-end-column="5" />
-          <folding>
-            <marker date="1543181545596" expanded="true" signature="472:2135" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543181545596" expanded="true" signature="2147:2495" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Integer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="764" column="33" selection-start-line="764" selection-start-column="26" selection-end-line="764" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner">
         <state propertiesWidth="222" />
@@ -782,96 +799,13 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="e#873#874#0" expanded="true" />
-            <element signature="e#923#924#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="185" column="18" selection-start-line="185" selection-start-column="18" selection-end-line="185" selection-end-column="18" />
-          <folding>
-            <marker date="1543173350943" expanded="false" signature="505:4032" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543173350943" expanded="false" signature="4044:4730" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="231" column="32" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="101" column="28" selection-start-line="101" selection-start-column="24" selection-end-line="101" selection-end-column="28" />
-          <folding>
-            <element signature="e#4053#4054#0" expanded="true" />
-            <element signature="e#4121#4122#0" expanded="true" />
-            <marker date="1543853373817" expanded="true" signature="482:2696" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543853373817" expanded="true" signature="2708:3144" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="186" column="21" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="21" />
-          <folding>
-            <marker date="1543851712287" expanded="true" signature="483:4787" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543851712287" expanded="true" signature="4799:5647" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Factory.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="71" selection-start-line="71" selection-end-line="110" selection-end-column="5" />
-          <folding>
-            <element signature="e#3468#3469#0" expanded="true" />
-            <element signature="e#3501#3502#0" expanded="true" />
-            <marker date="1543850668365" expanded="true" signature="422:2092" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543850668365" expanded="true" signature="2104:2457" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Patches/V20181203191320__v0_0_0__modify_patch.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/PresenceFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -879,56 +813,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/orders/SupplierPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="396" column="71" selection-start-line="396" selection-start-column="71" selection-end-line="396" selection-end-column="71" />
-          <folding>
-            <element signature="method#Controller#0;class#Controller#0" />
-            <element signature="e#789#1246#0" />
-            <element signature="e#1806#2289#0" />
-            <element signature="e#1992#2198#0" />
-            <element signature="e#2355#3089#0" />
-            <element signature="e#2594#2986#0" />
-            <element signature="e#3159#3612#0" />
-            <element signature="e#3305#3517#0" />
-            <element signature="e#3686#4952#0" />
-            <element signature="e#3854#4584#0" />
-            <element signature="e#4071#4390#0" />
-            <element signature="e#4628#4783#0" />
-            <element signature="e#5020#5431#0" />
-            <element signature="e#5149#5346#0" />
-            <element signature="e#5504#6636#0" />
-            <element signature="e#5655#6310#0" />
-            <element signature="e#5845#6140#0" />
-            <element signature="e#6349#6486#0" />
-            <element signature="e#6782#7212#0" />
-            <element signature="e#6915#7121#0" />
-            <element signature="e#7279#8479#0" />
-            <element signature="e#7434#8128#0" />
-            <element signature="e#7634#7943#0" />
-            <element signature="e#8170#8318#0" />
-            <element signature="e#8560#9065#0" />
-            <element signature="e#8733#8960#0" />
-            <element signature="e#9150#10577#0" />
-            <element signature="e#9345#10163#0" />
-            <element signature="e#9599#9943#0" />
-            <element signature="e#10212#10388#0" />
-            <element signature="e#10649#11112#0" />
-            <element signature="e#10800#11015#0" />
-            <element signature="e#11188#12487#0" />
-            <element signature="e#11361#12109#0" />
-            <element signature="e#11585#11909#0" />
-            <element signature="e#12154#12314#0" />
-            <element signature="e#12556#13000#0" />
-            <element signature="e#12698#12907#0" />
-            <element signature="e#13073#14312#0" />
-            <element signature="e#13237#13952#0" />
-            <element signature="e#13448#13762#0" />
-            <element signature="e#13995#14147#0" />
-            <element signature="e#14378#14803#0" />
-            <element signature="e#14511#14714#0" />
-          </folding>
+        <state relative-caret-position="263">
+          <caret line="56" column="18" lean-forward="true" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -941,37 +829,354 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
+        <state relative-caret-position="453">
           <caret line="106" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <marker date="1543859759141" expanded="true" signature="452:2749" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
-            <marker date="1543859759141" expanded="true" signature="2761:3223" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresenceListPanel.jfd">
       <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Factory.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Database/DAO.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/beans/PropertyChangeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="58" column="82" selection-start-line="58" selection-start-column="82" selection-end-line="58" selection-end-column="82" />
+        <state relative-caret-position="303">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Patches/V20181203191320__v0_0_0__modify_patch.sql">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="102">
+          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/PresencePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding>
+            <marker date="1543933428450" expanded="true" signature="482:2672" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428450" expanded="true" signature="2684:3120" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/UserFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserPanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/admin/UserPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+          <folding>
+            <marker date="1543933428536" expanded="true" signature="463:4789" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428536" expanded="true" signature="4801:5757" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/allergens/AllergensPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <marker date="1543933428311" expanded="true" signature="420:1897" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428311" expanded="false" signature="1909:2224" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <folding>
+            <element signature="e#873#874#0" expanded="true" />
+            <element signature="e#923#924#0" expanded="true" />
+            <element signature="e#963#964#0" expanded="true" />
+            <element signature="e#1011#1012#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="341" column="11" selection-start-line="341" selection-start-column="11" selection-end-line="341" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="169" column="5" lean-forward="true" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+          <folding>
+            <marker date="1543934338026" expanded="false" signature="505:3924" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543934338026" expanded="false" signature="3936:4622" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientPanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="219" propertiesWidth="377" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="160" column="38" lean-forward="true" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
+          <folding>
+            <marker date="1543933428472" expanded="false" signature="483:4763" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428472" expanded="false" signature="4775:5623" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientTypeFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="111" selection-start-line="111" selection-end-line="115" selection-end-column="9" />
+          <folding>
+            <marker date="1543933428398" expanded="false" signature="538:2273" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428398" expanded="false" signature="2285:2664" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="111" propertiesWidth="234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <marker date="1543933428513" expanded="true" signature="477:2123" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428513" expanded="true" signature="2135:2492" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="144" lean-forward="true" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowsePanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/IngredientTypeListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="80" column="51" lean-forward="true" selection-start-line="80" selection-end-line="81" />
+          <folding>
+            <marker date="1543933428410" expanded="false" signature="503:2155" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428410" expanded="false" signature="2167:2527" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/IngredientTypeListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/browse/BrowsePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
+          <folding>
+            <element signature="e#2846#2847#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+            <marker date="1543940263716" expanded="true" signature="451:1911" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543940263716" expanded="true" signature="1923:2239" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/BrowseIngredientTypeFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Patches/v0_0_0__create_tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="198" column="70" selection-start-line="198" selection-start-column="70" selection-end-line="198" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductPanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="224" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/sql/Connection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/BrowseMachineFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="100" lean-forward="true" selection-start-line="33" selection-start-column="100" selection-end-line="33" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/WorkerListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/workers/WorkerListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="71" selection-start-line="71" selection-end-line="110" selection-end-column="5" />
+          <folding>
+            <marker date="1543933428388" expanded="false" signature="422:2068" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543933428388" expanded="false" signature="2080:2433" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="128" column="17" selection-start-line="128" selection-start-column="17" selection-end-line="128" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+            <element signature="e#1366#1367#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="380" column="99" selection-start-line="380" selection-start-column="99" selection-end-line="380" selection-end-column="99" />
+          <folding>
+            <marker date="1543954040021" expanded="false" signature="756:7185" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543954040021" expanded="true" signature="7197:8492" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/product/ProductTypeListPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+          <folding>
+            <element signature="e#3041#3042#0" expanded="true" />
+            <element signature="e#3070#3071#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3150#3151#0" expanded="true" />
+            <element signature="e#3224#3225#0" expanded="true" />
+            <element signature="e#3259#3260#0" expanded="true" />
+            <marker date="1543954005017" expanded="true" signature="432:2096" ph="// JFormDesigner - Component initialization - DO NOT MODIFY" />
+            <marker date="1543954005017" expanded="true" signature="2108:2456" ph="// JFormDesigner - Variables declaration - DO NOT MODIFY" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Windows/ProductTypeListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#1265#1266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="480" column="28" lean-forward="true" selection-start-line="480" selection-start-column="20" selection-end-line="480" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Database/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="911" selection-start-line="911" selection-end-line="911" />
+          <folding>
+            <element signature="e#41786#42345#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Menu/MenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="234" column="22" lean-forward="true" selection-start-line="234" selection-start-column="22" selection-end-line="234" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GUI/Panes/storage/MadeProductsListPanel.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner" />
     </entry>
   </component>
   <component name="masterDetails">
@@ -1030,6 +1235,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

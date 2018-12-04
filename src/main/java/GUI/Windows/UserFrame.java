@@ -12,7 +12,7 @@ public class UserFrame extends JInternalFrame {
     public UserFrame(String title, boolean resizable, boolean closable,
                           boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 475, 370);
+        this.setBounds(10, 10, 475, 325);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         userPanel = new UserPanel();
         this.setVisible(true);

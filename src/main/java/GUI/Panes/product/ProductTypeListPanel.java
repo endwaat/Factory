@@ -5,7 +5,12 @@
 package GUI.Panes.product;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
 import net.miginfocom.swing.*;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Dominik
@@ -20,8 +25,8 @@ public class ProductTypeListPanel extends JPanel {
         // Generated using JFormDesigner Evaluation license - Dominik
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
-        button1 = new JButton();
-        button2 = new JButton();
+        deleteButton = new JButton();
+        editButton = new JButton();
 
         //======== this ========
 
@@ -47,13 +52,13 @@ public class ProductTypeListPanel extends JPanel {
         }
         add(scrollPane1, "cell 0 0 2 1");
 
-        //---- button1 ----
-        button1.setText("T\u00f6rl\u00e9s");
-        add(button1, "cell 0 1");
+        //---- deleteButton ----
+        deleteButton.setText("T\u00f6rl\u00e9s");
+        add(deleteButton, "cell 0 1");
 
-        //---- button2 ----
-        button2.setText("Ment\u00e9s");
-        add(button2, "cell 1 1");
+        //---- editButton ----
+        editButton.setText("Szerkeszt\u00e9s");
+        add(editButton, "cell 1 1");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
@@ -61,7 +66,47 @@ public class ProductTypeListPanel extends JPanel {
     // Generated using JFormDesigner Evaluation license - Dominik
     private JScrollPane scrollPane1;
     private JTable table1;
-    private JButton button1;
-    private JButton button2;
+    private JButton deleteButton;
+    private JButton editButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+    public void setTableValues(List<Map> list){
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "erméktípus"}, 0);
+        for(int i = 0; i < list.size(); i++){
+            model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name")});
+        }
+        table1.setModel(model);
+        table1.removeColumn(table1.getColumnModel().getColumn(0));
+    }
+
+    public JScrollPane getScrollPane1() {
+        return scrollPane1;
+    }
+
+    public void setScrollPane1(JScrollPane scrollPane1) {
+        this.scrollPane1 = scrollPane1;
+    }
+
+    public JTable getTable1() {
+        return table1;
+    }
+
+    public void setTable1(JTable table1) {
+        this.table1 = table1;
+    }
+
+    public JButton getDeleteButton() {
+        return deleteButton;
+    }
+
+    public void setDeleteButton(JButton deleteButton) {
+        this.deleteButton = deleteButton;
+    }
+
+    public JButton getEditButton() {
+        return editButton;
+    }
+
+    public void setEditButton(JButton editButton) {
+        this.editButton = editButton;
+    }
 }

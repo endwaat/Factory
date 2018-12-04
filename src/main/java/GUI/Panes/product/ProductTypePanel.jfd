@@ -18,7 +18,7 @@ new FormModel {
 					"value": "cell 0 0"
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField1"
+					name: "nameField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 0"
 				} )
@@ -29,7 +29,7 @@ new FormModel {
 					"value": "cell 0 1"
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
-					name: "comboBox1"
+					name: "allergenCombo"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 1"
 				} )
@@ -40,7 +40,7 @@ new FormModel {
 					"value": "cell 0 2"
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField6"
+					name: "weightField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 2"
 				} )
@@ -51,7 +51,7 @@ new FormModel {
 					"value": "cell 0 3"
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField5"
+					name: "productionTimeField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 3"
 				} )
@@ -62,7 +62,7 @@ new FormModel {
 					"value": "cell 0 4"
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField4"
+					name: "valueField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 4"
 				} )
@@ -73,7 +73,7 @@ new FormModel {
 					"value": "cell 0 5"
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
-					name: "textField3"
+					name: "costField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 5"
 				} )
@@ -111,7 +111,7 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label8"
-					"text": "Mennyiség (kg)"
+					"text": "Mennyiség (%)"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 0 1"
 				} )
@@ -127,7 +127,7 @@ new FormModel {
 					"value": "cell 1 2"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "deleteINgredientButton"
+					name: "deleteIngredientButton"
 					"text": "-"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 2 2"
@@ -190,7 +190,7 @@ new FormModel {
 				"title": "Gépek"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 215, 80 )
+			"location": new java.awt.Point( 0, 0 )
 			"size": new java.awt.Dimension( 400, 300 )
 		} )
 	}

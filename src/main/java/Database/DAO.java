@@ -57,7 +57,25 @@ public class DAO {
             "WHERE date BETWEEN ? AND ? " +
             "ORDER BY worklog.id";
     private static String SQL_DELETE_WORKLOG = "DELETE FROM worklog WHERE id = ?";
-
+    private static String SQL_SELECT_WORKLOG_BY_WORKERID = "SELECT date,hour FROM worklog WHERE worker_id = ?";
+    private static String SQL_SELECT_TRANSLATE = "SELECT value FROM dict WHERE name = ?";
+    private static String SQL_SAVE_PRODUCTTYPE = "INSERT INTO product_type (name,allergens_id,weight,production_time,value,cost) VALUES (?,?,?,?,?,?) RETURNING id";
+    private static String SQL_INSERT_RECEIPT = "INSERT INTO receipt (product_type_id,ingredient_type_id,value) VALUES (?,?,?)";
+    private static String SQL_INSERT_MACHINE_PRODUCT = "INSERT INTO machine_product (machine_id,product_type_id) VALUES (?,?)";
+    private static String SQL_UPDATE_PRODUCTTYPE = "UPDATE product_type SET name = ?, allergens_id = ?, weight = ?, production_time = ?, value = ?, cost = ? WHERE id = ?";
+    private static String SQL_CLEAR_RECEIPT = "DELETE FROM receipt WHERE product_type_id = ?";
+    private static String SQL_CLEAR_MACHINE_PRODUCT = "DELETE FROM machine_product WHERE product_type_id = ?";
+    private static String SQL_SELECT_INGREDIENT_BY_PRODUCT = "SELECT ingredient_type_id, name, value " +
+            "FROM receipt " +
+            "LEFT JOIN ingredient_type ON receipt.ingredient_type_id = ingredient_type.id " +
+            "WHERE receipt.product_type_id = ? ";
+    private static String SQL_SELECT_MACHINE_BY_PRODUCT = "SELECT machine_id, machine.name " +
+            "FROM machine_product " +
+            "LEFT JOIN machine ON machine_product.machine_id = machine.id " +
+            "WHERE machine_product.product_type_id = ? ";
+    private static String SQL_DELETE_PRODUCTTYPE = "UPDATE product_type SET deleted = 't' WHERE id = ?";
+    private static String SQL_SELECT_PRODUCTTYPE = "SELECT id,name,allergens_id,weight,production_time,value,cost FROM product_type WHERE id = ? AND deleted = 'f'";
+    private static String SQL_SELECT_PRODUCTTYPE_LIST = "SELECT id,name FROM product_type WHERE deleted = 'f' ORDER BY name";
     private int userId;
 
     public DAO() {
@@ -496,7 +514,7 @@ public class DAO {
                 preparedStatement.setInt(2, (Integer) values.get("type"));
                 preparedStatement.setDate(3, new java.sql.Date(((java.util.Date) values.get("arrived")).getTime()));
                 preparedStatement.setDate(4, new java.sql.Date(((java.util.Date) values.get("expire")).getTime()));
-                preparedStatement.setInt(5, (Integer) values.get("weight"));
+                preparedStatement.setDouble(5, Double.parseDouble((String) values.get("weight")));
                 preparedStatement.setString(6, (String) values.get("source"));
                 preparedStatement.setInt(7, (Integer) values.get("value"));
                 preparedStatement.execute();
@@ -507,7 +525,7 @@ public class DAO {
                 preparedStatement.setInt(2, (Integer) values.get("type"));
                 preparedStatement.setDate(3, new java.sql.Date(((java.util.Date) values.get("arrived")).getTime()));
                 preparedStatement.setDate(4, new java.sql.Date(((java.util.Date) values.get("expire")).getTime()));
-                preparedStatement.setInt(5, (Integer) values.get("weight"));
+                preparedStatement.setDouble(5, Double.parseDouble((String) values.get("weight")));
                 preparedStatement.setString(6, (String) values.get("source"));
                 preparedStatement.setInt(7, (Integer) values.get("value"));
                 preparedStatement.setInt(8, (Integer) values.get("id"));
@@ -534,7 +552,7 @@ public class DAO {
                 values.put("type", resultSet.getInt(3));
                 values.put("arrived", resultSet.getDate(4));
                 values.put("expire", resultSet.getDate(5));
-                values.put("weight", resultSet.getString(6));
+                values.put("weight", resultSet.getDouble(6));
                 list.add(values);
             }
         } catch (SQLException e) {
@@ -557,7 +575,7 @@ public class DAO {
                 values.put("ingredient_type_id", resultSet.getInt(3));
                 values.put("arrived", resultSet.getDate(4));
                 values.put("expire", resultSet.getDate(5));
-                values.put("weight", resultSet.getInt(6));
+                values.put("weight", resultSet.getDouble(6));
                 values.put("source", resultSet.getString(7));
                 values.put("value", resultSet.getInt(8));
             }
@@ -711,12 +729,12 @@ public class DAO {
                 values.put("id", resultSet.getInt(1));
                 values.put("name", resultSet.getString(2));
                 values.put("barcode", resultSet.getString(3));
-                values.put("email", resultSet.getString(3));
-                values.put("salary", resultSet.getInt(3));
-                values.put("zip", resultSet.getInt(3));
-                values.put("town", resultSet.getString(3));
-                values.put("address", resultSet.getString(3));
-                values.put("phone", resultSet.getInt(3));
+                values.put("email", resultSet.getString(4));
+                values.put("salary", resultSet.getInt(5));
+                values.put("zip", resultSet.getInt(6));
+                values.put("town", resultSet.getString(7));
+                values.put("address", resultSet.getString(8));
+                values.put("phone", resultSet.getInt(9));
                 list.add(values);
             }
         } catch (SQLException e) {
@@ -824,5 +842,216 @@ public class DAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Map> getWorkersLog(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_WORKLOG_BY_WORKERID);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("date", resultSet.getDate(1));
+                values.put("hour", resultSet.getInt(2));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Serializable saveProductType(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_SAVE_PRODUCTTYPE);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("allergensType"));
+                preparedStatement.setInt(3, Integer.parseInt((String) values.get("weight")));
+                preparedStatement.setInt(4, Integer.parseInt((String) values.get("productionTime")));
+                preparedStatement.setInt(5, Integer.parseInt((String) values.get("value")));
+                preparedStatement.setInt(6, Integer.parseInt((String) values.get("cost")));
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    int id = resultSet.getInt(1);
+                    preparedStatement = connection.prepareStatement(SQL_INSERT_RECEIPT);
+                    List ingredients = (List) values.get("ingredients");
+                    for (int i = 0; i < ingredients.size(); i++) {
+                        preparedStatement.setInt(1, id);
+                        preparedStatement.setInt(2, (Integer) ((Map) ingredients.get(i)).get("id"));
+                        preparedStatement.setDouble(3, (double) ((Map) ingredients.get(i)).get("value"));
+                        preparedStatement.addBatch();
+                        preparedStatement.clearParameters();
+                    }
+                    preparedStatement.executeBatch();
+                    preparedStatement = connection.prepareStatement(SQL_INSERT_MACHINE_PRODUCT);
+                    List machines = (List) values.get("machines");
+                    for (int i = 0; i < machines.size(); i++) {
+                        preparedStatement.setInt(1, (Integer) ((Map) ingredients.get(i)).get("id"));
+                        preparedStatement.setInt(2, id);
+                        preparedStatement.addBatch();
+                        preparedStatement.clearParameters();
+                    }
+                    preparedStatement.executeBatch();
+                    return "SUCCES";
+                }
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_PRODUCTTYPE);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setInt(2, (Integer) values.get("allergensType"));
+                preparedStatement.setInt(3, Integer.parseInt((String) values.get("weight")));
+                preparedStatement.setInt(4, Integer.parseInt((String) values.get("productionTime")));
+                preparedStatement.setInt(5, Integer.parseInt((String) values.get("value")));
+                preparedStatement.setInt(6, Integer.parseInt((String) values.get("cost")));
+                preparedStatement.setInt(7, (Integer) values.get("id"));
+                preparedStatement.execute();
+                preparedStatement = connection.prepareStatement(SQL_CLEAR_RECEIPT);
+                preparedStatement.setInt(1, (Integer) values.get("id"));
+                preparedStatement.execute();
+                preparedStatement = connection.prepareStatement(SQL_CLEAR_MACHINE_PRODUCT);
+                preparedStatement.setInt(1, (Integer) values.get("id"));
+                preparedStatement.execute();
+                preparedStatement = connection.prepareStatement(SQL_INSERT_RECEIPT);
+                List ingredients = (List) values.get("ingredients");
+                for (int i = 0; i < ingredients.size(); i++) {
+                    preparedStatement.setInt(1, (Integer) values.get("id"));
+                    preparedStatement.setInt(2, (Integer) ((Map) ingredients.get(i)).get("id"));
+                    preparedStatement.setDouble(3, (double) ((Map) ingredients.get(i)).get("value"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+                preparedStatement = connection.prepareStatement(SQL_INSERT_MACHINE_PRODUCT);
+                List machines = (List) values.get("machines");
+                for (int i = 0; i < machines.size(); i++) {
+                    preparedStatement.setInt(1, (Integer) ((Map) ingredients.get(i)).get("id"));
+                    preparedStatement.setInt(2, (Integer) values.get("id"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+                return "SUCCES";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "SAVE_ERROR";
+    }
+
+    public List<Map> getIngredientlistByproductId(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT_BY_PRODUCT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("value", resultSet.getDouble(3));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<Map> getMachinesByproductId(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_MACHINE_BY_PRODUCT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public void deleteProductType(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_DELETE_PRODUCTTYPE);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Map getProductType(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCTTYPE);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                //id,name,allergens_id,weight,production_time,value,cost
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("allergensType", resultSet.getInt(3));
+                values.put("weight", resultSet.getInt(4));
+                values.put("productionTime", resultSet.getInt(5));
+                values.put("value", resultSet.getInt(6));
+                values.put("cost", resultSet.getInt(7));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public List<Map> getProductTypeList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCTTYPE_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public String translate(String value) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_TRANSLATE);
+            preparedStatement.setString(1, value);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return value;
     }
 }
