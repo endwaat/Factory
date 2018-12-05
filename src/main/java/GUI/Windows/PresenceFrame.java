@@ -12,7 +12,7 @@ public class PresenceFrame extends JInternalFrame {
     public PresenceFrame(String title, boolean resizable, boolean closable,
                          boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-            this.setBounds(10, 10, 345, 160);
+            this.setBounds(10, 10, 345, 185);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         presencePanel = new PresencePanel();
         this.setVisible(true);

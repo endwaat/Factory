@@ -20,7 +20,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="MigLayout" level="project" />
-    <orderEntry type="library" name="Maven: org.flywaydb:flyway-core:3.0" level="project" />
+    <orderEntry type="library" exported="" name="MigLayout" level="project" />
+    <orderEntry type="library" exported="" name="Maven: org.flywaydb:flyway-core:3.0" level="project" />
+    <orderEntry type="library" exported="" name="com.seaglasslookandfeel:seaglasslookandfeel:0.2.1" level="project" />
   </component>
 </module>

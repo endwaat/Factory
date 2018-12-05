@@ -12,7 +12,7 @@ public class OrderFrame extends JInternalFrame {
     public OrderFrame(String title, boolean resizable, boolean closable,
                       boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-            this.setBounds(10, 10, 400, 265);
+            this.setBounds(10, 10, 400, 290);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         productTypePanel = new OrderPanel();
         this.setVisible(true);

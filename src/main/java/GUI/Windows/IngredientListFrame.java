@@ -14,7 +14,7 @@ public class IngredientListFrame extends JInternalFrame {
     public IngredientListFrame(String title, boolean resizable, boolean closable,
                                boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 500, 275);
+        this.setBounds(10, 10, 500, 300);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         ingredientListPanel = new IngredientListPanel();
         this.setVisible(true);

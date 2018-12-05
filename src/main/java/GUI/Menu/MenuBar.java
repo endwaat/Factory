@@ -2,6 +2,7 @@ package GUI.Menu;
 
 import javax.swing.*;
 import java.awt.event.ActionListener;
+import java.util.Map;
 
 public class MenuBar extends JMenuBar {
 
@@ -249,5 +250,16 @@ public class MenuBar extends JMenuBar {
                 ((JMenuItem) ((JMenu) orderMenu.getMenuComponent(0)).getMenuComponent(1)).addActionListener(actionListener);
                 break;
         }
+    }
+
+
+    public void setAcces(Map access) {
+        storageMenu.setVisible((Boolean) access.get("storage"));
+        productMenu.setVisible((Boolean) access.get("products"));
+        workerMenu.setVisible((Boolean) access.get("workers"));
+        allergenMenu.setVisible((Boolean) access.get("allergen"));
+        machineMenu.setVisible((Boolean) access.get("machines"));
+        orderMenu.setVisible((Boolean) access.get("orders"));
+        adminMenu.setVisible((Boolean) access.get("admin"));
     }
 }

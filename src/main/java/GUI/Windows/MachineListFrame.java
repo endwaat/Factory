@@ -14,7 +14,7 @@ public class MachineListFrame extends JInternalFrame {
     public MachineListFrame(String title, boolean resizable, boolean closable,
                             boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 300, 300);
+        this.setBounds(10, 10, 300, 325);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         machineListPanel = new MachineListPanel();
         this.setVisible(true);

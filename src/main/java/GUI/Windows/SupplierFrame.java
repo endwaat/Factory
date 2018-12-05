@@ -13,7 +13,7 @@ public class SupplierFrame extends JInternalFrame {
     public SupplierFrame(String title, boolean resizable, boolean closable,
                          boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 300, 230);
+        this.setBounds(10, 10, 300, 255);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         supplierPanel = new SupplierPanel();
         this.setVisible(true);

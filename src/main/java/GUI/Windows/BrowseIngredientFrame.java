@@ -16,7 +16,7 @@ public class BrowseIngredientFrame extends JInternalFrame {
     public BrowseIngredientFrame(String title, boolean resizable, boolean closable,
                                  boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-            this.setBounds(10, 10, 500, 320);
+            this.setBounds(10, 10, 500, 345);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         browsePanel = new BrowsePanel();
         this.setVisible(true);

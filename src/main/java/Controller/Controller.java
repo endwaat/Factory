@@ -5,6 +5,7 @@ import GUI.Menu.MenuBar;
 import GUI.Panes.admin.UserPanel;
 import GUI.Panes.machines.MachineListPanel;
 import GUI.Windows.*;
+import org.flywaydb.core.Flyway;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,16 +28,24 @@ public class Controller {
         frame.setLayout(new BorderLayout());
         desktopPane = new JDesktopPane();
 
+        Flyway flyway = new Flyway();
+        flyway.setDataSource("jdbc:postgresql://localhost:5432/Factory", "postgres", "postinor");
+        flyway.setInitOnMigrate(true);
+        flyway.migrate();
+
         LoginFrame loginInternalFrame = new LoginFrame("Bejelentkezés", true, true, true, true);
         loginInternalFrame.addLoginButtonActionListener(e -> {
             if (dao.login(loginInternalFrame.getUsernameInput().getText(), String.valueOf((loginInternalFrame.getPasswordInput()).getPassword()))) {
-                //TODO show menu
                 MenuBar menuBar = new MenuBar();
                 frame.setJMenuBar(menuBar);
                 loginInternalFrame.dispose();
                 addMenuListeners(menuBar);
+                menuBar.setAcces(dao.getAcces());
             } else {
-                //TODO popup invalid data
+                JOptionPane.showMessageDialog(frame,
+                        dao.translate("INVALID_LOGIN"),
+                        "ERROR",
+                        JOptionPane.PLAIN_MESSAGE);
             }
         });
         desktopPane.add(loginInternalFrame);
@@ -55,10 +64,15 @@ public class Controller {
             ProfileFrame profileFrame = new ProfileFrame("Profil", true, true, true, true);
             profileFrame.setValues(dao.getProfile());
             profileFrame.setSave(e1 -> {
-                if (dao.saveProfile(profileFrame.getValues())) {
-                    profileFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveProfile(profileFrame.getValues())) {
+                        profileFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(profileFrame);
@@ -86,10 +100,15 @@ public class Controller {
         menuBar.addListener("newAllergens", event -> {
             AllergensFrame allergensFrame = new AllergensFrame("Allergén", true, true, true, true);
             allergensFrame.setSave(e1 -> {
-                if (dao.saveAllergens(allergensFrame.getValues())) {
-                    allergensFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveAllergens(allergensFrame.getValues())) {
+                        allergensFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(allergensFrame);
@@ -103,20 +122,27 @@ public class Controller {
                 AllergensFrame allergensFrame = new AllergensFrame("Allergén", true, true, true, true);
                 allergensFrame.setId(allergensListFrame.getId());
                 allergensFrame.setSave(e2 -> {
-                    if (dao.saveAllergens(allergensFrame.getValues())) {
-                        allergensFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveAllergens(allergensFrame.getValues())) {
+                            allergensFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        allergensListFrame.setValues(dao.getAllergensList()); //reload
                     }
-                    allergensListFrame.setValues(dao.getAllergensList()); //reload
                 });
                 allergensFrame.setValues(dao.getAllergen(allergensListFrame.getId()));
                 desktopPane.add(allergensFrame);
                 allergensFrame.toFront();
             });
             allergensListFrame.setDelete(el -> {
-                dao.deleteAllergen(allergensListFrame.getId());
-                allergensListFrame.setValues(dao.getAllergensList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deleteAllergen(allergensListFrame.getId());
+                    allergensListFrame.setValues(dao.getAllergensList());
+                }
             });
             allergensListFrame.setValues(dao.getAllergensList());
             desktopPane.add(allergensListFrame);
@@ -127,10 +153,15 @@ public class Controller {
         menuBar.addListener("newUser", event -> {
             UserFrame userFrame = new UserFrame("Felhasználó", true, true, true, true);
             userFrame.setSave(e1 -> {
-                if (dao.saveUser(userFrame.getValues())) {
-                    userFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveUser(userFrame.getValues())) {
+                        userFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(userFrame);
@@ -144,20 +175,27 @@ public class Controller {
                 UserFrame userFrame = new UserFrame("Felhasználó", true, true, true, true);
                 userFrame.setId(userListFrame.getId());
                 userFrame.setSave(e2 -> {
-                    if (dao.saveUser(userFrame.getValues())) {
-                        userFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveUser(userFrame.getValues())) {
+                            userFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        userListFrame.setValues(dao.getUsersList()); //reload
                     }
-                    userListFrame.setValues(dao.getUsersList()); //reload
                 });
                 userFrame.setValues(dao.getUser(userListFrame.getId()));
                 desktopPane.add(userFrame);
                 userFrame.toFront();
             });
             userListFrame.setDelete(el -> {
-                dao.deleteUser(userListFrame.getId());
-                userListFrame.setValues(dao.getUsersList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deleteUser(userListFrame.getId());
+                    userListFrame.setValues(dao.getUsersList());
+                }
             });
             userListFrame.setValues(dao.getUsersList());
             desktopPane.add(userListFrame);
@@ -171,10 +209,15 @@ public class Controller {
         menuBar.addListener("newMachine", event -> {
             MachineFrame machineFrame = new MachineFrame("Gép", true, true, true, true);
             machineFrame.setSave(e1 -> {
-                if (dao.saveMachine(machineFrame.getValues())) {
-                    machineFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveMachine(machineFrame.getValues())) {
+                        machineFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(machineFrame);
@@ -188,20 +231,27 @@ public class Controller {
                 MachineFrame machineFrame = new MachineFrame("Gép", true, true, true, true);
                 machineFrame.setId(machineListFrame.getId());
                 machineFrame.setSave(e2 -> {
-                    if (dao.saveMachine(machineFrame.getValues())) {
-                        machineFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveMachine(machineFrame.getValues())) {
+                            machineFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        machineListFrame.setValues(dao.getMachineList()); //reload
                     }
-                    machineListFrame.setValues(dao.getMachineList()); //reload
                 });
                 machineFrame.setValues(dao.getMachine(machineListFrame.getId()));
                 desktopPane.add(machineFrame);
                 machineFrame.toFront();
             });
             machineListFrame.setDelete(el -> {
-                dao.deleteMachine(machineListFrame.getId());
-                machineListFrame.setValues(dao.getMachineList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deleteMachine(machineListFrame.getId());
+                    machineListFrame.setValues(dao.getMachineList());
+                }
             });
             machineListFrame.setValues(dao.getMachineList());
             desktopPane.add(machineListFrame);
@@ -212,10 +262,15 @@ public class Controller {
         menuBar.addListener("newIngredientType", event -> {
             IngredientTypeFrame ingredientTypeFrame = new IngredientTypeFrame("Alapanyag típus", true, true, true, true);
             ingredientTypeFrame.setSave(e1 -> {
-                if (dao.saveIngredientType(ingredientTypeFrame.getValues())) {
-                    ingredientTypeFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveIngredientType(ingredientTypeFrame.getValues())) {
+                        ingredientTypeFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(ingredientTypeFrame);
@@ -229,20 +284,27 @@ public class Controller {
                 IngredientTypeFrame ingredientTypeFrame = new IngredientTypeFrame("Alapanyag típus", true, true, true, true);
                 ingredientTypeFrame.setId(ingredientTypeListFrame.getId());
                 ingredientTypeFrame.setSave(e2 -> {
-                    if (dao.saveIngredientType(ingredientTypeFrame.getValues())) {
-                        ingredientTypeFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveIngredientType(ingredientTypeFrame.getValues())) {
+                            ingredientTypeFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        ingredientTypeListFrame.setValues(dao.getIngredientTypeList()); //reload
                     }
-                    ingredientTypeListFrame.setValues(dao.getIngredientTypeList()); //reload
                 });
                 ingredientTypeFrame.setValues(dao.getIngredientType(ingredientTypeListFrame.getId()));
                 desktopPane.add(ingredientTypeFrame);
                 ingredientTypeFrame.toFront();
             });
             ingredientTypeListFrame.setDelete(el -> {
-                dao.deteleIngredientType(ingredientTypeListFrame.getId());
-                ingredientTypeListFrame.setValues(dao.getIngredientTypeList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deteleIngredientType(ingredientTypeListFrame.getId());
+                    ingredientTypeListFrame.setValues(dao.getIngredientTypeList());
+                }
             });
             ingredientTypeListFrame.setValues(dao.getIngredientTypeList());
             desktopPane.add(ingredientTypeListFrame);
@@ -253,10 +315,15 @@ public class Controller {
         menuBar.addListener("newIngredient", event -> {
             IngredientFrame ingredientFrame = new IngredientFrame("Alapanyag", true, true, true, true);
             ingredientFrame.setSave(e1 -> {
-                if (dao.saveIngredient(ingredientFrame.getValues())) {
-                    ingredientFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveIngredient(ingredientFrame.getValues())) {
+                        ingredientFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(ingredientFrame);
@@ -270,20 +337,27 @@ public class Controller {
                 IngredientFrame ingredientFrame = new IngredientFrame("Alapanyag", true, true, true, true);
                 ingredientFrame.setId(ingredientListFrame.getId());
                 ingredientFrame.setSave(e2 -> {
-                    if (dao.saveIngredient(ingredientFrame.getValues())) {
-                        ingredientFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveIngredient(ingredientFrame.getValues())) {
+                            ingredientFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        ingredientListFrame.setValues(dao.getIngredientList()); //reload
                     }
-                    ingredientListFrame.setValues(dao.getIngredientList()); //reload
                 });
                 ingredientFrame.setValues(dao.getIngredient(ingredientListFrame.getId()));
                 desktopPane.add(ingredientFrame);
                 ingredientFrame.toFront();
             });
             ingredientListFrame.setDelete(el -> {
-                dao.deteleIngredient(ingredientListFrame.getId());
-                ingredientListFrame.setValues(dao.getIngredientList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deteleIngredient(ingredientListFrame.getId());
+                    ingredientListFrame.setValues(dao.getIngredientList());
+                }
             });
             ingredientListFrame.setValues(dao.getIngredientList());
             desktopPane.add(ingredientListFrame);
@@ -294,10 +368,15 @@ public class Controller {
         menuBar.addListener("newSupplier", event -> {
             SupplierFrame supplierFrame = new SupplierFrame("Szállító", true, true, true, true);
             supplierFrame.setSave(e1 -> {
-                if (dao.saveSupplier(supplierFrame.getValues())) {
-                    supplierFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveSupplier(supplierFrame.getValues())) {
+                        supplierFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(supplierFrame);
@@ -311,20 +390,27 @@ public class Controller {
                 SupplierFrame supplierFrame = new SupplierFrame("Szállító", true, true, true, true);
                 supplierFrame.setId(supplierListFrame.getId());
                 supplierFrame.setSave(e2 -> {
-                    if (dao.saveSupplier(supplierFrame.getValues())) {
-                        supplierFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveSupplier(supplierFrame.getValues())) {
+                            supplierFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        supplierListFrame.setValues(dao.getSupplierList()); //reload
                     }
-                    supplierListFrame.setValues(dao.getSupplierList()); //reload
                 });
                 supplierFrame.setValues(dao.getSupplier(supplierListFrame.getId()));
                 desktopPane.add(supplierFrame);
                 supplierFrame.toFront();
             });
             supplierListFrame.setDelete(el -> {
-                dao.deteleSupplier(supplierListFrame.getId());
-                supplierListFrame.setValues(dao.getSupplierList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deteleSupplier(supplierListFrame.getId());
+                    supplierListFrame.setValues(dao.getSupplierList());
+                }
             });
             supplierListFrame.setValues(dao.getSupplierList());
             desktopPane.add(supplierListFrame);
@@ -335,10 +421,15 @@ public class Controller {
         menuBar.addListener("newWorker", event -> {
             WorkerFrame workerFrame = new WorkerFrame("Dolgozó", true, true, true, true);
             workerFrame.setSave(e1 -> {
-                if (dao.saveWorker(workerFrame.getValues())) {
-                    workerFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (dao.saveWorker(workerFrame.getValues())) {
+                        workerFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(workerFrame);
@@ -352,12 +443,17 @@ public class Controller {
                 WorkerFrame workerFrame = new WorkerFrame("Dolgozó", true, true, true, true);
                 workerFrame.setId(workerListFrame.getId());
                 workerFrame.setSave(e2 -> {
-                    if (dao.saveWorker(workerFrame.getValues())) {
-                        workerFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if (dao.saveWorker(workerFrame.getValues())) {
+                            workerFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
+                        workerListFrame.setValues(dao.getWorkerList()); //reload
                     }
-                    workerListFrame.setValues(dao.getWorkerList()); //reload
                 });
                 workerFrame.setValues(dao.getWorker(workerListFrame.getId()));
                 workerFrame.setAttendance(dao.getWorkersLog(workerListFrame.getId()));
@@ -365,8 +461,10 @@ public class Controller {
                 workerFrame.toFront();
             });
             workerListFrame.setDelete(el -> {
-                dao.deleteWorker(workerListFrame.getId());
-                workerListFrame.setValues(dao.getWorkerList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deleteWorker(workerListFrame.getId());
+                    workerListFrame.setValues(dao.getWorkerList());
+                }
             });
             workerListFrame.setValues(dao.getWorkerList());
             desktopPane.add(workerListFrame);
@@ -377,10 +475,15 @@ public class Controller {
         menuBar.addListener("newAttendance", event -> {
             PresenceFrame presenceFrame = new PresenceFrame("Jelenlét", true, true, true, true);
             presenceFrame.setSave(e1 -> {
-                if ("SUCCES".equals(dao.savePresence(presenceFrame.getValues()).toString())) {
-                    presenceFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if ("SUCCES".equals(dao.savePresence(presenceFrame.getValues()).toString())) {
+                        presenceFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             desktopPane.add(presenceFrame);
@@ -391,8 +494,10 @@ public class Controller {
         menuBar.addListener("listAttendance", event -> {
             PresenceListFrame presenceListFrame = new PresenceListFrame("Jelenléti lista", true, true, true, true);
             presenceListFrame.setDelete(el -> {
-                dao.deletePresence(presenceListFrame.getId());
-                presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deletePresence(presenceListFrame.getId());
+                    presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
+                }
             });
             presenceListFrame.setShow(el -> {
                 presenceListFrame.setValues(dao.getPresenceList(presenceListFrame.getDateInterval()));
@@ -406,10 +511,15 @@ public class Controller {
         menuBar.addListener("newProductType", event -> {
             ProductTypeFrame productTypeFrame = new ProductTypeFrame("Terméktípus", true, true, true, true);
             productTypeFrame.setSave(e1 -> {
-                if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
-                    productTypeFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
+                        productTypeFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             productTypeFrame.setBrowseIngredientButton(e1 -> {
@@ -446,10 +556,15 @@ public class Controller {
                 productTypeFrame.setId(productTypeListFrame.getId());
                 productTypeFrame.setValues(dao.getProductType(productTypeListFrame.getId()));
                 productTypeFrame.setSave(e2 -> {
-                    if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
-                        productTypeFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
+                            productTypeFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
                     }
                 });
                 productTypeFrame.setBrowseIngredientButton(e2 -> {
@@ -478,8 +593,10 @@ public class Controller {
                 productTypeFrame.toFront();
             });
             productTypeListFrame.setDelete(el -> {
-                dao.deleteProductType(productTypeListFrame.getId());
-                productTypeListFrame.setValues(dao.getProductTypeList());
+                if(JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("DELETE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    dao.deleteProductType(productTypeListFrame.getId());
+                    productTypeListFrame.setValues(dao.getProductTypeList());
+                }
             });
             productTypeListFrame.setValues(dao.getProductTypeList());
             desktopPane.add(productTypeListFrame);
@@ -490,14 +607,22 @@ public class Controller {
         menuBar.addListener("newProduct", event -> {
             ProductFrame productFrame = new ProductFrame("Terméktípus", true, true, true, true);
             productFrame.setSave(e1 -> {
-                if(productFrame.beforeSave()) {
-                    if ("SUCCES".equals(dao.saveProduct(productFrame.getValues()).toString())) {
-                        productFrame.dispose();
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if (productFrame.beforeSave()) {
+                        if ("SUCCES".equals(dao.saveProduct(productFrame.getValues()).toString())) {
+                            productFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
                     } else {
-                        //TODO ERROR
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("NOT_SAVEABLE_PRODUCT"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
                     }
-                }else{
-                    //TODO NOT SAVEABLE maxweight
                 }
             });
             productFrame.setBrowseIngredientButton(e1 -> {
@@ -533,10 +658,15 @@ public class Controller {
         menuBar.addListener("newOrder", event -> {
             OrderFrame orderFrame = new OrderFrame("Rendelés", true, true, true, true);
             orderFrame.setSave(e1 -> {
-                if ("SUCCES".equals(dao.saveOrder(orderFrame.getValues()).toString())) {
-                    orderFrame.dispose();
-                } else {
-                    //TODO ERROR
+                if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                    if ("SUCCES".equals(dao.saveOrder(orderFrame.getValues()).toString())) {
+                        orderFrame.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(frame,
+                                dao.translate("SAVE_ERROR"),
+                                "ERROR",
+                                JOptionPane.PLAIN_MESSAGE);
+                    }
                 }
             });
             orderFrame.setBrowseProductTypeButton(e1 -> {
@@ -572,10 +702,15 @@ public class Controller {
                 OrderFrame orderFrame = new OrderFrame("Rendelés", true, true, true, true);
                 orderFrame.setId(orderListFrame.getId());
                 orderFrame.setSave(e1 -> {
-                    if ("SUCCES".equals(dao.saveOrder(orderFrame.getValues()).toString())) {
-                        orderFrame.dispose();
-                    } else {
-                        //TODO ERROR
+                    if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
+                        if ("SUCCES".equals(dao.saveOrder(orderFrame.getValues()).toString())) {
+                            orderFrame.dispose();
+                        } else {
+                            JOptionPane.showMessageDialog(frame,
+                                    dao.translate("SAVE_ERROR"),
+                                    "ERROR",
+                                    JOptionPane.PLAIN_MESSAGE);
+                        }
                     }
                 });
                 orderFrame.setBrowseProductTypeButton(e1 -> {

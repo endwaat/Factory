@@ -14,7 +14,7 @@ public class UserListFrame extends JInternalFrame {
     public UserListFrame(String title, boolean resizable, boolean closable,
                          boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 300, 300);
+        this.setBounds(10, 10, 300, 325);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         userListPanel = new UserListPanel();
         this.setVisible(true);

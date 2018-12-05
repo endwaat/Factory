@@ -13,7 +13,7 @@ public class AllergensFrame extends JInternalFrame {
     public AllergensFrame(String title, boolean resizable, boolean closable,
                         boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 250, 100);
+        this.setBounds(10, 10, 250, 125);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         allergensPanel = new AllergensPanel();
         this.setVisible(true);

@@ -14,7 +14,7 @@ public class LoginFrame extends JInternalFrame {
     public LoginFrame(String title, boolean resizable, boolean closable,
                       boolean maximizable, boolean iconifiable) {
         super(title,resizable,closable,maximizable,iconifiable);
-        this.setBounds(10,10,200,200);
+        this.setBounds(10,10,200,225);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         loginButton = new JButton("Bejelentkezés");
         usernameText = new JLabel("Felhasználónév");

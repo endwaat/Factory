@@ -13,7 +13,7 @@ public class IngredientFrame extends JInternalFrame {
     public IngredientFrame(String title, boolean resizable, boolean closable,
                            boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-        this.setBounds(10, 10, 410, 270);
+        this.setBounds(10, 10, 410, 295);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         ingredientPanel = new IngredientPanel();
         this.setVisible(true);

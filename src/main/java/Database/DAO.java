@@ -10,8 +10,8 @@ public class DAO {
     private static String SQL_INSERT_ALLERGENS = "INSERT INTO allergens (name) VALUES (?)";
     private static String SQL_UPDATE_ALLERGENS = "UPDATE allergens SET name = ? WHERE id = ?";
     private static String SQL_SELECT_USER = "SELECT username, password, email, zip, town, address, phone FROM users WHERE id = ? AND deleted = 'f'";
-    private static String SQL_SELECT_ALLERGENS_LIST = "SELECT * FROM allergens WHERE deleted = 'f' ORDER BY name";
-    private static String SQL_SELECT_ALLERGENS = "SELECT * FROM allergens WHERE id = ? AND deleted = 'f'";
+    private static String SQL_SELECT_ALLERGENS_LIST = "SELECT * FROM allergensORDER BY name";
+    private static String SQL_SELECT_ALLERGENS = "SELECT * FROM allergens WHERE id = ?";
     private static String SQL_DELETE_ALLERGENS = "DELETE FROM allergens WHERE id = ?";
     private static String SQL_INSERT_USER = "INSERT INTO users (username,password,email,zip,town,address,phone) VALUES (?,?,?,?,?,?,?) RETURNING id";
     private static String SQL_INSERT_AUTHENTICATION = "INSERT INTO authentication (user_id,storage,products,allergen,machines,orders,workers,admin) VALUES (?,?,?,?,?,?,?,?)";
@@ -107,8 +107,7 @@ public class DAO {
     private static String SQL_SELECT_ORDER_BY_ID = "SELECT name,costumer,price,done,order_time,end_time FROM orders WHERE id = ?";
     private static String SQL_SELECT_ORDER = "SELECT id,name,costumer,price,done,order_time,end_time FROM orders WHERE deleted = 'f'";
     private static String SQL_SELECT_PRODUCT = "SELECT product_type_id,production_date,wieght,name,cost,value,expire_date FROM product WHERE id = ? AND deleted = 'f'";
-
-
+    private static String SQL_GET_ACCESS = "SELECT   storage, products, allergen, machines, orders, workers, admin FROM authentication WHERE user_id = ?";
 
 
     private int userId;
@@ -1444,6 +1443,28 @@ public class DAO {
                 values.put("cost", resultSet.getDouble(5));
                 values.put("value", resultSet.getDouble(6));
                 values.put("expire_date", resultSet.getDate(7));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public Map getAcces(){
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();try {
+            preparedStatement = connection.prepareStatement(SQL_GET_ACCESS);
+            preparedStatement.setInt(1, userId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("storage", resultSet.getBoolean(1));
+                values.put("products", resultSet.getBoolean(2));
+                values.put("allergen", resultSet.getBoolean(3));
+                values.put("machines", resultSet.getBoolean(4));
+                values.put("orders", resultSet.getBoolean(5));
+                values.put("workers", resultSet.getBoolean(6));
+                values.put("admin", resultSet.getBoolean(7));
             }
         } catch (SQLException e) {
             e.printStackTrace();

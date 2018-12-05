@@ -14,7 +14,7 @@ public class WorkerFrame extends JInternalFrame {
     public WorkerFrame(String title, boolean resizable, boolean closable,
                        boolean maximizable, boolean iconifiable) {
         super(title, resizable, closable, maximizable, iconifiable);
-            this.setBounds(10, 10, 345, 320);
+            this.setBounds(10, 10, 345, 345);
         this.setFrameIcon(new ImageIcon("frame:/gfg.jpg"));
         workerPanel = new WorkerPanel();
         this.setVisible(true);
