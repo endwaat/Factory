@@ -179,15 +179,6 @@ CREATE TABLE supplier (
 
 CREATE SEQUENCE supplier_order_sequence START 1;
 
-CREATE TABLE supplier_order (
-    id              integer PRIMARY KEY DEFAULT nextval('supplier_order_sequence'),
-    supplier_id   integer references supplier (id),
-    order_id   integer references orders (id),
-    date            Date default now(),
-    transfer_price           integer,
-    order_price            integer,
-    deleted boolean NOT NULL DEFAULT false
-);
 
 CREATE SEQUENCE worklog_sequence START 1;
 
