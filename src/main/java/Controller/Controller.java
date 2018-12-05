@@ -486,7 +486,6 @@ public class Controller {
             productTypeListFrame.toFront();
         });
 
-
         //új terméktípus
         menuBar.addListener("newProduct", event -> {
             ProductFrame productFrame = new ProductFrame("Terméktípus", true, true, true, true);
