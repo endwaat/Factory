@@ -370,6 +370,18 @@ public class ProductPanel extends JTabbedPane {
         browseIngredientButton.setEnabled(false);
         deleteIngredientButton.setEnabled(false);
         saveButton.setEnabled(false);
+        Map values = dao.getProductById(id);
+        nameField.setText((String) values.get("name"));
+        for(int i = 0; i < productTypeCombo.getItemCount(); i++){
+            if(((Item)productTypeCombo.getItemAt(i)).getId() == (Integer) (values.get("product_type_id"))){
+                productTypeCombo.setSelectedIndex(i);
+            }
+        }
+        dateSpinner.setValue(values.get("production_date"));
+        weightSpinner.setValue(values.get("weight"));
+        costField.setText(String.valueOf(values.get("cost")));
+        valueField.setText(String.valueOf(values.get("value")));
+        expireSpinner.setValue(values.get("expire_date"));
         List<Map> receipt = dao.getProductReceipt(id);
         setReceipt(receipt);
         List<Map> ingrediens = dao.getProductIngredients(id);

@@ -5,7 +5,16 @@
 package GUI.Panes.orders;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+
+import Database.DAO;
 import net.miginfocom.swing.*;
+
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Dominik
@@ -13,6 +22,10 @@ import net.miginfocom.swing.*;
 public class OrderPanel extends JTabbedPane {
     public OrderPanel() {
         initComponents();
+        setAddProductTypeButton();
+        setAddProductButton();
+        setDeleteProductTypeButton();
+        setDeleteProductButton();
     }
 
     private void initComponents() {
@@ -30,28 +43,27 @@ public class OrderPanel extends JTabbedPane {
         label5 = new JLabel();
         endDateSpinner = new JSpinner();
         doneCheckBox = new JCheckBox();
-        exchangeButton = new JButton();
         saveButton = new JButton();
         panel1 = new JPanel();
         label6 = new JLabel();
         productTypeField = new JTextField();
-        browseOrderButton = new JButton();
+        browseProductTypeButton = new JButton();
         label7 = new JLabel();
-        orderWeightSpinner = new JSpinner();
-        addOrderButton = new JButton();
-        deleteOrderButton = new JButton();
+        productTypeWeightField = new JTextField();
+        addProductTypeButton = new JButton();
+        deleteProductTypeButton = new JButton();
         scrollPane1 = new JScrollPane();
-        orderdProductsTable = new JTable();
+        productTypeTable = new JTable();
         panel2 = new JPanel();
         label8 = new JLabel();
         productField = new JTextField();
         browseProductButton = new JButton();
         label9 = new JLabel();
-        productWeightSpinner = new JSpinner();
-        addProdutButton = new JButton();
+        productWeightField = new JTextField();
+        addProductButton = new JButton();
         deleteProductButton = new JButton();
         scrollPane2 = new JScrollPane();
-        doneProductsTable = new JTable();
+        productTable = new JTable();
 
         //======== this ========
 
@@ -61,7 +73,7 @@ public class OrderPanel extends JTabbedPane {
             // JFormDesigner evaluation mark
             panel.setBorder(new javax.swing.border.CompoundBorder(
                 new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "", javax.swing.border.TitledBorder.CENTER,
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
                     javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
                     java.awt.Color.red), panel.getBorder())); panel.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
@@ -108,21 +120,15 @@ public class OrderPanel extends JTabbedPane {
 
             //---- endDateSpinner ----
             endDateSpinner.setModel(new SpinnerDateModel());
-            endDateSpinner.setEnabled(false);
             panel.add(endDateSpinner, "cell 1 4");
 
             //---- doneCheckBox ----
             doneCheckBox.setText("Teljes\u00edtve");
-            doneCheckBox.setEnabled(false);
             panel.add(doneCheckBox, "cell 1 5");
-
-            //---- exchangeButton ----
-            exchangeButton.setText("Lez\u00e1r\u00e1s");
-            panel.add(exchangeButton, "cell 0 6");
 
             //---- saveButton ----
             saveButton.setText("Ment\u00e9s");
-            panel.add(saveButton, "cell 1 6");
+            panel.add(saveButton, "cell 0 6 2 1");
         }
         addTab("Rendel\u00e9s", panel);
 
@@ -145,29 +151,26 @@ public class OrderPanel extends JTabbedPane {
             panel1.add(label6, "cell 0 0");
             panel1.add(productTypeField, "cell 1 0");
 
-            //---- browseOrderButton ----
-            browseOrderButton.setText(">>");
-            panel1.add(browseOrderButton, "cell 2 0");
+            //---- browseProductTypeButton ----
+            browseProductTypeButton.setText(">>");
+            panel1.add(browseProductTypeButton, "cell 2 0");
 
             //---- label7 ----
             label7.setText("Mennyis\u00e9g (kg)");
             panel1.add(label7, "cell 0 1");
+            panel1.add(productTypeWeightField, "cell 1 1 2 1");
 
-            //---- orderWeightSpinner ----
-            orderWeightSpinner.setModel(new SpinnerNumberModel(1, 1, null, 1));
-            panel1.add(orderWeightSpinner, "cell 1 1 2 1");
+            //---- addProductTypeButton ----
+            addProductTypeButton.setText("+");
+            panel1.add(addProductTypeButton, "cell 1 2");
 
-            //---- addOrderButton ----
-            addOrderButton.setText("+");
-            panel1.add(addOrderButton, "cell 1 2");
-
-            //---- deleteOrderButton ----
-            deleteOrderButton.setText("-");
-            panel1.add(deleteOrderButton, "cell 2 2");
+            //---- deleteProductTypeButton ----
+            deleteProductTypeButton.setText("-");
+            panel1.add(deleteProductTypeButton, "cell 2 2");
 
             //======== scrollPane1 ========
             {
-                scrollPane1.setViewportView(orderdProductsTable);
+                scrollPane1.setViewportView(productTypeTable);
             }
             panel1.add(scrollPane1, "cell 0 3 3 1");
         }
@@ -199,14 +202,11 @@ public class OrderPanel extends JTabbedPane {
             //---- label9 ----
             label9.setText("Mennyis\u00e9g (kg)");
             panel2.add(label9, "cell 0 1");
+            panel2.add(productWeightField, "cell 1 1 2 1");
 
-            //---- productWeightSpinner ----
-            productWeightSpinner.setModel(new SpinnerNumberModel(1, 0, null, 1));
-            panel2.add(productWeightSpinner, "cell 1 1 2 1");
-
-            //---- addProdutButton ----
-            addProdutButton.setText("+");
-            panel2.add(addProdutButton, "cell 1 2");
+            //---- addProductButton ----
+            addProductButton.setText("+");
+            panel2.add(addProductButton, "cell 1 2");
 
             //---- deleteProductButton ----
             deleteProductButton.setText("-");
@@ -214,7 +214,7 @@ public class OrderPanel extends JTabbedPane {
 
             //======== scrollPane2 ========
             {
-                scrollPane2.setViewportView(doneProductsTable);
+                scrollPane2.setViewportView(productTable);
             }
             panel2.add(scrollPane2, "cell 0 3 3 1");
         }
@@ -236,27 +236,164 @@ public class OrderPanel extends JTabbedPane {
     private JLabel label5;
     private JSpinner endDateSpinner;
     private JCheckBox doneCheckBox;
-    private JButton exchangeButton;
     private JButton saveButton;
     private JPanel panel1;
     private JLabel label6;
     private JTextField productTypeField;
-    private JButton browseOrderButton;
+    private JButton browseProductTypeButton;
     private JLabel label7;
-    private JSpinner orderWeightSpinner;
-    private JButton addOrderButton;
-    private JButton deleteOrderButton;
+    private JTextField productTypeWeightField;
+    private JButton addProductTypeButton;
+    private JButton deleteProductTypeButton;
     private JScrollPane scrollPane1;
-    private JTable orderdProductsTable;
+    private JTable productTypeTable;
     private JPanel panel2;
     private JLabel label8;
     private JTextField productField;
     private JButton browseProductButton;
     private JLabel label9;
-    private JSpinner productWeightSpinner;
-    private JButton addProdutButton;
+    private JTextField productWeightField;
+    private JButton addProductButton;
     private JButton deleteProductButton;
     private JScrollPane scrollPane2;
-    private JTable doneProductsTable;
+    private JTable productTable;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+    private int id = 0;
+    private int tempProductTypeId = 0;
+    private int tempProductId = 0;
+    DAO dao = new DAO();
+    List<Map> productTypeList = new ArrayList<>();
+    List<Map> productList = new ArrayList<>();
+
+    public void setAddProductTypeButton() {
+        addProductTypeButton.addActionListener(e -> {
+            if (tempProductTypeId != 0) {
+                Map tempMap = new HashMap();
+                tempMap.put("id", tempProductTypeId);
+                tempMap.put("name", productTypeField.getText());
+                tempMap.put("value", Double.valueOf(productTypeWeightField.getText().replace(",", ".")));
+                productTypeList.add(tempMap);
+                setProductTypes(productTypeList);
+                tempProductTypeId = 0;
+                productTypeField.setText("");
+                productTypeWeightField.setText("");
+            }
+        });
+    }
+
+
+    public void setAddProductButton() {
+        addProductButton.addActionListener(e -> {
+            if (tempProductId != 0) {
+                Map tempMap = new HashMap();
+                tempMap.put("id", tempProductId);
+                tempMap.put("name", productField.getText());
+                tempMap.put("value", Double.valueOf(productWeightField.getText().replace(",", ".")));
+                productList.add(tempMap);
+                setProducts(productList);
+                tempProductId = 0;
+                productField.setText("");
+                productWeightField.setText("");
+            }
+        });
+    }
+
+    public void setDeleteProductTypeButton() {
+        deleteProductTypeButton.addActionListener(e -> {
+            for (int i = 0; i < productTypeList.size(); i++) {
+                if (productTypeList.get(i).get("id") == productTypeTable.getModel().getValueAt(productTypeTable.getSelectedRow(), 0)) {
+                    productTypeList.remove(i);
+                }
+            }
+            setProductTypes(productTypeList);
+        });
+    }
+
+    public void setDeleteProductButton() {
+        deleteProductButton.addActionListener(e -> {
+            for (int i = 0; i < productList.size(); i++) {
+                if (productList.get(i).get("id") == productTable.getModel().getValueAt(productTable.getSelectedRow(), 0)) {
+                    productList.remove(i);
+                }
+            }
+            setProducts(productList);
+        });
+    }
+
+    public void setSave(ActionListener actionListener) {
+        saveButton.addActionListener(actionListener);
+    }
+
+    public void setBrowseProductTypeButton(ActionListener actionListener) {
+        browseProductTypeButton.addActionListener(actionListener);
+    }
+
+    public void setBrowseProductButton(ActionListener actionListener) {
+        browseProductButton.addActionListener(actionListener);
+    }
+
+    public Map getValues() {
+        Map values = new HashMap();
+        try {
+            values.put("id", id);
+            values.put("name", nameField.getText());
+            values.put("costumer", costumerField.getText());
+            values.put("price", Double.parseDouble(priceField.getText().replace(",",".")));
+            values.put("orderDate", orderDateSpinner.getValue());
+            values.put("endDate", endDateSpinner.getValue());
+            values.put("done", doneCheckBox.isSelected());
+            values.put("productTypes", productTypeList);
+            values.put("products", productList);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return values;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+        setTexts(dao.getOrder(id));
+        setProductTypes(dao.getProductTypeByOrderId(id));
+        productTypeList = dao.getProductTypeByOrderId(id);
+        setProducts(dao.getProductByOrderId(id));
+        productList = dao.getProductByOrderId(id);
+    }
+
+    public void setTexts(Map values) {
+        nameField.setText((String) values.get("name"));
+        costumerField.setText(String.valueOf(values.get("costumer")));
+        priceField.setText(String.valueOf(values.get("price")));
+        orderDateSpinner.setValue(values.get("orderDate"));
+        endDateSpinner.setValue(values.get("endDate"));
+        doneCheckBox.setSelected((Boolean) values.get("done"));
+    }
+
+    public void setProductTypes(List<Map> list) {
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Terméktípus", "Mennyiség (kg)"}, 0);
+        for (int i = 0; i < list.size(); i++) {
+            model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name"), list.get(i).get("value")});
+        }
+        productTypeTable.setModel(model);
+        productTypeTable.removeColumn(productTypeTable.getColumnModel().getColumn(0));
+    }
+
+    public void setProducts(List<Map> list) {
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Terméknév", "Mennyiség (kg)"}, 0);
+        for (int i = 0; i < list.size(); i++) {
+            model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name"), list.get(i).get("value")});
+        }
+        productTable.setModel(model);
+        productTable.removeColumn(productTable.getColumnModel().getColumn(0));
+    }
+
+    public void setSelectedProductTypeItem(Map values) {
+        productTypeField.setText((String) values.get("name"));
+        tempProductTypeId = (int) values.get("id");
+    }
+
+    public void setSelectedProductItem(Map values) {
+        productField.setText((String) values.get("name"));
+        tempProductId = (int) values.get("id");
+    }
+
 }

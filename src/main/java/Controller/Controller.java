@@ -528,5 +528,84 @@ public class Controller {
             desktopPane.add(productListFrame);
             productListFrame.toFront();
         });
+
+        //új rendelés
+        menuBar.addListener("newOrder", event -> {
+            OrderFrame orderFrame = new OrderFrame("Rendelés", true, true, true, true);
+            orderFrame.setSave(e1 -> {
+                if ("SUCCES".equals(dao.saveOrder(orderFrame.getValues()).toString())) {
+                    orderFrame.dispose();
+                } else {
+                    //TODO ERROR
+                }
+            });
+            orderFrame.setBrowseProductTypeButton(e1 -> {
+                BrowseProductTypeFrame browseProductTypeFrame = new BrowseProductTypeFrame("Terméktípus böngészés", true, true, true, true);
+                browseProductTypeFrame.setTableValues(dao.getProductTypeList());
+                browseProductTypeFrame.setSelect(e -> {
+                    Map selectedItem = browseProductTypeFrame.getSelectedItem();
+                    orderFrame.setSelectedProductTypeItem(selectedItem);
+                    browseProductTypeFrame.dispose();
+                });
+                desktopPane.add(browseProductTypeFrame);
+                browseProductTypeFrame.toFront();
+            });
+            orderFrame.setBrowseProductButton(e1 -> {
+                BrowseProductFrame browseProductFrame = new BrowseProductFrame("Termék böngészése", true, true, true, true);
+                browseProductFrame.setTableValues(dao.getProductList());
+                browseProductFrame.setSelect(e -> {
+                    Map selectedItem = browseProductFrame.getSelectedItem();
+                    orderFrame.setSelectedProductItem(selectedItem);
+                    browseProductFrame.dispose();
+                });
+                desktopPane.add(browseProductFrame);
+                browseProductFrame.toFront();
+            });
+            desktopPane.add(orderFrame);
+            orderFrame.toFront();
+        });
+
+        //rendelés lista
+        menuBar.addListener("listOrders", event -> {
+            OrderListFrame orderListFrame = new OrderListFrame("Rendelésilista", true, true, true, true);
+            orderListFrame.setEdit(e2 -> {
+                OrderFrame orderFrame = new OrderFrame("Rendelés", true, true, true, true);
+                orderFrame.setId(orderListFrame.getId());
+                orderFrame.setSave(e1 -> {
+                    if ("SUCCES".equals(dao.saveOrder(orderFrame.getValues()).toString())) {
+                        orderFrame.dispose();
+                    } else {
+                        //TODO ERROR
+                    }
+                });
+                orderFrame.setBrowseProductTypeButton(e1 -> {
+                    BrowseProductTypeFrame browseProductTypeFrame = new BrowseProductTypeFrame("Terméktípus böngészés", true, true, true, true);
+                    browseProductTypeFrame.setTableValues(dao.getProductTypeList());
+                    browseProductTypeFrame.setSelect(e -> {
+                        Map selectedItem = browseProductTypeFrame.getSelectedItem();
+                        orderFrame.setSelectedProductTypeItem(selectedItem);
+                        browseProductTypeFrame.dispose();
+                    });
+                    desktopPane.add(browseProductTypeFrame);
+                    browseProductTypeFrame.toFront();
+                });
+                orderFrame.setBrowseProductButton(e1 -> {
+                    BrowseProductFrame browseProductFrame = new BrowseProductFrame("Termék böngészése", true, true, true, true);
+                    browseProductFrame.setTableValues(dao.getProductList());
+                    browseProductFrame.setSelect(e -> {
+                        Map selectedItem = browseProductFrame.getSelectedItem();
+                        orderFrame.setSelectedProductItem(selectedItem);
+                        browseProductFrame.dispose();
+                    });
+                    desktopPane.add(browseProductFrame);
+                    browseProductFrame.toFront();
+                });
+                desktopPane.add(orderFrame);
+                orderFrame.toFront();
+            });
+            orderListFrame.setValues(dao.getOrderList());
+            desktopPane.add(orderListFrame);
+            orderListFrame.toFront();
+        });
     }
 }

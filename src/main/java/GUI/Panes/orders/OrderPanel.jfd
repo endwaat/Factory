@@ -69,28 +69,20 @@ new FormModel {
 					"model": new javax.swing.SpinnerDateModel {
 						value: new java.util.Date( -9223372036854775808l )
 					}
-					"enabled": false
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 4"
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
 					name: "doneCheckBox"
 					"text": "Teljesítve"
-					"enabled": false
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 5"
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "exchangeButton"
-					"text": "Lezárás"
-				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-					"value": "cell 0 6"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "saveButton"
 					"text": "Mentés"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-					"value": "cell 1 6"
+					"value": "cell 0 6 2 1"
 				} )
 			}, new FormLayoutConstraints( null ) {
 				"title": "Rendelés"
@@ -113,7 +105,7 @@ new FormModel {
 					"value": "cell 1 0"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "browseOrderButton"
+					name: "browseProductTypeButton"
 					"text": ">>"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 2 0"
@@ -124,23 +116,19 @@ new FormModel {
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 0 1"
 				} )
-				add( new FormComponent( "javax.swing.JSpinner" ) {
-					name: "orderWeightSpinner"
-					"model": new javax.swing.SpinnerNumberModel {
-						minimum: 1
-						value: 1
-					}
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "productTypeWeightField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 1 2 1"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "addOrderButton"
+					name: "addProductTypeButton"
 					"text": "+"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 2"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "deleteOrderButton"
+					name: "deleteProductTypeButton"
 					"text": "-"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 2 2"
@@ -148,7 +136,7 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "scrollPane1"
 					add( new FormComponent( "javax.swing.JTable" ) {
-						name: "orderdProductsTable"
+						name: "productTypeTable"
 					} )
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 0 3 3 1"
@@ -185,17 +173,13 @@ new FormModel {
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 0 1"
 				} )
-				add( new FormComponent( "javax.swing.JSpinner" ) {
-					name: "productWeightSpinner"
-					"model": new javax.swing.SpinnerNumberModel {
-						minimum: 0
-						value: 1
-					}
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "productWeightField"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 1 2 1"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "addProdutButton"
+					name: "addProductButton"
 					"text": "+"
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 1 2"
@@ -209,7 +193,7 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "scrollPane2"
 					add( new FormComponent( "javax.swing.JTable" ) {
-						name: "doneProductsTable"
+						name: "productTable"
 					} )
 				}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 					"value": "cell 0 3 3 1"

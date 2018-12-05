@@ -1,10 +1,7 @@
 package Database;
 
-import com.sun.java.accessibility.util.GUIInitializedListener;
-
 import java.io.Serializable;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class DAO {
@@ -88,9 +85,30 @@ public class DAO {
     private static String SQL_SAVE_PRODUCT = "INSERT INTO product (name,product_type_id,production_date,wieght,cost,value,expire_date,instorage) VALUES (?,?,?,?,?,?,?,'t') RETURNING id";
     private static String SQL_INSERT_PRODUCT_INGREDIENTS = "INSERT INTO product_ingredient (product_id,ingredient_id) VALUES (?,?)";
     private static String SQL_UPDATE_PRODUCT_INGREDIENTS = "UPDATE ingredient SET weight = weight - ? WHERE id = ?";
-    private static String SQL_REFRESH_INGREDIENTS = "UPDATE ingredient SET deleted = 't' WHERE weight = 0";
+    private static String SQL_REFRESH_INGREDIENTS = "UPDATE ingredient SET deleted = 't' WHERE weight <= 0";
     private static String SQL_SELECT_PRODUCT_TYPE = "SELECT product_type_id FROM product WHERE id = ?";
-    private static String SQL_SELECT_PRODUCT_LIST = "SELECT id,name FROM product WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_PRODUCT_LIST = "SELECT id,name,wieght FROM product WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SAVE_ORDER = "INSERT INTO orders (name,costumer,price,done,order_time,end_time) VALUES (?,?,?,?,?,?) RETURNING id";
+    private static String SQL_INSERT_ORDER_PRODUCT_TYPE = "INSERT INTO order_product_type (oder_id,product_type_id,weight) VALUES (?,?,?)";
+    private static String SQL_INSERT_ORDER_PRODUCT = "INSERT INTO order_product (oder_id,product_id,weight) VALUES (?,?,?)";
+    private static String SQL_UPDATE_ORDER = "UPDATE orders SET name = ?, costumer = ?, price = ?, done = ?, order_time = ?, end_time = ? WHERE id = ?";
+    private static String SQL_CLEAR_ORDER_PRODUCT_TYPE = "DELETE FROM order_product_type WHERE oder_id = ?";
+    private static String SQL_CLEAR_ORDER_PRODUCT = "DELETE FROM order_product WHERE oder_id = ?";
+    private static String SQL_REFRESH_PRODUCTS = "UPDATE ingredient SET deleted = 't' WHERE weight <= 0";
+    private static String SQL_UPDATE_PRODUCT_AFTER_ORDER = "UPDATE product SET wieght = wieght - ? WHERE id = ?";
+    private static String SQL_SELECT_PRODUCTTYPE_BY_ORDERT = "SELECT product_type_id, name, value " +
+            "FROM order_product_type " +
+            "LEFT JOIN product_type ON order_product_type.product_type_id = product_type.id " +
+            "WHERE order_product_type.oder_id = ? ";
+    private static String SQL_SELECT_PRODUCT_BY_ORDERT = "SELECT product_id, name, value " +
+            "FROM order_product " +
+            "LEFT JOIN product ON order_product.product_id = product.id " +
+            "WHERE order_product.oder_id = ? ";
+    private static String SQL_SELECT_ORDER_BY_ID = "SELECT name,costumer,price,done,order_time,end_time FROM orders WHERE id = ?";
+    private static String SQL_SELECT_ORDER = "SELECT id,name,costumer,price,done,order_time,end_time FROM orders WHERE deleted = 'f'";
+    private static String SQL_SELECT_PRODUCT = "SELECT product_type_id,production_date,wieght,name,cost,value,expire_date FROM product WHERE id = ? AND deleted = 'f'";
+
+
 
 
     private int userId;
@@ -934,7 +952,7 @@ public class DAO {
                     preparedStatement = connection.prepareStatement(SQL_INSERT_MACHINE_PRODUCT);
                     List machines = (List) values.get("machines");
                     for (int i = 0; i < machines.size(); i++) {
-                        preparedStatement.setInt(1, (Integer) ((Map) ingredients.get(i)).get("id"));
+                        preparedStatement.setInt(1, (Integer) ((Map) machines.get(i)).get("id"));
                         preparedStatement.setInt(2, id);
                         preparedStatement.addBatch();
                         preparedStatement.clearParameters();
@@ -971,7 +989,7 @@ public class DAO {
                 preparedStatement = connection.prepareStatement(SQL_INSERT_MACHINE_PRODUCT);
                 List machines = (List) values.get("machines");
                 for (int i = 0; i < machines.size(); i++) {
-                    preparedStatement.setInt(1, (Integer) ((Map) ingredients.get(i)).get("id"));
+                    preparedStatement.setInt(1, (Integer) ((Map) machines.get(i)).get("id"));
                     preparedStatement.setInt(2, (Integer) values.get("id"));
                     preparedStatement.addBatch();
                     preparedStatement.clearParameters();
@@ -1174,9 +1192,9 @@ public class DAO {
         int prodTypeId = 0;
         try {
             preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCT_TYPE);
-                preparedStatement.setInt(1, id);
-                ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()){
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
                 prodTypeId = resultSet.getInt(1);
             }
             return getIngredientlistByproductId(prodTypeId);
@@ -1218,11 +1236,218 @@ public class DAO {
                 Map values = new HashMap();
                 values.put("id", resultSet.getInt(1));
                 values.put("name", resultSet.getString(2));
+                values.put("weight", resultSet.getString(3));
                 list.add(values);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public Serializable saveOrder(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            if (0 == (Integer) values.get("id")) {
+                preparedStatement = connection.prepareStatement(SQL_SAVE_ORDER);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setString(2, (String) values.get("costumer"));
+                preparedStatement.setDouble(3, (Double) values.get("price"));
+                preparedStatement.setBoolean(4, (Boolean) values.get("done"));
+                preparedStatement.setDate(5, new java.sql.Date(((java.util.Date) values.get("orderDate")).getTime()));
+                preparedStatement.setDate(6, new java.sql.Date(((java.util.Date) values.get("endDate")).getTime()));
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    int id = resultSet.getInt(1);
+                    preparedStatement = connection.prepareStatement(SQL_INSERT_ORDER_PRODUCT_TYPE);
+                    List productTypes = (List) values.get("productTypes");
+                    for (int i = 0; i < productTypes.size(); i++) {
+                        preparedStatement.setInt(1, id);
+                        preparedStatement.setInt(2, (Integer) ((Map) productTypes.get(i)).get("id"));
+                        preparedStatement.setDouble(3, (double) ((Map) productTypes.get(i)).get("value"));
+                        preparedStatement.addBatch();
+                        preparedStatement.clearParameters();
+                    }
+                    preparedStatement.executeBatch();
+                    preparedStatement = connection.prepareStatement(SQL_INSERT_ORDER_PRODUCT);
+                    List products = (List) values.get("products");
+                    for (int i = 0; i < products.size(); i++) {
+                        preparedStatement.setInt(1, id);
+                        preparedStatement.setInt(2, (Integer) ((Map) products.get(i)).get("id"));
+                        preparedStatement.setDouble(3, (double) ((Map) products.get(i)).get("value"));
+                        preparedStatement.addBatch();
+                        preparedStatement.clearParameters();
+                    }
+                    preparedStatement.executeBatch();
+                    return "SUCCES";
+                }
+            } else {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_ORDER);
+                preparedStatement.setString(1, (String) values.get("name"));
+                preparedStatement.setString(2, (String) values.get("costumer"));
+                preparedStatement.setDouble(3, (Double) values.get("price"));
+                preparedStatement.setBoolean(4, (Boolean) values.get("done"));
+                preparedStatement.setDate(5, new java.sql.Date(((java.util.Date) values.get("orderDate")).getTime()));
+                preparedStatement.setDate(6, new java.sql.Date(((java.util.Date) values.get("endDate")).getTime()));
+                preparedStatement.setInt(7, (Integer) values.get("id"));
+                preparedStatement.execute();
+                preparedStatement = connection.prepareStatement(SQL_CLEAR_ORDER_PRODUCT_TYPE);
+                preparedStatement.setInt(1, (Integer) values.get("id"));
+                preparedStatement.execute();
+                preparedStatement = connection.prepareStatement(SQL_CLEAR_ORDER_PRODUCT);
+                preparedStatement.setInt(1, (Integer) values.get("id"));
+                preparedStatement.execute();
+                preparedStatement = connection.prepareStatement(SQL_INSERT_ORDER_PRODUCT_TYPE);
+                List productTypes = (List) values.get("productTypes");
+                for (int i = 0; i < productTypes.size(); i++) {
+                    preparedStatement.setInt(1, (Integer) values.get("id"));
+                    preparedStatement.setInt(2, (Integer) ((Map) productTypes.get(i)).get("id"));
+                    preparedStatement.setDouble(3, (double) ((Map) productTypes.get(i)).get("value"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+                preparedStatement = connection.prepareStatement(SQL_INSERT_ORDER_PRODUCT);
+                List products = (List) values.get("products");
+                for (int i = 0; i < products.size(); i++) {
+                    preparedStatement.setInt(1, (Integer) values.get("id"));
+                    preparedStatement.setInt(2, (Integer) ((Map) products.get(i)).get("id"));
+                    preparedStatement.setDouble(3, (double) ((Map) products.get(i)).get("value"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+            }
+            if ((boolean) values.get("done")) {
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_PRODUCT_AFTER_ORDER);
+                List products = (List) values.get("products");
+                for (int i = 0; i < products.size(); i++) {
+                    preparedStatement.setDouble(1, (double) ((Map) products.get(i)).get("value"));
+                    preparedStatement.setInt(2, (Integer) ((Map) products.get(i)).get("id"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+                preparedStatement = connection.prepareStatement(SQL_REFRESH_PRODUCTS);
+                preparedStatement.execute();
+            }
+            return "SUCCES";
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "SAVE_ERROR";
+    }
+
+    public List<Map> getProductTypeByOrderId(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCTTYPE_BY_ORDERT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("value", resultSet.getDouble(3));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<Map> getProductByOrderId(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCT_BY_ORDERT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("value", resultSet.getDouble(3));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getOrder(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_ORDER_BY_ID);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()) {
+                values.put("name", resultSet.getString(1));
+                values.put("costumer", resultSet.getString(2));
+                values.put("price", resultSet.getDouble(3));
+                values.put("done", resultSet.getBoolean(4));
+                values.put("orderDate", resultSet.getDate(5));
+                values.put("endDate", resultSet.getDate(6));
+            }
+            return values;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public List<Map> getOrderList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_ORDER);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("costumer", resultSet.getString(3));
+                values.put("price", resultSet.getDouble(4));
+                values.put("done", resultSet.getBoolean(5));
+                values.put("orderDate", resultSet.getDate(6));
+                values.put("endDate", resultSet.getDate(7));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public Map getProductById(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        Map values = new HashMap();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                values.put("product_type_id", resultSet.getInt(1));
+                values.put("production_date", resultSet.getDate(2));
+                values.put("weight", resultSet.getDouble(3));
+                values.put("name", resultSet.getString(4));
+                values.put("cost", resultSet.getDouble(5));
+                values.put("value", resultSet.getDouble(6));
+                values.put("expire_date", resultSet.getDate(7));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
     }
 }

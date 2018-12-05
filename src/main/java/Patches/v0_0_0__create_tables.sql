@@ -151,12 +151,18 @@ CREATE SEQUENCE order_product_sequence START 1;
 CREATE TABLE order_product (
     id              integer PRIMARY KEY DEFAULT nextval('order_product_sequence'),
     oder_id   integer references orders (id),
+    product_id    integer references product (id),
+    weight            integer
+);
+
+CREATE SEQUENCE order_product_type_sequence START 1;
+
+
+CREATE TABLE order_product_type (
+    id              integer PRIMARY KEY DEFAULT nextval('order_product_type_sequence'),
+    oder_id   integer references orders (id),
     product_type_id    integer references product_type (id),
-    weight            integer,
-    price            integer,
-    done           boolean,
-    production_time   DATE,
-    deleted boolean NOT NULL DEFAULT false
+    weight            integer
 );
 
 CREATE SEQUENCE supplier_sequence START 1;

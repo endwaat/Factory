@@ -18,16 +18,10 @@ new FormModel {
 				"value": "cell 0 0 2 1"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "deleteButton"
-				"text": "Törlés"
-			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 0 1"
-			} )
-			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "editButton"
 				"text": "Szerkeszt"
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
-				"value": "cell 1 1"
+				"value": "cell 0 1 2 1"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
