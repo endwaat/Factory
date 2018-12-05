@@ -365,7 +365,15 @@ public class ProductPanel extends JTabbedPane {
 
     public void setId(int id) {
         this.id = id;
-        //TODO LOAD EVERTHING
+        calculateButton.setEnabled(false);
+        addIngredientButton.setEnabled(false);
+        browseIngredientButton.setEnabled(false);
+        deleteIngredientButton.setEnabled(false);
+        saveButton.setEnabled(false);
+        List<Map> receipt = dao.getProductReceipt(id);
+        setReceipt(receipt);
+        List<Map> ingrediens = dao.getProductIngredients(id);
+        setIngredients(ingrediens);
     }
 
     public void setReceipt(List<Map> list) {

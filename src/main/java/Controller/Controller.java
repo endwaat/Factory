@@ -516,52 +516,18 @@ public class Controller {
             productFrame.toFront();
         });
 
-        //terméktípus lista
+        //termék lista
         menuBar.addListener("listProduct", event -> {
-            ProductTypeListFrame productTypeListFrame = new ProductTypeListFrame("Terméktípus lista", true, true, true, true);
-            productTypeListFrame.setEdit(e1 -> {
-                ProductTypeFrame productTypeFrame = new ProductTypeFrame("Terméktípus", true, true, true, true);
-                productTypeFrame.setId(productTypeListFrame.getId());
-                productTypeFrame.setValues(dao.getProductType(productTypeListFrame.getId()));
-                productTypeFrame.setSave(e2 -> {
-                    if ("SUCCES".equals(dao.saveProductType(productTypeFrame.getValues()).toString())) {
-                        productTypeFrame.dispose();
-                    } else {
-                        //TODO ERROR
-                    }
-                });
-                productTypeFrame.setBrowseIngredientButton(e2 -> {
-                    BrowseIngredientTypeFrame browseIngredientTypeFrame = new BrowseIngredientTypeFrame("Alapanyag típus böngészés", true, true, true, true);
-                    browseIngredientTypeFrame.setTableValues(dao.getIngredientTypeList());
-                    browseIngredientTypeFrame.setSelect(e -> {
-                        Map selectedItem = browseIngredientTypeFrame.getSelectedItem();
-                        productTypeFrame.setSelectedIngredientTypeItem(selectedItem);
-                        browseIngredientTypeFrame.dispose();
-                    });
-                    desktopPane.add(browseIngredientTypeFrame);
-                    browseIngredientTypeFrame.toFront();
-                });
-                productTypeFrame.setBrowseMachineButton(e2 -> {
-                    BrowseMachineFrame browseMachineFrame = new BrowseMachineFrame("Gép böngészés", true, true, true, true);
-                    browseMachineFrame.setTableValues(dao.getMachineList());
-                    browseMachineFrame.setSelect(e -> {
-                        Map selectedItem = browseMachineFrame.getSelectedItem();
-                        productTypeFrame.setSelectedMachineItem(selectedItem);
-                        browseMachineFrame.dispose();
-                    });
-                    desktopPane.add(browseMachineFrame);
-                    browseMachineFrame.toFront();
-                });
-                desktopPane.add(productTypeFrame);
-                productTypeFrame.toFront();
+            ProductListFrame productListFrame = new ProductListFrame("Terméktípus lista", true, true, true, true);
+            productListFrame.setShow(e2 -> {
+                ProductFrame productFrame = new ProductFrame("Terméktípus", true, true, true, true);
+                productFrame.setId(productListFrame.getId());
+                desktopPane.add(productFrame);
+                productFrame.toFront();
             });
-            productTypeListFrame.setDelete(el -> {
-                dao.deleteProductType(productTypeListFrame.getId());
-                productTypeListFrame.setValues(dao.getProductTypeList());
-            });
-            productTypeListFrame.setValues(dao.getProductTypeList());
-            desktopPane.add(productTypeListFrame);
-            productTypeListFrame.toFront();
+            productListFrame.setValues(dao.getProductList());
+            desktopPane.add(productListFrame);
+            productListFrame.toFront();
         });
     }
 }

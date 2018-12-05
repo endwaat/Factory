@@ -35,7 +35,6 @@ public class ProductFrame extends JInternalFrame {
         return productPanel.beforeSave();
     }
 
-
     public void setId(int id){
         productPanel.setId(id);
     }

@@ -89,6 +89,9 @@ public class DAO {
     private static String SQL_INSERT_PRODUCT_INGREDIENTS = "INSERT INTO product_ingredient (product_id,ingredient_id) VALUES (?,?)";
     private static String SQL_UPDATE_PRODUCT_INGREDIENTS = "UPDATE ingredient SET weight = weight - ? WHERE id = ?";
     private static String SQL_REFRESH_INGREDIENTS = "UPDATE ingredient SET deleted = 't' WHERE weight = 0";
+    private static String SQL_SELECT_PRODUCT_TYPE = "SELECT product_type_id FROM product WHERE id = ?";
+    private static String SQL_SELECT_PRODUCT_LIST = "SELECT id,name FROM product WHERE deleted = 'f' ORDER BY name";
+
 
     private int userId;
 
@@ -1162,5 +1165,64 @@ public class DAO {
             e.printStackTrace();
         }
         return "SAVE_ERROR";
+    }
+
+    public List<Map> getProductReceipt(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> values = new ArrayList<>();
+        int prodTypeId = 0;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCT_TYPE);
+                preparedStatement.setInt(1, id);
+                ResultSet resultSet = preparedStatement.executeQuery();
+            if(resultSet.next()){
+                prodTypeId = resultSet.getInt(1);
+            }
+            return getIngredientlistByproductId(prodTypeId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public List<Map> getProductIngredients(int id) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT_BY_PRODUCT);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("value", "N/A");
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<Map> getProductList() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_PRODUCT_LIST);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

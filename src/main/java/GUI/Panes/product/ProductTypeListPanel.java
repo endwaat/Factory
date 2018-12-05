@@ -70,7 +70,7 @@ public class ProductTypeListPanel extends JPanel {
     private JButton editButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
     public void setTableValues(List<Map> list){
-        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "erméktípus"}, 0);
+        DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Terméktípus"}, 0);
         for(int i = 0; i < list.size(); i++){
             model.addRow(new Object[]{list.get(i).get("id"), list.get(i).get("name")});
         }

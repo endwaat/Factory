@@ -17,9 +17,15 @@ new FormModel {
 			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
 				"value": "cell 0 0"
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "showButton"
+				"text": "Megjelenít"
+			}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+				"value": "cell 0 1"
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 1020, 345 )
+			"size": new java.awt.Dimension( 1020, 365 )
 		} )
 	}
 }
