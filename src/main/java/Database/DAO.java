@@ -36,7 +36,12 @@ public class DAO {
     private static String SQL_DELETE_INGREDIENT_TYPE = "DELETE FROM ingredient_type WHERE id = ?";
     private static String SQL_INSERT_INGREDIENT = "INSERT INTO ingredient (name,ingredient_type_id,arrived,expire,weight,source,value) VALUES (?,?,?,?,?,?,?)";
     private static String SQL_UPDATE_INGREDIENT = "UPDATE ingredient SET name = ?, ingredient_type_id = ?, arrived = ?, expire = ?, weight = ?, source = ?, value = ?  WHERE id = ?";
-    private static String SQL_SELECT_INGREDIENT_LIST = "SELECT id,name,ingredient_type_id,arrived,expire,weight FROM ingredient WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_INGREDIENT_LIST = "SELECT id,name,ingredient_type_id,arrived,expire,weight,value FROM ingredient WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_INGREDIENT_LIST_FOR_BROWSE = "SELECT ingredient.id,ingredient.name,ingredient_type.name,arrived,expire,weight,value " +
+            "FROM ingredient " +
+            "LEFT JOIN ingredient_type ON ingredient.ingredient_type_id = ingredient_type.id " +
+            "WHERE ingredient.deleted = 'f' " +
+            "ORDER BY ingredient.name";
     private static String SQL_SELECT_INGREDIENT = "SELECT id,name,ingredient_type_id,arrived,expire,weight,source,value FROM ingredient WHERE id = ? AND deleted = 'f'";
     private static String SQL_DELETE_INGREDIENT = "UPDATE ingredient SET deleted = 't' WHERE id = ?";
     private static String SQL_INSERT_SUPPLIER = "INSERT INTO supplier (name,phone,zip,town,address) VALUES (?,?,?,?,?)";
@@ -76,6 +81,15 @@ public class DAO {
     private static String SQL_DELETE_PRODUCTTYPE = "UPDATE product_type SET deleted = 't' WHERE id = ?";
     private static String SQL_SELECT_PRODUCTTYPE = "SELECT id,name,allergens_id,weight,production_time,value,cost FROM product_type WHERE id = ? AND deleted = 'f'";
     private static String SQL_SELECT_PRODUCTTYPE_LIST = "SELECT id,name FROM product_type WHERE deleted = 'f' ORDER BY name";
+    private static String SQL_SELECT_BEST_INGREDIENT = "SELECT id,name,weight,value,expire " +
+            "FROM ingredient " +
+            "WHERE ingredient_type_id = ? AND weight > ? " +
+            "ORDER BY expire";
+    private static String SQL_SAVE_PRODUCT = "INSERT INTO product (name,product_type_id,production_date,wieght,cost,value,expire_date,instorage) VALUES (?,?,?,?,?,?,?,'t') RETURNING id";
+    private static String SQL_INSERT_PRODUCT_INGREDIENTS = "INSERT INTO product_ingredient (product_id,ingredient_id) VALUES (?,?)";
+    private static String SQL_UPDATE_PRODUCT_INGREDIENTS = "UPDATE ingredient SET weight = weight - ? WHERE id = ?";
+    private static String SQL_REFRESH_INGREDIENTS = "UPDATE ingredient SET deleted = 't' WHERE weight = 0";
+
     private int userId;
 
     public DAO() {
@@ -553,6 +567,31 @@ public class DAO {
                 values.put("arrived", resultSet.getDate(4));
                 values.put("expire", resultSet.getDate(5));
                 values.put("weight", resultSet.getDouble(6));
+                values.put("value", resultSet.getDouble(7));
+                list.add(values);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    public List<Map> getIngredientListForBrowse() {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> list = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_INGREDIENT_LIST_FOR_BROWSE);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Map values = new HashMap();
+                values.put("id", resultSet.getInt(1));
+                values.put("name", resultSet.getString(2));
+                values.put("type", resultSet.getString(3));
+                values.put("arrived", resultSet.getDate(4));
+                values.put("expire", resultSet.getDate(5));
+                values.put("weight", resultSet.getDouble(6));
+                values.put("value", resultSet.getDouble(7));
                 list.add(values);
             }
         } catch (SQLException e) {
@@ -1053,5 +1092,75 @@ public class DAO {
             e.printStackTrace();
         }
         return value;
+    }
+
+    public List<Map> getBestIngredients(List<Map> actualRecipe) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        List<Map> values = new ArrayList<>();
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SELECT_BEST_INGREDIENT);
+            for (int i = 0; i < actualRecipe.size(); i++) {
+                Map tempMap = new HashMap();
+                preparedStatement.setInt(1, (Integer) actualRecipe.get(i).get("id"));
+                preparedStatement.setDouble(2, (Double) actualRecipe.get(i).get("value"));
+                ResultSet resultSet = preparedStatement.executeQuery();
+                if (resultSet.next()) {
+                    tempMap.put("id", resultSet.getInt(1));
+                    tempMap.put("name", resultSet.getString(2));
+                    tempMap.put("itemValue", (double) actualRecipe.get(i).get("value") * resultSet.getInt(4));
+                    tempMap.put("expireDate", resultSet.getString(5));
+                    tempMap.put("value", actualRecipe.get(i).get("value"));
+                    values.add(tempMap);
+                }
+            }
+            return values;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return values;
+    }
+
+    public Serializable saveProduct(Map values) {
+        Connection connection = getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(SQL_SAVE_PRODUCT);
+            preparedStatement.setString(1, (String) values.get("name"));
+            preparedStatement.setInt(2, (Integer) values.get("productType"));
+            preparedStatement.setDate(3, new java.sql.Date(((java.util.Date) values.get("productionDate")).getTime()));
+            preparedStatement.setInt(4, (Integer) values.get("weight"));
+            preparedStatement.setDouble(5, (Double) values.get("cost"));
+            preparedStatement.setDouble(6, (Double) values.get("value"));
+            preparedStatement.setDate(7, new java.sql.Date(((java.util.Date) values.get("expireDate")).getTime()));
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt(1);
+                preparedStatement = connection.prepareStatement(SQL_INSERT_PRODUCT_INGREDIENTS);
+                List ingredients = (List) values.get("ingredients");
+                for (int i = 0; i < ingredients.size(); i++) {
+                    preparedStatement.setInt(1, id);
+                    preparedStatement.setInt(2, (Integer) ((Map) ingredients.get(i)).get("id"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+                preparedStatement = connection.prepareStatement(SQL_UPDATE_PRODUCT_INGREDIENTS);
+                for (int i = 0; i < ingredients.size(); i++) {
+                    preparedStatement.setDouble(1, (double) ((Map) ingredients.get(i)).get("value"));
+                    preparedStatement.setInt(2, (Integer) ((Map) ingredients.get(i)).get("id"));
+                    preparedStatement.addBatch();
+                    preparedStatement.clearParameters();
+                }
+                preparedStatement.executeBatch();
+                preparedStatement = connection.prepareStatement(SQL_REFRESH_INGREDIENTS);
+                preparedStatement.execute();
+                return "SUCCES";
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "SAVE_ERROR";
     }
 }

@@ -29,7 +29,6 @@ public class ProductTypePanel extends JTabbedPane {
         setDeleteIngredientButton();
         setAddMachineButton();
         setDeleteMachineButton();
-
     }
 
     private void initComponents() {

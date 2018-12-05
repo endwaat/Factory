@@ -40,9 +40,9 @@ public class BrowsePanel extends JPanel {
         setLayout(new MigLayout(
             "hidemode 3",
             // columns
-            "[fill]",
+            "[grow,fill]",
             // rows
-            "[]" +
+            "[grow]" +
             "[]"));
 
         //======== scrollPane1 ========
