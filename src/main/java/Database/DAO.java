@@ -10,7 +10,7 @@ public class DAO {
     private static String SQL_INSERT_ALLERGENS = "INSERT INTO allergens (name) VALUES (?)";
     private static String SQL_UPDATE_ALLERGENS = "UPDATE allergens SET name = ? WHERE id = ?";
     private static String SQL_SELECT_USER = "SELECT username, password, email, zip, town, address, phone FROM users WHERE id = ? AND deleted = 'f'";
-    private static String SQL_SELECT_ALLERGENS_LIST = "SELECT * FROM allergensORDER BY name";
+    private static String SQL_SELECT_ALLERGENS_LIST = "SELECT * FROM allergens ORDER BY name";
     private static String SQL_SELECT_ALLERGENS = "SELECT * FROM allergens WHERE id = ?";
     private static String SQL_DELETE_ALLERGENS = "DELETE FROM allergens WHERE id = ?";
     private static String SQL_INSERT_USER = "INSERT INTO users (username,password,email,zip,town,address,phone) VALUES (?,?,?,?,?,?,?) RETURNING id";

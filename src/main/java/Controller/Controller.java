@@ -603,9 +603,9 @@ public class Controller {
             productTypeListFrame.toFront();
         });
 
-        //új terméktípus
+        //új termék
         menuBar.addListener("newProduct", event -> {
-            ProductFrame productFrame = new ProductFrame("Terméktípus", true, true, true, true);
+            ProductFrame productFrame = new ProductFrame("Termék", true, true, true, true);
             productFrame.setSave(e1 -> {
                 if (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(null, dao.translate("SAVE_CHECK"), "FIGYELEM", JOptionPane.YES_NO_OPTION)) {
                     if (productFrame.beforeSave()) {
